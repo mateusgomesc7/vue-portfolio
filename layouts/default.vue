@@ -5,6 +5,13 @@
       app
     >
       <v-toolbar-title>{{ title }}</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-switch
+        v-model="$vuetify.theme.dark"
+        hide-details
+        inset
+        label="Theme"
+      ></v-switch>
     </v-app-bar>
 
     <v-main>
