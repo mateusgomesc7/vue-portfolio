@@ -22,6 +22,10 @@ export default {
     ]
   },
 
+  server: {
+    host: '0.0.0.0', // valor padrão: localhost,
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
@@ -70,6 +74,9 @@ export default {
           success: colors.green.accent3
         }
       }
+    },
+    breakpoint: {
+      mobileBreakpoint: 800
     }
   },
 
