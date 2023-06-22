@@ -1,18 +1,6 @@
 <template>
   <v-app dark>
-    <v-app-bar
-      fixed
-      app
-    >
-      <v-toolbar-title>{{ title }}</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-switch
-        v-model="$vuetify.theme.dark"
-        hide-details
-        inset
-        label="Theme"
-      ></v-switch>
-    </v-app-bar>
+    <Navbar />
 
     <v-main>
       <v-container>
@@ -29,8 +17,11 @@
 </template>
 
 <script>
+import Navbar from '@/components/Navbar.vue';
+
 export default {
   name: 'DefaultLayout',
+  components: { Navbar },
   data () {
     return {
       title: 'Mateus Gomes'
