@@ -59,17 +59,16 @@
           :menu-props="{ bottom: true, offsetY: true }"
           class="mr-6 custom-select"
         ></v-select>
-        <v-switch
-            v-model="$vuetify.theme.dark"
-            hide-details
-            inset
-        ></v-switch>
+        <SwitchTheme />
     </v-app-bar>
 </template>
 
 <script>
+import SwitchTheme from './navbar/SwitchTheme.vue';
+
 export default {
     name: 'Navbar',
+    components: {SwitchTheme},
     data () {
         return {
             title: 'Mateus',
