@@ -9,27 +9,17 @@
       </v-container>
     </v-main>
 
-    <v-footer
-      app
-      absolute
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
-
+    <Footer />
   </v-app>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar.vue';
 import NavigationDrawer from '@/components/NavigationDrawer.vue';
+import Footer from '@/components/Footer.vue';
 
 export default {
   name: 'DefaultLayout',
-  components: { Navbar, NavigationDrawer },
-  data () {
-    return {
-      title: 'Mateus Gomes'
-    }
-  }
+  components: { Navbar, NavigationDrawer, Footer },
 }
 </script>
