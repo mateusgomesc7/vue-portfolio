@@ -8,7 +8,7 @@
                 text
                 large
                 class="lowercase-btn align-stretch"
-                @click="toggle_page = undefined"
+                @click.stop="toggle_page = undefined"
             >
                 <template #default>
                     <div v-if="$vuetify.breakpoint.mobile">
@@ -49,14 +49,27 @@
             </v-btn>
         </v-btn-toggle>
         <v-spacer></v-spacer>
-        <ButtonTranslation />
-        <SwitchTheme />
+        <div>
+            <div v-if="!$vuetify.breakpoint.mobile" class="d-flex justify-start">
+                <ButtonTranslation />
+                <SwitchTheme />
+            </div>
+            <div v-else>
+                <v-btn
+                    text 
+                    @click.stop="() => { setDrawer(true) }"
+                >
+                    <v-icon>mdi-dots-vertical</v-icon>
+                </v-btn>
+            </div>
+        </div>
     </v-app-bar>
 </template>
 
 <script>
-import SwitchTheme from './navbar/SwitchTheme.vue';
-import ButtonTranslation from './navbar/ButtonTranslation.vue';
+import { mapState, mapMutations } from 'vuex'
+import SwitchTheme from './utils/SwitchTheme.vue';
+import ButtonTranslation from './utils/ButtonTranslation.vue';
 
 export default {
     name: 'Navbar',
@@ -65,9 +78,17 @@ export default {
         return {
             title: 'Mateus',
             subtitle: 'Gomes',
-            toggle_page: undefined
+            toggle_page: undefined,
         }
     },
+    computed: {
+        ...mapState('navigation_drawer', {
+            drawer: (state) => state.drawer
+        })
+    },
+    methods: {
+        ...mapMutations('navigation_drawer', ['setDrawer'])
+    }
 }
 </script>
 
