@@ -1,13 +1,14 @@
 <template>
     <v-app-bar
-    fixed
-    app
+        app
+        hide-on-scroll
     >
         <div class="d-flex align-stretch">
             <v-btn
                 text
                 large
                 class="lowercase-btn align-stretch"
+                to="/"
                 @click.stop="toggle_page = undefined"
             >
                 <template #default>
@@ -27,21 +28,21 @@
             v-model="toggle_page"
             group
         >
-            <v-btn>
+            <v-btn to="projects">
                 <v-icon :left="!$vuetify.breakpoint.mobile">mdi-view-grid-plus</v-icon>
                 <div v-if="!$vuetify.breakpoint.mobile">
                     Projects
                 </div>
             </v-btn>
 
-            <v-btn>
+            <v-btn to="about-me">
                 <v-icon :left="!$vuetify.breakpoint.mobile">mdi-account</v-icon>
                 <div v-if="!$vuetify.breakpoint.mobile">
                     About me
                 </div>
             </v-btn>
 
-            <v-btn>
+            <v-btn to="contact">
                 <v-icon :left="!$vuetify.breakpoint.mobile">mdi-email</v-icon>
                 <div v-if="!$vuetify.breakpoint.mobile">
                     Contact
