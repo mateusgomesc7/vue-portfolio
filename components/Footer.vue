@@ -5,13 +5,14 @@
       class="d-flex justify-space-between text-subtitle-2"
     >
         <span v-if="!$vuetify.breakpoint.xs">
-          Developed by 
-          <a
-            href="/about-me"
-            class="text-decoration-underline text--primary"
-          >
-            Mateus Gomes
-          </a>
+          {{ $t('components.footer.developed') }}
+          <nuxt-link :to="localePath('about-me')">
+            <a
+              class="text-decoration-underline text--primary"
+            >
+              Mateus Gomes
+            </a>
+          </nuxt-link>
         </span>
         <span>
           &copy; {{ new Date().getFullYear() }}. 

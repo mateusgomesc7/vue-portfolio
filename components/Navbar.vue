@@ -3,49 +3,41 @@
         app
         hide-on-scroll
     >
-        <div class="d-flex align-stretch">
-            <v-btn
-                text
-                large
-                class="lowercase-btn align-stretch"
-                to="/"
-                @click.stop="toggle_page = undefined"
-            >
-                <template #default>
-                    <div v-if="$vuetify.breakpoint.mobile">
-                        <v-icon>mdi-home</v-icon>
-                    </div>
-                    <div v-else>
-                        {{ title }}
-                        <br>
-                        {{ subtitle }}
-                    </div>
-                </template>
-            </v-btn>
-        </div>
+        <nuxt-link
+            class="d-flex align-stretch text-decoration-none"
+            :to="localePath('/')"
+            @click.stop="toggle_page = undefined"
+        >
+            <v-icon v-if="$vuetify.breakpoint.mobile" class="pa-3">mdi-home</v-icon>
+            <a v-else class="text-subtitle-2 text--primary">
+                {{ title }}
+                <br>
+                {{ subtitle }}
+            </a>
+        </nuxt-link>
         <v-spacer></v-spacer>
         <v-btn-toggle 
             v-model="toggle_page"
             group
         >
-            <v-btn to="projects">
+            <v-btn :to="localePath('projects')">
                 <v-icon :left="!$vuetify.breakpoint.mobile">mdi-view-grid-plus</v-icon>
                 <div v-if="!$vuetify.breakpoint.mobile">
-                    Projects
+                    {{ $t('components.navbar.projects') }}
                 </div>
             </v-btn>
 
-            <v-btn to="about-me">
+            <v-btn :to="localePath('about-me')">
                 <v-icon :left="!$vuetify.breakpoint.mobile">mdi-account</v-icon>
                 <div v-if="!$vuetify.breakpoint.mobile">
-                    About me
+                    {{ $t('components.navbar.about_me') }}
                 </div>
             </v-btn>
 
-            <v-btn to="contact">
+            <v-btn :to="localePath('contact')">
                 <v-icon :left="!$vuetify.breakpoint.mobile">mdi-email</v-icon>
                 <div v-if="!$vuetify.breakpoint.mobile">
-                    Contact
+                    {{ $t('components.navbar.contact') }}
                 </div>
             </v-btn>
         </v-btn-toggle>
@@ -96,9 +88,6 @@ export default {
 <style scoped>
 .custom-select {
   max-width: 66px;
-}
-.lowercase-btn {
-  text-transform: none;
 }
 </style>
   
