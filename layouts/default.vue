@@ -1,7 +1,8 @@
 <template>
   <v-app dark>
+    <NavigationDrawer />
     <Navbar />
-
+    
     <v-main>
       <v-container>
         <Nuxt />
@@ -10,11 +11,11 @@
 
     <v-footer
       app
+      absolute
     >
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
 
-    <NavigationDrawer />
   </v-app>
 </template>
 
