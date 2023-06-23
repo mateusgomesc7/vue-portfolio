@@ -16,11 +16,12 @@
 
     <v-list max-height="300">
         <v-list-item
-            v-for="(item, index) in items"
-            :key="index"
+            v-for="locale in availableLocales"
+            :key="locale.code"
+            :to="switchLocalePath(locale.code)"
             link
         >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title>{{ locale.name }}</v-list-item-title>
         </v-list-item>
     </v-list>
   </v-menu>
@@ -35,5 +36,10 @@
         { title: 'Português' },
       ],
     }),
+    computed: {
+      availableLocales () {
+        return this.$i18n.locales
+      }
+    }
   }
 </script>

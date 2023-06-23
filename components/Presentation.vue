@@ -1,41 +1,9 @@
 <template>
-  <div>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  <h1>Hi, I'am Mateus Gomes</h1>
-  </div>
+  <h1>{{ $t('components.presentation.title') }}</h1>
 </template>
 
-<style>
-</style>
+<script>
+export default {
+  name: 'Presentation',
+}
+</script>
