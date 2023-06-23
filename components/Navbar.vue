@@ -1,14 +1,15 @@
 <template>
     <v-app-bar
-    fixed
-    app
+        app
+        hide-on-scroll
     >
         <div class="d-flex align-stretch">
             <v-btn
                 text
                 large
                 class="lowercase-btn align-stretch"
-                @click="toggle_page = undefined"
+                to="/"
+                @click.stop="toggle_page = undefined"
             >
                 <template #default>
                     <div v-if="$vuetify.breakpoint.mobile">
@@ -27,21 +28,21 @@
             v-model="toggle_page"
             group
         >
-            <v-btn>
+            <v-btn to="projects">
                 <v-icon :left="!$vuetify.breakpoint.mobile">mdi-view-grid-plus</v-icon>
                 <div v-if="!$vuetify.breakpoint.mobile">
                     Projects
                 </div>
             </v-btn>
 
-            <v-btn>
+            <v-btn to="about-me">
                 <v-icon :left="!$vuetify.breakpoint.mobile">mdi-account</v-icon>
                 <div v-if="!$vuetify.breakpoint.mobile">
                     About me
                 </div>
             </v-btn>
 
-            <v-btn>
+            <v-btn to="contact">
                 <v-icon :left="!$vuetify.breakpoint.mobile">mdi-email</v-icon>
                 <div v-if="!$vuetify.breakpoint.mobile">
                     Contact
@@ -49,38 +50,46 @@
             </v-btn>
         </v-btn-toggle>
         <v-spacer></v-spacer>
-        <v-select
-          v-model="select"
-          :items="items"
-          item-text="abbr"
-          item-value="abbr"
-          hide-details
-          return-object
-          :menu-props="{ bottom: true, offsetY: true }"
-          class="mr-6 custom-select"
-        ></v-select>
-        <SwitchTheme />
+        <div>
+            <div v-if="!$vuetify.breakpoint.mobile" class="d-flex justify-start">
+                <ButtonTranslation />
+                <SwitchTheme />
+            </div>
+            <div v-else>
+                <v-btn
+                    text 
+                    @click.stop="() => { setDrawer(true) }"
+                >
+                    <v-icon>mdi-dots-vertical</v-icon>
+                </v-btn>
+            </div>
+        </div>
     </v-app-bar>
 </template>
 
 <script>
-import SwitchTheme from './navbar/SwitchTheme.vue';
+import { mapState, mapMutations } from 'vuex'
+import SwitchTheme from './utils/SwitchTheme.vue';
+import ButtonTranslation from './utils/ButtonTranslation.vue';
 
 export default {
     name: 'Navbar',
-    components: {SwitchTheme},
+    components: {ButtonTranslation, SwitchTheme},
     data () {
         return {
             title: 'Mateus',
             subtitle: 'Gomes',
-            select: { state: 'English', abbr: 'en' },
-            items: [
-            { state: 'English', abbr: 'en' },
-            { state: 'Português', abbr: 'pt-br' },
-            ],
-            toggle_page: undefined
+            toggle_page: undefined,
         }
     },
+    computed: {
+        ...mapState('navigation_drawer', {
+            drawer: (state) => state.drawer
+        })
+    },
+    methods: {
+        ...mapMutations('navigation_drawer', ['setDrawer'])
+    }
 }
 </script>
 
