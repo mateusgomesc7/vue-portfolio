@@ -1,6 +1,7 @@
 <template>
     <v-btn
         text
+        :block="$vuetify.breakpoint.mobile ? true : false"
         @click="changeTheme"
     >
         <v-icon>{{ iconTheme }}</v-icon>
@@ -15,9 +16,16 @@ export default {
             iconTheme: 'mdi-moon-waning-crescent'
         }
     },
+    mounted() {
+        this.changeIcon()
+    },
     methods: {
         changeTheme() {
             this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+            this.changeIcon()
+            
+        },
+        changeIcon() {
             if (this.$vuetify.theme.dark)
                 this.iconTheme = 'mdi-weather-sunny'
             else
