@@ -80,6 +80,25 @@ export default {
     }
   },
 
+  i18n: {
+    strategy: 'prefix_and_default',
+    locales: [
+      {
+        code: 'pt',
+        name: 'Português',
+        file: 'pt-BR.js'
+      },
+      {
+        code: 'en',
+        name: 'English',
+        file: 'en-US.js'
+      }
+    ],
+    lazy: true,
+    langDir: 'locales/',
+    defaultLocale: 'en',
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
