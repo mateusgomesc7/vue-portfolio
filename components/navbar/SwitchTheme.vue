@@ -1,6 +1,6 @@
 <template>
     <v-btn
-        icon
+        text
         @click="changeTheme"
     >
         <v-icon>{{ iconTheme }}</v-icon>

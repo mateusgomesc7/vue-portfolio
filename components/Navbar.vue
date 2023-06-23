@@ -49,35 +49,22 @@
             </v-btn>
         </v-btn-toggle>
         <v-spacer></v-spacer>
-        <v-select
-          v-model="select"
-          :items="items"
-          item-text="abbr"
-          item-value="abbr"
-          hide-details
-          return-object
-          :menu-props="{ bottom: true, offsetY: true }"
-          class="mr-6 custom-select"
-        ></v-select>
+        <ButtonTranslation />
         <SwitchTheme />
     </v-app-bar>
 </template>
 
 <script>
 import SwitchTheme from './navbar/SwitchTheme.vue';
+import ButtonTranslation from './navbar/ButtonTranslation.vue';
 
 export default {
     name: 'Navbar',
-    components: {SwitchTheme},
+    components: {ButtonTranslation, SwitchTheme},
     data () {
         return {
             title: 'Mateus',
             subtitle: 'Gomes',
-            select: { state: 'English', abbr: 'en' },
-            items: [
-            { state: 'English', abbr: 'en' },
-            { state: 'Português', abbr: 'pt-br' },
-            ],
             toggle_page: undefined
         }
     },
