@@ -1,34 +1,25 @@
 <template>
   <v-app dark>
+    <NavigationDrawer />
     <Navbar />
-
+    
     <v-main>
       <v-container>
         <Nuxt />
       </v-container>
     </v-main>
 
-    <v-footer
-      app
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
-
-    <NavigationDrawer />
+    <Footer />
   </v-app>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar.vue';
 import NavigationDrawer from '@/components/NavigationDrawer.vue';
+import Footer from '@/components/Footer.vue';
 
 export default {
   name: 'DefaultLayout',
-  components: { Navbar, NavigationDrawer },
-  data () {
-    return {
-      title: 'Mateus Gomes'
-    }
-  }
+  components: { Navbar, NavigationDrawer, Footer },
 }
 </script>

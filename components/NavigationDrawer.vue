@@ -1,7 +1,7 @@
 <template>
     <v-navigation-drawer
         :value="drawer"
-        absolute
+        app
         bottom
         temporary
         right
