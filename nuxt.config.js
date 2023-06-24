@@ -81,7 +81,8 @@ export default {
   },
 
   i18n: {
-    strategy: 'prefix_and_default',
+    strategy: 'prefix',
+    defaultLocale: 'en',
     locales: [
       {
         code: 'pt',
@@ -96,7 +97,11 @@ export default {
     ],
     lazy: true,
     langDir: 'locales/',
-    defaultLocale: 'en',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
