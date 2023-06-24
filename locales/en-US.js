@@ -9,7 +9,10 @@ export default {
             contact: "Contact"
         },
         presentation: {
-            title: "Hi, I'm Mateus Gomes"
+            title: "Hi, I'm",
+            subtitle: "Full-Stack Developer",
+            btn_about_me: "About me",
+            btn_resume: "Resume"
         }
     },
     pages: {
