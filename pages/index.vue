@@ -1,18 +1,20 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <v-card class="logo py-4 d-flex justify-center">
-        <Presentation />
-      </v-card>
+  <v-row no-gutters justify="center" align="center">
+    <v-col class="d-flex justify-center" cols="12" md="5">
+      <Presentation />
+    </v-col>
+    <v-col class="d-flex justify-center" cols="12" md="7">
+      <Cubo />
     </v-col>
   </v-row>
 </template>
 
 <script>
 import Presentation from '@/components/Presentation.vue';
+import Cubo from '@/components/Cubo.vue';
 
 export default {
     name: "IndexPage",
-    components: { Presentation }
+    components: { Presentation, Cubo }
 }
 </script>
