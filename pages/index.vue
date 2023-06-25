@@ -3,18 +3,16 @@
     <v-col class="d-flex justify-center" cols="12" md="5">
       <Presentation />
     </v-col>
-    <v-col class="d-flex justify-center" cols="12" md="7">
-      <Cubo />
-    </v-col>
+    <Experience />
   </v-row>
 </template>
 
 <script>
 import Presentation from '@/components/Presentation.vue';
-import Cubo from '@/components/Cubo.vue';
+import Experience from '@/components/Experience.vue';
 
 export default {
     name: "IndexPage",
-    components: { Presentation, Cubo }
+    components: { Presentation, Experience }
 }
 </script>
