@@ -3,7 +3,15 @@
     <v-col class="d-flex justify-center" cols="12" md="5">
       <Presentation />
     </v-col>
-    <Experience />
+    <v-col
+      class="webgl-col d-flex justify-center"
+      cols="12"
+      md="7"
+      style="height: 500px;"
+      :class="{'mobile-height': $vuetify.breakpoint.mobile}"
+    >
+      <Experience />
+    </v-col>
   </v-row>
 </template>
 
@@ -16,3 +24,9 @@ export default {
     components: { Presentation, Experience }
 }
 </script>
+
+<style scoped>
+.mobile-height {
+  height: 300px !important;
+}
+</style>
