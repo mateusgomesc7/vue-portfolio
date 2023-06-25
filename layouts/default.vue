@@ -2,9 +2,9 @@
   <v-app dark>
     <NavigationDrawer />
     <Navbar />
-    
+
     <v-main>
-      <v-container class="fill-height">
+      <v-container :fill-height="!$vuetify.breakpoint.mobile">
         <Nuxt />
       </v-container>
     </v-main>
