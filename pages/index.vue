@@ -1,6 +1,11 @@
 <template>
   <v-row no-gutters justify="center" align="center">
-    <v-col class="d-flex justify-center" cols="12" md="5">
+    <v-col
+      class="d-flex"
+      :class="$vuetify.breakpoint.mdAndDown ? 'justify-center' : 'justify-end'"
+      cols="12"
+      md="5"
+    >
       <Presentation />
     </v-col>
     <v-col
