@@ -9,9 +9,8 @@ import {
     Scene, PerspectiveCamera, Mesh,
     BoxGeometry, MeshStandardMaterial,
     WebGLRenderer, AmbientLight, DirectionalLight,
-    Raycaster, DirectionalLightHelper
+    Raycaster, Vector2,
 } from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 
 export default {
@@ -30,6 +29,8 @@ export default {
             renderer: undefined,
             controls: undefined,
             raycaster: undefined,
+            mouse: new Vector2(-1,-1),
+            currentIntersect: null, 
             time: Date.now()
         }
     },
@@ -37,12 +38,31 @@ export default {
         this.createScene()
         this.setRenderer()
         window.addEventListener('resize', this.handleResize);
+        this.$refs.card.addEventListener('click', this.mouseClick)
+        this.$refs.card.addEventListener('mousemove', this.mouseMove)
         this.tick()
     },
     beforeDestroy() {
         window.removeEventListener('resize', this.handleResize);
+        this.$refs.card.removeEventListener('click', this.mouseClick)
+        this.$refs.card.removeEventListener('mousemove', this.mouseMove)
     },
     methods: {
+        mouseClick() {
+            if(this.currentIntersect)
+            {
+                // Generate a random grayscale value between 0 and 255
+                const randomGray = Math.floor(Math.random() * 201);
+
+                // Create a hexadecimal color string in grayscale
+                const colorString = `#${randomGray.toString(16).repeat(3)}`;
+                this.currentIntersect.object.material.color.set(colorString)
+            }
+        },
+        mouseMove(event) {
+            this.mouse.x = event.offsetX / this.sizes.width * 2 - 1
+            this.mouse.y = - (event.offsetY / this.sizes.height) * 2 + 1
+        },
         createScene() {
             this.scene = new Scene();
 
@@ -67,9 +87,6 @@ export default {
             this.directionalLight.position.set(-1, 1, 2)
             this.scene.add(this.directionalLight)
 
-            // this.directionalLightHelper = new DirectionalLightHelper(this.directionalLight, 0.2)
-            // this.scene.add(this.directionalLightHelper)
-
             this.box = new Mesh(
                 new BoxGeometry(1, 1, 1),
                 new MeshStandardMaterial({ color: 0x616161 })
@@ -83,12 +100,6 @@ export default {
                 canvas: document.querySelector('canvas.webgl'),
                 alpha: true
             })
-            // this.controls = new OrbitControls(this.camera, this.renderer.domElement)
-            // this.controls.enableDamping = false
-
-            // Desabilitar rotação vertical
-            // this.controls.minPolarAngle = Math.PI / 2; // Ângulo polar mínimo
-            // this.controls.maxPolarAngle = Math.PI / 2; // Ângulo polar máximo
 
             this.renderer.setSize(this.sizes.width, this.sizes.height)
             this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
@@ -117,9 +128,21 @@ export default {
             this.box.rotation.y += 0.0004 * deltaTime
             this.box.rotation.x += 0.0001 * deltaTime
             this.box.position.y = Math.sin(this.time * 0.001) * 0.3
+            this.box.updateMatrixWorld()
 
-            // Update controls
-            // this.controls.update()
+            // raycaster
+            this.raycaster.setFromCamera(this.mouse, this.camera)
+            const objectToTest = this.box
+            const intersects = this.raycaster.intersectObject(objectToTest)
+            
+            if(intersects.length)
+            {
+                this.currentIntersect = intersects[0]
+            }
+            else
+            {                
+                this.currentIntersect = null
+            }
 
             // Render
             this.renderer.render(this.scene, this.camera)
