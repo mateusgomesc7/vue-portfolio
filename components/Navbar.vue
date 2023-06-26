@@ -1,7 +1,7 @@
 <template>
     <v-app-bar
         app
-        hide-on-scroll
+        elevation="0"
     >
         <nuxt-link
             class="d-flex align-stretch text-decoration-none"
