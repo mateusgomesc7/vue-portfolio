@@ -4,7 +4,10 @@
     <Navbar />
 
     <v-main>
-      <v-container :fill-height="!$vuetify.breakpoint.mobile">
+      <v-container
+        :fill-height="!$vuetify.breakpoint.mobile"
+        class="pt-4"
+      >
         <Nuxt />
       </v-container>
     </v-main>
@@ -23,3 +26,9 @@ export default {
   components: { Navbar, NavigationDrawer, Footer },
 }
 </script>
+
+<style scoped>
+.fill-height {
+  align-items: start;
+}
+</style>
