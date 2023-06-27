@@ -24,7 +24,7 @@
       >
         mdi-magnify
       </v-icon>
-      Search
+      {{ $t('components.search.search') }}
     </template>
     </v-autocomplete>
 </template>
@@ -41,7 +41,6 @@ export default {
           { name: 'Vue' },
           { name: 'Nuxt' },
           { name: 'JavaScript' },
-          { name: 'Visão Computacional' },
           { name: 'Machine Learning' },
           { name: 'React' },
         ],

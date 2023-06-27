@@ -13,6 +13,9 @@ export default {
             subtitle: "Full-Stack Developer",
             btn_about_me: "About me",
             btn_resume: "Resume"
+        },
+        search: {
+            search: "Search"
         }
     },
     pages: {
