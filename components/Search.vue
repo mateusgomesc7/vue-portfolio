@@ -10,13 +10,22 @@
         deletable-chips
         hide-selected
         hide-no-data
-        label="Search"
         item-text="name"
         item-value="name"
         multiple
         :menu-props="{ maxHeight: 200 }"
         @keydown.enter="closeAutocomplete"
+        @blur="isSearchSelected = false"
+        @focus="isSearchSelected = true"
     >
+    <template #label>
+      <v-icon
+       :color="isSearchSelected ? 'primary' : ''"
+      >
+        mdi-magnify
+      </v-icon>
+      Search
+    </template>
     </v-autocomplete>
 </template>
 
@@ -35,7 +44,8 @@ export default {
           { name: 'Visão Computacional' },
           { name: 'Machine Learning' },
           { name: 'React' },
-        ]
+        ],
+        isSearchSelected: false,
       }
     },
     methods: {
