@@ -30,5 +30,25 @@ export default {
         projects: {
             title: "Projects"
         }
+    },
+    data: {
+        projects: {
+            project_1: {
+                title: "Project 1",
+                description: "Description of project 1"
+            },
+            project_2: {
+                title: "Project 2",
+                description: "Description of project 2"
+            },
+            project_3: {
+                title: "Project 3",
+                description: "Description of project 3"
+            },
+            project_4: {
+                title: "Project 4",
+                description: "Description of project 4"
+            },
+        }
     }
 }
