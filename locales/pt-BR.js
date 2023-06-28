@@ -14,9 +14,11 @@ export default {
             btn_about_me: "Sobre mim",
             btn_resume: "Currículo"
         },
-        search: {
-            search: "Pesquisar"
-        }
+        projects: {
+            search: {
+                search: "Pesquisar"
+            }
+        },
     },
     pages: {
         about_me: {
