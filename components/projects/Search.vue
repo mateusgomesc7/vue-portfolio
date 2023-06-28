@@ -2,7 +2,9 @@
     <v-autocomplete
         v-model="values"
         ref="autocomplete"
-        :items="people"
+        :items="technologies"
+        :loading="loading"
+        :menu-props="{ maxHeight: 200 }"
         outlined
         clearable
         chips
@@ -12,9 +14,8 @@
         hide-no-data
         hide-details
         item-text="name"
-        item-value="name"
+        item-value="id"
         multiple
-        :menu-props="{ maxHeight: 200 }"
         @keydown.enter="closeAutocomplete"
         @blur="isSearchSelected = false"
         @focus="isSearchSelected = true"
@@ -33,20 +34,29 @@
 <script>
 export default {
     name: "Search",
+    props: {
+      technologies: {
+        type: Array,
+        default: () => [],
+      },
+      loading: {
+        type: Boolean,
+        default: false,
+      }
+    },
     data () {
       return {
-        values: ['Python', 'JavaScript'],
-        people: [
-          { name: 'Python' },
-          { name: 'Flask' },
-          { name: 'Vue' },
-          { name: 'Nuxt' },
-          { name: 'JavaScript' },
-          { name: 'Machine Learning' },
-          { name: 'React' },
-        ],
+        values: [],
         isSearchSelected: false,
       }
+    },
+    watch: {
+        values: {
+            handler: function (val) {
+                this.$emit('search', val)
+            },
+            deep: true
+        }
     },
     methods: {
         closeAutocomplete() {
