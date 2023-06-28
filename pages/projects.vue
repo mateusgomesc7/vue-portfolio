@@ -10,8 +10,6 @@
 </template>
 
 <script>
-import technologies from '~/static/data/technologies.json'
-import projects from '~/static/data/projects.json'
 import Search from '@/components/projects/Search.vue';
 import ListProjects from '@/components/projects/ListProjects.vue';
 
@@ -20,23 +18,52 @@ export default {
     components: { Search, ListProjects },
     data() {
         return {
-            technologies: technologies.technologies,
-            projects: projects.projects,
-            filteredProjects: projects.projects,
+            technologies: [],
+            projects: [],
+            filteredProjects: [],
         }
     },
+    mounted() {
+      Promise.all([this.loadProjects(), this.loadTechnologies()])
+        .then(([dataProjects, dataTechnologies]) => {
+          this.projects = this.mergeProjectsTechnologies(
+            dataProjects.projects,
+            dataTechnologies.technologies
+          )
+          this.filteredProjects = this.projects;
+          this.technologies = dataTechnologies.technologies;
+        })
+        .catch(error => {
+          console.error('Error loading data:', error);
+        });
+    },
     methods: {
-      handleSearch(value) {
-        if (value.length === 0) {
+      mergeProjectsTechnologies(projects, technologies) {
+        return projects.map( project => {
+          const matchedTechnologies = project.technologies.map(techId => {
+            return technologies.find(technologie => technologie.id === techId);
+          });
+
+          return {...project, technologies: matchedTechnologies}
+        })
+      },
+      handleSearch(listTechnologiesIds) {
+        if (listTechnologiesIds.length === 0) {
           this.filteredProjects = this.projects;
         } else {
           this.filteredProjects = this.projects.filter(project => {
-            return project.technologies.some(technologyId => {
-              return value.includes(technologyId)
+            return project.technologies.some(technology => {
+              return listTechnologiesIds.includes(technology.id);
             })
           })
         }
       },
+      loadProjects() {
+        return this.$axios.$get('/data/projects.json', { baseURL: window.location.origin })
+      },
+      loadTechnologies() {
+        return this.$axios.$get('/data/technologies.json', { baseURL: window.location.origin })
+      }
     },
 }
 </script>

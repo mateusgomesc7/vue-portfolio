@@ -6,16 +6,24 @@
         :height="400"
         outlined
     >
-        <slot name="title"></slot>
+        {{ $t(project.name) }}
         <br />
-        <slot name="description"></slot>
+        {{ $t(project.description) }}
         <br />
-        <slot name="technologies"></slot>
+        <div v-for="(technologie, index) in project.technologies" :key="index">
+            {{ technologie.name }}
+        </div>
     </v-card>
 </template>
 
 <script>
 export default {
     name: "CardProject",
+    props: {
+        project: {
+            type: Array,
+            default: () => {},
+        },
+    },
 }
 </script>
