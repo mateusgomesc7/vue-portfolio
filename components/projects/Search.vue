@@ -12,7 +12,7 @@
         hide-no-data
         hide-details
         item-text="name"
-        item-value="name"
+        item-value="id"
         multiple
         :menu-props="{ maxHeight: 200 }"
         @keydown.enter="closeAutocomplete"
@@ -31,16 +31,27 @@
 </template>
 
 <script>
-import technologies from '~/static/data/technologies.json'
-
 export default {
     name: "Search",
+    props: {
+      technologies: {
+            type: Array,
+            default: () => [],
+        },
+    },
     data () {
       return {
-        values: ['Python', 'JavaScript'],
-        technologies: technologies.technologies,
+        values: [],
         isSearchSelected: false,
       }
+    },
+    watch: {
+        values: {
+            handler: function (val) {
+                this.$emit('search', val)
+            },
+            deep: true
+        }
     },
     methods: {
         closeAutocomplete() {
