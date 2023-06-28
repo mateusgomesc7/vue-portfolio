@@ -2,7 +2,7 @@
     <v-autocomplete
         v-model="values"
         ref="autocomplete"
-        :items="people"
+        :items="technologies"
         outlined
         clearable
         chips
@@ -31,20 +31,14 @@
 </template>
 
 <script>
+import technologies from '~/static/data/technologies.json'
+
 export default {
     name: "Search",
     data () {
       return {
         values: ['Python', 'JavaScript'],
-        people: [
-          { name: 'Python' },
-          { name: 'Flask' },
-          { name: 'Vue' },
-          { name: 'Nuxt' },
-          { name: 'JavaScript' },
-          { name: 'Machine Learning' },
-          { name: 'React' },
-        ],
+        technologies: technologies.technologies,
         isSearchSelected: false,
       }
     },
