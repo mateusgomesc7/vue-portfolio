@@ -13,7 +13,12 @@ export default {
             subtitle: "Desenvolvedor Full-Stack",
             btn_about_me: "Sobre mim",
             btn_resume: "Currículo"
-        }
+        },
+        projects: {
+            search: {
+                search: "Pesquisar"
+            }
+        },
     },
     pages: {
         about_me: {
