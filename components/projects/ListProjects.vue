@@ -1,34 +1,22 @@
 <template>
     <v-row no-gutters justify="center" align="start">
         <v-col cols="12" md="6">
-            <CardProject v-for="(project, index) in firstColumn" :key="index">
-                <template #title>
-                    {{ $t(project.name) }}
-                </template>
-                <template #description>
-                    {{ $t(project.description) }}
-                </template>
-                <template #technologies>
-                    {{ project.technologies }}
-                </template>
-            </CardProject>
+            <CardProject
+                v-for="(project, index) in firstColumn"
+                :key="index"
+                :project="project" 
+            />
         </v-col>
         <v-col
             cols="12"
             md="6"
             :class="this.$vuetify.breakpoint.mdAndUp ? 'second-col' : ''"
         >
-            <CardProject v-for="(project, index) in secondColumn" :key="index">
-                <template #title>
-                    {{ $t(project.name) }}
-                </template>
-                <template #description>
-                    {{ $t(project.description) }}
-                </template>
-                <template #technologies>
-                    {{ project.technologies }}
-                </template>
-            </CardProject>
+            <CardProject
+                v-for="(project, index) in secondColumn"
+                :key="index"
+                :project="project"
+            />
         </v-col>
     </v-row>
 </template>
