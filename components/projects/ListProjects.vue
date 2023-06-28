@@ -1,41 +1,44 @@
 <template>
     <v-row no-gutters justify="center" align="start">
         <v-col cols="12" md="6">
-            <v-card
-                v-for="(project, index) in firstColumn"
-                :key="index"
-                justify="center"
-                class="pa-2 mt-4 mx-auto"
-                width="440"
-                :height="400"
-                outlined
-            >
-                {{ project.name }}
-            </v-card>
+            <CardProject v-for="(project, index) in firstColumn" :key="index">
+                <template #title>
+                    {{ $t(project.name) }}
+                </template>
+                <template #description>
+                    {{ $t(project.description) }}
+                </template>
+                <template #technologies>
+                    {{ project.technologies }}
+                </template>
+            </CardProject>
         </v-col>
         <v-col
             cols="12"
             md="6"
             :class="this.$vuetify.breakpoint.mdAndUp ? 'second-col' : ''"
         >
-            <v-card
-                v-for="(project, index) in secondColumn"
-                :key="index"
-                justify="center"
-                class="pa-2 mt-4 mx-auto"
-                width="440"
-                :height="400"
-                outlined
-            >
-                {{ project.name }}
-            </v-card>
+            <CardProject v-for="(project, index) in secondColumn" :key="index">
+                <template #title>
+                    {{ $t(project.name) }}
+                </template>
+                <template #description>
+                    {{ $t(project.description) }}
+                </template>
+                <template #technologies>
+                    {{ project.technologies }}
+                </template>
+            </CardProject>
         </v-col>
     </v-row>
 </template>
 
 <script>
+import CardProject from '@/components/projects/CardProject.vue';
+
 export default {
     name: "ListProjects",
+    components: {CardProject},
     props: {
         projects: {
             type: Array,
