@@ -1,0 +1,32 @@
+{
+    "technologies": [
+        {
+            "id": "1",
+            "name": "Python"
+        },
+        {
+            "id": "2",
+            "name": "Flask"
+        },
+        {
+            "id": "3",
+            "name": "Vue"
+        },
+        {
+            "id": "4",
+            "name": "Nuxt"
+        },
+        {
+            "id": "5",
+            "name": "JavaScript"
+        },
+        {
+            "id": "6",
+            "name": "Machine Learning"
+        },
+        {
+            "id": "7",
+            "name": "React"
+        }
+    ]
+}
