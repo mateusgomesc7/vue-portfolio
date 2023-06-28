@@ -1,5 +1,5 @@
 <template>
-  <v-row no-gutters justify="center" align="center">
+  <v-row no-gutters class="h-100" justify="center" align="center">
     <v-col
       class="d-flex"
       :class="$vuetify.breakpoint.mdAndDown ? 'justify-center' : 'justify-end'"

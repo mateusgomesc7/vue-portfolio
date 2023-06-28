@@ -1,5 +1,5 @@
 <template>
-  <v-card class="py-4" elevation="0">
+  <v-card elevation="0">
     <v-card-title class="text-sm-h3 text-h4">
       {{ $t('components.presentation.title') }}
       <br />
