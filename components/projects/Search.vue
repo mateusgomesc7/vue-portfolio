@@ -3,6 +3,8 @@
         v-model="values"
         ref="autocomplete"
         :items="technologies"
+        :loading="loading"
+        :menu-props="{ maxHeight: 200 }"
         outlined
         clearable
         chips
@@ -14,7 +16,6 @@
         item-text="name"
         item-value="id"
         multiple
-        :menu-props="{ maxHeight: 200 }"
         @keydown.enter="closeAutocomplete"
         @blur="isSearchSelected = false"
         @focus="isSearchSelected = true"
@@ -35,9 +36,13 @@ export default {
     name: "Search",
     props: {
       technologies: {
-            type: Array,
-            default: () => [],
-        },
+        type: Array,
+        default: () => [],
+      },
+      loading: {
+        type: Boolean,
+        default: false,
+      }
     },
     data () {
       return {

@@ -1,7 +1,11 @@
 <template>
   <v-row no-gutters justify="center">
     <v-col cols="12">
-      <Search :technologies="technologies" @search="handleSearch" />
+      <Search
+        :technologies="technologies"
+        :loading="loading"
+        @search="handleSearch"
+      />
     </v-col>
     <v-col cols="12">
       <ListProjects :projects="filteredProjects"/>
@@ -21,9 +25,11 @@ export default {
             technologies: [],
             projects: [],
             filteredProjects: [],
+            loading: false
         }
     },
     mounted() {
+      this.loading = true;
       Promise.all([this.loadProjects(), this.loadTechnologies()])
         .then(([dataProjects, dataTechnologies]) => {
           this.projects = this.mergeProjectsTechnologies(
@@ -35,7 +41,10 @@ export default {
         })
         .catch(error => {
           console.error('Error loading data:', error);
-        });
+        })
+        .finally(() => {
+          this.loading = false;
+        })
     },
     methods: {
       mergeProjectsTechnologies(projects, technologies) {
