@@ -10,6 +10,7 @@
         deletable-chips
         hide-selected
         hide-no-data
+        hide-details
         item-text="name"
         item-value="name"
         multiple
@@ -24,7 +25,7 @@
       >
         mdi-magnify
       </v-icon>
-      {{ $t('components.search.search') }}
+      {{ $t('components.projects.search.search') }}
     </template>
     </v-autocomplete>
 </template>

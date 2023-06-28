@@ -28,6 +28,9 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  max-width: 940px;
+}
 .fill-height {
   align-items: start;
 }
