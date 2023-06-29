@@ -1,18 +1,68 @@
 <template>
     <v-card
         justify="center"
-        class="pa-2 mt-4 mx-auto"
+        class="mx-auto"
         width="440"
-        :height="400"
+        min-height="400"
         outlined
     >
-        {{ $t(project.name) }}
-        <br />
-        {{ $t(project.description) }}
-        <br />
-        <div v-for="(technologie, index) in project.technologies" :key="index">
-            {{ technologie.name }}
-        </div>
+        <v-img
+            :src="project.image"
+            height="190"
+            class="mx-auto"
+        ></v-img>
+        <v-card-title class="py-2">
+            {{ $t(project.name) }}
+        </v-card-title>
+        <v-card-text class="pb-2 pr-6">
+            <v-row no-gutters>
+                <v-col
+                    ref="description"
+                    cols="11"
+                    :class="expand ? '' : 'text-truncate'"
+                >
+                    {{ $t(project.description) }}
+                </v-col>
+                <v-col cols="1">
+                    <v-btn
+                        icon
+                        color="deep-purple accent-4"
+                        class="ml-2"
+                        style="top: -5px;"
+                        @click="expand = !expand"
+                    >
+                        <v-icon>
+                            {{ expand ? 'mdi-chevron-up' : 'mdi-chevron-down'}}
+                        </v-icon>
+                    </v-btn>
+                </v-col>
+            </v-row>
+        </v-card-text>
+        <v-card-text class="pt-0">
+            <v-chip
+                v-for="(technologie, index) in project.technologies"
+                :key="index"
+                small
+                class="mr-1 mb-1"
+            >
+                {{ technologie.name }}
+            </v-chip>
+        </v-card-text>
+        <v-divider></v-divider>
+        <v-card-actions>
+            <v-btn
+                text
+                color="deep-purple accent-4"
+            >
+                Live
+            </v-btn>
+            <v-btn
+                text
+                color="deep-purple accent-4"
+            >
+                Source Code
+            </v-btn>
+        </v-card-actions>
     </v-card>
 </template>
 
@@ -25,5 +75,10 @@ export default {
             default: () => {},
         },
     },
+    data: () => {
+        return {
+            expand: false,
+        }
+    }
 }
 </script>
