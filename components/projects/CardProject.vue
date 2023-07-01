@@ -8,7 +8,6 @@
         elevation="2"
     >
         <v-carousel
-            v-model="model"
             delimiter-icon="mdi-minus"
             hide-delimiter-background
             show-arrows-on-hover
@@ -24,26 +23,16 @@
             >
                 <template v-slot:activator="{ on, attrs }">
                     <v-carousel-item
-                        v-for="(color, i) in colors"
-                        :key="color"
+                        v-if="project.images.length > 0"
+                        v-for="(image, i) in project.images"
+                        :key="i"
                         v-bind="attrs"
                         v-on="on"
                     >
-                        <v-sheet
-                            :color="color"
-                            height="100%"
-                            tile
-                        >
-                            <v-row
-                                class="fill-height"
-                                align="center"
-                                justify="center"
-                            >
-                            <div class="text-h2">
-                                Slide {{ i + 1 }}
-                            </div>
-                            </v-row>
-                        </v-sheet>
+                    <v-img
+                        :src="image"
+                        height="100%"
+                    ></v-img>
                     </v-carousel-item>
                 </template>
 
@@ -58,7 +47,7 @@
                 </v-list>
             </v-menu>
         </v-carousel>
-        <v-card-title class="pb-1 pt-0">
+        <v-card-title class="py-1">
             {{ $t(project.name) }}
         </v-card-title>
         <v-card-text class="pb-2 pr-6">
@@ -92,6 +81,7 @@
                 :key="index"
                 small
                 class="mr-1 mb-1"
+                @click="setFilterTechnologies([technologie.id])"
             >
                 {{ technologie.name }}
             </v-chip>
@@ -115,11 +105,13 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
     name: "CardProject",
     props: {
         project: {
-            type: Array,
+            type: Object,
             default: () => {},
         },
     },
@@ -138,6 +130,9 @@ export default {
                 { title: 'Veja mais' },
             ],
         }
+    },
+    methods: {
+        ...mapMutations('search', ['setFilterTechnologies']),
     }
 }
 </script>
