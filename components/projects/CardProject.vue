@@ -7,12 +7,49 @@
         outlined
         elevation="2"
     >
-        <v-img
-            :src="project.image"
-            height="190"
-            class="mx-auto"
-        ></v-img>
-        <v-card-title class="py-2">
+        <v-carousel
+            delimiter-icon="mdi-minus"
+            hide-delimiter-background
+            show-arrows-on-hover
+            :show-arrows="!$vuetify.breakpoint.mobile"
+            height="220"
+            class="clickable"
+        >
+            <v-menu
+                v-model="showMenu"
+                absolute
+                offset-y
+                style="max-width: 600px"
+                transition="scale-transition"
+            >
+                <template v-slot:activator="{ on, attrs }">
+                    <v-carousel-item
+                        v-for="(image, i) in project.images"
+                        :key="i"
+                        v-bind="attrs"
+                        v-on="on"
+                    >
+                    <v-img
+                        :src="image"
+                        lazy-src="https://picsum.photos/id/11/10/6"
+                        height="100%"
+                        link
+                    ></v-img>
+                    </v-carousel-item>
+                </template>
+
+                <v-list>
+                    <v-list-item
+                        v-for="(item, index) in items"
+                        :key="index"
+                        link
+                    >
+                        <v-list-item-title>{{ item.title }}</v-list-item-title>
+                    </v-list-item>
+                </v-list>
+            </v-menu>
+        </v-carousel>
+        <v-card-title class="py-1">
             {{ $t(project.name) }}
         </v-card-title>
         <v-card-text class="pb-2 pr-6">
@@ -46,6 +83,7 @@
                 :key="index"
                 small
                 class="mr-1 mb-1"
+                @click="setFilterTechnologies([technologie.id])"
             >
                 {{ technologie.name }}
             </v-chip>
@@ -69,18 +107,40 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
     name: "CardProject",
     props: {
         project: {
-            type: Array,
+            type: Object,
             default: () => {},
         },
     },
     data: () => {
         return {
             expand: false,
+            colors: [
+                'primary',
+                'secondary',
+                'yellow darken-2',
+                'red',
+                'orange',
+            ],
+            showMenu: false,
+            items: [
+                { title: 'Veja mais' },
+            ],
         }
+    },
+    methods: {
+        ...mapMutations('search', ['setFilterTechnologies']),
     }
 }
 </script>
+
+<style scoped>
+  .clickable {
+    cursor: pointer;
+  }
+</style>
