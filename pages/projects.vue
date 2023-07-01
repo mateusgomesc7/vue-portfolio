@@ -76,8 +76,8 @@ export default {
           this.filteredProjects = this.projects;
         } else {
           this.filteredProjects = this.projects.filter(project => {
-            return project.technologies.some(technology => {
-              return listTechnologiesIds.includes(technology.id);
+            return listTechnologiesIds.every(techId => {
+              return project.technologies.some(technology => technology.id === techId);
             })
           })
         }
