@@ -1,8 +1,8 @@
 <template>
     <v-row no-gutters justify="center" align="start">
         <v-col
-            v-for="(project, index) in projects"
-            :key="index"
+            v-for="project in projects"
+            :key="project.name"
             cols="12"
             md="6"
             class="mt-4"

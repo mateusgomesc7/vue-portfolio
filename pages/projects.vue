@@ -8,12 +8,13 @@
       />
     </v-col>
     <v-col cols="12">
-      <ListProjects :projects="filteredProjects"/>
+      <ListProjects :projects="filteredProjects" />
     </v-col>
   </v-row>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Search from '@/components/projects/Search.vue';
 import ListProjects from '@/components/projects/ListProjects.vue';
 
@@ -38,6 +39,7 @@ export default {
           )
           this.filteredProjects = this.projects;
           this.technologies = dataTechnologies.technologies;
+          this.handleSearch(this.filterTechnologies)
         })
         .catch(error => {
           console.error('Error loading data:', error);
@@ -45,6 +47,19 @@ export default {
         .finally(() => {
           this.loading = false;
         })
+    },
+    computed: {
+        ...mapState('search', {
+          filterTechnologies: (state) => state.filterTechnologies
+        })
+    },
+    watch: {
+        filterTechnologies: {
+            handler: function (val) {
+              this.handleSearch(val)
+            },
+            deep: true
+        }
     },
     methods: {
       mergeProjectsTechnologies(projects, technologies) {
@@ -61,8 +76,8 @@ export default {
           this.filteredProjects = this.projects;
         } else {
           this.filteredProjects = this.projects.filter(project => {
-            return project.technologies.some(technology => {
-              return listTechnologiesIds.includes(technology.id);
+            return listTechnologiesIds.every(techId => {
+              return project.technologies.some(technology => technology.id === techId);
             })
           })
         }
