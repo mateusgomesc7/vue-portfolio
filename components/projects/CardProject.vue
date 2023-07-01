@@ -13,6 +13,7 @@
             show-arrows-on-hover
             :show-arrows="!$vuetify.breakpoint.mobile"
             height="220"
+            class="clickable"
         >
             <v-menu
                 v-model="showMenu"
@@ -32,6 +33,7 @@
                         :src="image"
                         lazy-src="https://picsum.photos/id/11/10/6"
                         height="100%"
+                        link
                     ></v-img>
                     </v-carousel-item>
                 </template>
@@ -136,3 +138,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+  .clickable {
+    cursor: pointer;
+  }
+</style>
