@@ -23,7 +23,6 @@
             >
                 <template v-slot:activator="{ on, attrs }">
                     <v-carousel-item
-                        v-if="project.images.length > 0"
                         v-for="(image, i) in project.images"
                         :key="i"
                         v-bind="attrs"
@@ -31,6 +30,7 @@
                     >
                     <v-img
                         :src="image"
+                        lazy-src="https://picsum.photos/id/11/10/6"
                         height="100%"
                     ></v-img>
                     </v-carousel-item>
