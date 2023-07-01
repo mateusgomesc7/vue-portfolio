@@ -49,6 +49,30 @@ export default {
                 title: "Project 4",
                 description: "Description of project 4"
             },
+            project_5: {
+                title: "Project 5",
+                description: "Description of project 5"
+            },
+            project_6: {
+                title: "Project 6",
+                description: "Description of project 6"
+            },
+            project_7: {
+                title: "Project 7",
+                description: "Description of project 7"
+            },
+            project_8: {
+                title: "Project 8",
+                description: "Description of project 8"
+            },
+            project_9: {
+                title: "Project 9",
+                description: "Description of project 9"
+            },
+            project_10: {
+                title: "Project 10",
+                description: "Description of project 10"
+            },
         }
     }
 }
