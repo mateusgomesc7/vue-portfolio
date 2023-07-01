@@ -1,6 +1,6 @@
 <template>
     <v-autocomplete
-        v-model="values"
+        :value="filterTechnologies"
         ref="autocomplete"
         :items="technologies"
         :loading="loading"
@@ -16,6 +16,7 @@
         item-text="name"
         item-value="id"
         multiple
+        @change="setFilterTechnologies"
         @keydown.enter="closeAutocomplete"
         @blur="isSearchSelected = false"
         @focus="isSearchSelected = true"
@@ -32,6 +33,8 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
+
 export default {
     name: "Search",
     props: {
@@ -50,6 +53,11 @@ export default {
         isSearchSelected: false,
       }
     },
+    computed: {
+        ...mapState('search', {
+          filterTechnologies: (state) => state.filterTechnologies
+        })
+    },
     watch: {
         values: {
             handler: function (val) {
@@ -59,6 +67,8 @@ export default {
         }
     },
     methods: {
+        ...mapMutations('search', ['setFilterTechnologies']),
+
         closeAutocomplete() {
             this.$refs.autocomplete.blur();
         }

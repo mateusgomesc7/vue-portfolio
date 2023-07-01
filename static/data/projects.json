@@ -6,7 +6,11 @@
       "technologies": ["1", "2", "3", "4", "5", "6", "7"],	
       "liveLink": "https://exemplo.com/projeto1",
       "repositoryLink": "https://github.com/seu-usuario/projeto1",
-      "image": "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg"
+      "images": [
+        "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg",
+        "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
+        "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+      ]
     },
     {
       "name": "data.projects.project_2.title",
@@ -14,7 +18,7 @@
       "technologies": ["3", "4"],
       "liveLink": "https://exemplo.com/projeto2",
       "repositoryLink": "https://github.com/seu-usuario/projeto2",
-      "image": "https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+      "images": ["https://cdn.vuetifyjs.com/images/cards/docks.jpg", "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"]
     },
     {
       "name": "data.projects.project_3.title",
@@ -22,7 +26,7 @@
       "technologies": ["5", "6"],
       "liveLink": "https://exemplo.com/projeto3",
       "repositoryLink": "https://github.com/seu-usuario/projeto3",
-      "image": "https://cdn.vuetifyjs.com/images/carousel/planet.jpg"
+      "images": ["https://cdn.vuetifyjs.com/images/carousel/planet.jpg"]
     },
     {
       "name": "data.projects.project_4.title",
@@ -30,49 +34,55 @@
       "technologies": ["6", "7"],
       "liveLink": "https://exemplo.com/projeto4",
       "repositoryLink": "",
-      "image": "https://cdn.vuetifyjs.com/images/carousel/sky.jpg"
+      "images": ["https://cdn.vuetifyjs.com/images/carousel/sky.jpg"]
     },
     {
       "name": "data.projects.project_5.title",
       "description": "data.projects.project_5.description",
       "technologies": ["4", "5"],
       "liveLink": "https://exemplo.com/projeto5",
-      "repositoryLink": ""
+      "repositoryLink": "",
+      "images": []
     },
     {
       "name": "data.projects.project_6.title",
       "description": "data.projects.project_6.description",
       "technologies": ["6", "1"],
       "liveLink": "https://exemplo.com/projeto6",
-      "repositoryLink": ""
+      "repositoryLink": "",
+      "images": []
     },
     {
       "name": "data.projects.project_7.title",
       "description": "data.projects.project_7.description",
       "technologies": ["2", "3"],
       "liveLink": "https://exemplo.com/projeto7",
-      "repositoryLink": ""
+      "repositoryLink": "",
+      "images": []
     },
     {
       "name": "data.projects.project_8.title",
       "description": "data.projects.project_8.description",
       "technologies": ["7", "1"],
       "liveLink": "https://exemplo.com/projeto8",
-      "repositoryLink": ""
+      "repositoryLink": "",
+      "images": []
     },
     {
       "name": "data.projects.project_9.title",
       "description": "data.projects.project_9.description",
       "technologies": ["2", "4"],
       "liveLink": "https://exemplo.com/projeto9",
-      "repositoryLink": ""
+      "repositoryLink": "",
+      "images": []
     },
     {
       "name": "data.projects.project_10.title",
       "description": "data.projects.project_10.description",
       "technologies": ["3", "2"],
       "liveLink": "https://exemplo.com/projeto10",
-      "repositoryLink": ""
+      "repositoryLink": "",
+      "images": []
     }
   ]
 }
