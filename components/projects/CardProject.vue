@@ -7,12 +7,58 @@
         outlined
         elevation="2"
     >
-        <v-img
-            :src="project.image"
-            height="190"
-            class="mx-auto"
-        ></v-img>
-        <v-card-title class="py-2">
+        <v-carousel
+            v-model="model"
+            delimiter-icon="mdi-minus"
+            hide-delimiter-background
+            show-arrows-on-hover
+            :show-arrows="!$vuetify.breakpoint.mobile"
+            height="220"
+        >
+            <v-menu
+                v-model="showMenu"
+                absolute
+                offset-y
+                style="max-width: 600px"
+                transition="scale-transition"
+            >
+                <template v-slot:activator="{ on, attrs }">
+                    <v-carousel-item
+                        v-for="(color, i) in colors"
+                        :key="color"
+                        v-bind="attrs"
+                        v-on="on"
+                    >
+                        <v-sheet
+                            :color="color"
+                            height="100%"
+                            tile
+                        >
+                            <v-row
+                                class="fill-height"
+                                align="center"
+                                justify="center"
+                            >
+                            <div class="text-h2">
+                                Slide {{ i + 1 }}
+                            </div>
+                            </v-row>
+                        </v-sheet>
+                    </v-carousel-item>
+                </template>
+
+                <v-list>
+                    <v-list-item
+                        v-for="(item, index) in items"
+                        :key="index"
+                        link
+                    >
+                        <v-list-item-title>{{ item.title }}</v-list-item-title>
+                    </v-list-item>
+                </v-list>
+            </v-menu>
+        </v-carousel>
+        <v-card-title class="pb-1 pt-0">
             {{ $t(project.name) }}
         </v-card-title>
         <v-card-text class="pb-2 pr-6">
@@ -80,6 +126,17 @@ export default {
     data: () => {
         return {
             expand: false,
+            colors: [
+                'primary',
+                'secondary',
+                'yellow darken-2',
+                'red',
+                'orange',
+            ],
+            showMenu: false,
+            items: [
+                { title: 'Veja mais' },
+            ],
         }
     }
 }
