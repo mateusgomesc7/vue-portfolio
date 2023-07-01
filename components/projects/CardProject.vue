@@ -5,6 +5,7 @@
         width="440"
         min-height="400"
         outlined
+        elevation="2"
     >
         <v-img
             :src="project.image"
@@ -20,6 +21,7 @@
                     ref="description"
                     cols="11"
                     :class="expand ? '' : 'text-truncate'"
+                    @click="expand = true"
                 >
                     {{ $t(project.description) }}
                 </v-col>
