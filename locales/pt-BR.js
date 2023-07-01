@@ -35,7 +35,7 @@ export default {
         projects: {
             project_1: {
                 title: "Projeto 1",
-                description: "Descrição do projeto 1"
+                description: "Descrição do projeto 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl nec ultrices ultrices, nunc nisl aliquam nunc, nec aliquam nisl nisl nec nisl."
             },
             project_2: {
                 title: "Projeto 2",
@@ -48,6 +48,30 @@ export default {
             project_4: {
                 title: "Projeto 4",
                 description: "Descrição do projeto 4"
+            },
+            project_5: {
+                title: "Projeto 5",
+                description: "Descrição do projeto 5"
+            },
+            project_6: {
+                title: "Projeto 6",
+                description: "Descrição do projeto 6"
+            },
+            project_7: {
+                title: "Projeto 7",
+                description: "Descrição do projeto 7"
+            },
+            project_8: {
+                title: "Projeto 8",
+                description: "Descrição do projeto 8"
+            },
+            project_9: {
+                title: "Projeto 9",
+                description: "Descrição do projeto 9"
+            },
+            project_10: {
+                title: "Projeto 10",
+                description: "Descrição do projeto 10"
             },
         }
     }
