@@ -12,8 +12,7 @@
             hide-delimiter-background
             show-arrows-on-hover
             :show-arrows="!$vuetify.breakpoint.mobile"
-            height="220"
-            class="clickable"
+            height="230"
         >
             <v-menu
                 v-model="showMenu"
@@ -65,9 +64,8 @@
                 <v-col cols="1">
                     <v-btn
                         icon
-                        color="deep-purple accent-4"
                         class="ml-2"
-                        style="top: -5px;"
+                        style="top: -7px;"
                         @click="expand = !expand"
                     >
                         <v-icon>
@@ -77,7 +75,7 @@
                 </v-col>
             </v-row>
         </v-card-text>
-        <v-card-text class="pt-0">
+        <v-card-text class="pt-0 pb-2">
             <v-chip
                 v-for="(technologie, index) in project.technologies"
                 :key="index"
@@ -89,17 +87,27 @@
             </v-chip>
         </v-card-text>
         <v-divider></v-divider>
-        <v-card-actions>
+        <v-card-actions class="px-4">
             <v-btn
-                text
-                color="deep-purple accent-4"
+                depressed
+                color="success"
             >
-                Live
+                <v-icon
+                    left
+                >
+                    mdi-open-in-new
+                </v-icon>
+                {{$vuetify.breakpoint.width > 380 ? 'Open Project' : 'Open'}}
             </v-btn>
             <v-btn
                 text
-                color="deep-purple accent-4"
+                outlined
             >
+                <v-icon
+                    left
+                >
+                    mdi-github
+                </v-icon>
                 Source Code
             </v-btn>
         </v-card-actions>
@@ -129,7 +137,7 @@ export default {
             ],
             showMenu: false,
             items: [
-                { title: 'Veja mais' },
+                { title: 'Open project' },
             ],
         }
     },
@@ -138,9 +146,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-  .clickable {
-    cursor: pointer;
-  }
-</style>
