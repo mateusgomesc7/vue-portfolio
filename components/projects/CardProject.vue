@@ -81,7 +81,7 @@
                 :key="index"
                 small
                 class="mr-1 mb-1"
-                @click="setFilterTechnologies([technologie.id])"
+                @click="searchTechnologies(technologie.id)"
             >
                 {{ technologie.name }}
             </v-chip>
@@ -143,6 +143,17 @@ export default {
     },
     methods: {
         ...mapMutations('search', ['setFilterTechnologies']),
+
+        searchTechnologies(technologieId) {
+            this.setFilterTechnologies([technologieId])
+            this.scrollToTop()
+        },
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+        },
     }
 }
 </script>
