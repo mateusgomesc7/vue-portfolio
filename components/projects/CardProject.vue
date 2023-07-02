@@ -8,7 +8,6 @@
         elevation="2"
     >
         <v-carousel
-            delimiter-icon="mdi-minus"
             hide-delimiter-background
             show-arrows-on-hover
             :show-arrows="!$vuetify.breakpoint.mobile"
