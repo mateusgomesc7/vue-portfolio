@@ -6,7 +6,7 @@
     <v-main>
       <v-container
         :fill-height="!$vuetify.breakpoint.mobile"
-        class="pt-4"
+        class="pt-4 px-0"
       >
         <Nuxt />
       </v-container>
