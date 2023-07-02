@@ -1,15 +1,15 @@
 <template>
     <v-fab-transition>
         <v-btn
-                v-show="showButton"
-                fab
-                fixed
-                dark
-                bottom
-                right
-                @click="scrollToTop"
-            >
-            <v-icon>mdi-chevron-up</v-icon>
+            v-show="showButton"
+            fab
+            fixed
+            bottom
+            right
+            color="accent"
+            @click="scrollToTop"
+        >
+            <v-icon class="primary--text">mdi-chevron-up</v-icon>
         </v-btn>
     </v-fab-transition>
 </template>

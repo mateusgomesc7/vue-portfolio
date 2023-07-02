@@ -2,10 +2,11 @@
     <v-footer
       app
       absolute
+      color="primary"
     >
       <v-container
-        class="d-flex justify-space-between align-center text-subtitle-2 pa-0"
-        style="max-width: 1280px;"
+        class="d-flex justify-space-between align-center text-subtitle-2 py-0 px-2"
+        style="max-width: 940px;"
       >
         <span v-if="!$vuetify.breakpoint.xs">
           {{ $t('components.footer.developed') }}
