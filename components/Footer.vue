@@ -2,8 +2,11 @@
     <v-footer
       app
       absolute
-      class="d-flex justify-space-between text-subtitle-2"
     >
+      <v-container
+        class="d-flex justify-space-between align-center text-subtitle-2 pa-0"
+        style="max-width: 1280px;"
+      >
         <span v-if="!$vuetify.breakpoint.xs">
           {{ $t('components.footer.developed') }}
           <nuxt-link :to="localePath('about-me')">
@@ -30,7 +33,6 @@
             target="_blank"
             class="mr-2"
             icon
-            small
           >
             <v-icon>mdi-linkedin</v-icon>
           </v-btn>
@@ -38,11 +40,11 @@
             href="https://github.com/mateusgomesc7"
             target="_blank"
             icon
-            small
           >
             <v-icon>mdi-github</v-icon>
           </v-btn>
         </div>
+      </v-container>
     </v-footer>
 </template>
 

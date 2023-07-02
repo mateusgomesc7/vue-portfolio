@@ -10,6 +10,7 @@
       >
         <Nuxt />
       </v-container>
+      <ButtonScrollToTop />
     </v-main>
 
     <Footer />
@@ -20,10 +21,11 @@
 import Navbar from '@/components/Navbar.vue';
 import NavigationDrawer from '@/components/NavigationDrawer.vue';
 import Footer from '@/components/Footer.vue';
+import ButtonScrollToTop from '@/components/ButtonScrollToTop.vue';
 
 export default {
   name: 'DefaultLayout',
-  components: { Navbar, NavigationDrawer, Footer },
+  components: { Navbar, NavigationDrawer, Footer, ButtonScrollToTop },
 }
 </script>
 

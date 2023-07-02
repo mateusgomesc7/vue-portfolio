@@ -9,6 +9,7 @@
           :block="$vuetify.breakpoint.mobile ? true : false"
           v-bind="attrs"
           v-on="on"
+          class="pa-0"
       >
           <v-icon>mdi-translate</v-icon>
       </v-btn>
