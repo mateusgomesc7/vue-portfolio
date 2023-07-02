@@ -1,3 +1,26 @@
+
+.v-main {
+    background: var(--v-primary-base) !important;
+    color: var(--v-primary-text-base) !important;
+}
+
+.v-card {
+    background: var(--v-primary-base) !important;
+    color: var(--v-primary-text-base) !important;
+
+    .v-card__subtitle {
+        color: var(--v-secondary-text-base) !important;
+    }
+}
+
+.v-btn {
+    color: var(--v-primary-text-base) !important;
+}
+
+.v-icon {
+    color: var(--v-primary-text-base) !important;
+}
+
 .h-100 {
     height: 100%;
 }

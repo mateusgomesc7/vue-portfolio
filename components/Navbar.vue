@@ -2,6 +2,7 @@
     <v-app-bar
         app
         elevation="0"
+        color="primary"
     >
     <v-container
         class="d-flex justify-space-between align-center pa-0"
