@@ -27,7 +27,7 @@
       >
         mdi-magnify
       </v-icon>
-      {{ $t('components.projects.search.search') }}
+      {{ $t('components.projects.search.search_by_technologie') }}
     </template>
     </v-autocomplete>
 </template>

@@ -15,8 +15,13 @@ export default {
             btn_resume: "Resume"
         },
         projects: {
+            card_project: {
+                btn_open: "Open",
+                btn_open_project: "Open project",
+                btn_source_code: "Source code"
+            },
             search: {
-                search: "Search"
+                search_by_technologie: "Search by technologie"
             }
         },
     },

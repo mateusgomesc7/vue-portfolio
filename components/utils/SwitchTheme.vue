@@ -3,8 +3,9 @@
         text
         :block="$vuetify.breakpoint.mobile ? true : false"
         @click="changeTheme"
+        class="pa-0"
     >
-        <v-icon>{{ iconTheme }}</v-icon>
+        <v-icon class="rotate-icon">{{ iconTheme }}</v-icon>
     </v-btn>
 </template>
 
@@ -34,4 +35,10 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.rotate-icon {
+    transform: rotate(-30deg);
+}
+</style>
   

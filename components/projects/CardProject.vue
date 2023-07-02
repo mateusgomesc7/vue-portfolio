@@ -8,7 +8,6 @@
         elevation="2"
     >
         <v-carousel
-            delimiter-icon="mdi-minus"
             hide-delimiter-background
             show-arrows-on-hover
             :show-arrows="!$vuetify.breakpoint.mobile"
@@ -81,7 +80,7 @@
                 :key="index"
                 small
                 class="mr-1 mb-1"
-                @click="setFilterTechnologies([technologie.id])"
+                @click="searchTechnologies(technologie.id)"
             >
                 {{ technologie.name }}
             </v-chip>
@@ -97,7 +96,11 @@
                 >
                     mdi-open-in-new
                 </v-icon>
-                {{$vuetify.breakpoint.width > 380 ? 'Open Project' : 'Open'}}
+                {{
+                    $vuetify.breakpoint.width > 380 ?
+                    $t('components.projects.card_project.btn_open_project') :
+                    $t('components.projects.card_project.btn_open')
+                }}
             </v-btn>
             <v-btn
                 text
@@ -108,7 +111,7 @@
                 >
                     mdi-github
                 </v-icon>
-                Source Code
+                {{ $t('components.projects.card_project.btn_source_code') }}
             </v-btn>
         </v-card-actions>
     </v-card>
@@ -143,6 +146,17 @@ export default {
     },
     methods: {
         ...mapMutations('search', ['setFilterTechnologies']),
+
+        searchTechnologies(technologieId) {
+            this.setFilterTechnologies([technologieId])
+            this.scrollToTop()
+        },
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+        },
     }
 }
 </script>

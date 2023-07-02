@@ -1,0 +1,42 @@
+<template>
+    <v-fab-transition>
+        <v-btn
+                v-show="showButton"
+                fab
+                fixed
+                dark
+                bottom
+                right
+                @click="scrollToTop"
+            >
+            <v-icon>mdi-chevron-up</v-icon>
+        </v-btn>
+    </v-fab-transition>
+</template>
+
+<script>
+export default {
+    name: 'ButtonScrollToTop',
+    data: () => ({
+        showButton: false,
+    }),
+    mounted() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    beforeDestroy() {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
+    methods: {
+        handleScroll() {
+            const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop
+            this.showButton = scrollPosition > 100
+        },
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+        },
+    },
+}
+</script>
