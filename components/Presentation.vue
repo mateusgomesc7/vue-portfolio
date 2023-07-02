@@ -1,6 +1,6 @@
 <template>
   <v-card elevation="0">
-    <v-card-title class="text-sm-h3 text-h4">
+    <v-card-title class="text-sm-h3 text-h4 primary-text--text">
       {{ $t('components.presentation.title') }}
       <br />
       Mateus Gomes
@@ -8,18 +8,19 @@
     <v-card-subtitle class="text-sm-h6 text-subtitle">
       {{ $t('components.presentation.subtitle') }}
     </v-card-subtitle>
-    <v-card-actions>
+    <v-card-actions class="px-4">
       <v-btn
-        text
-        outlined
+        depressed
+        color="accent"
+        class="black--text"
         :small="$vuetify.breakpoint.mobile"
         :to="localePath('about-me')"
       >
         {{ $t('components.presentation.btn_about_me') }}
       </v-btn>
       <v-btn
-        color="success"
-        depressed
+        text
+        outlined
         :small="$vuetify.breakpoint.mobile"
       >
         <v-icon left>
