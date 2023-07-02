@@ -55,6 +55,7 @@
                 <v-btn
                     text 
                     @click.stop="() => { setDrawer(true) }"
+                    class="custom-button"
                 >
                     <v-icon>mdi-dots-vertical</v-icon>
                 </v-btn>
@@ -93,6 +94,9 @@ export default {
 <style scoped>
 .custom-select {
   max-width: 66px;
+}
+.custom-button {
+  min-width: 32px;
 }
 </style>
   
