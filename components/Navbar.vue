@@ -3,7 +3,10 @@
         app
         elevation="0"
     >
-    <v-container class="d-flex justify-space-between align-center" style="max-width: 940px;">
+    <v-container
+        class="d-flex justify-space-between align-center pa-0"
+        style="max-width: 940px;"
+    >
         <v-app-bar-title>
             <nuxt-link
                 class="d-flex align-stretch text-decoration-none"
