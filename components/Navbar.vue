@@ -3,19 +3,21 @@
         app
         elevation="0"
     >
-        <nuxt-link
-            class="d-flex align-stretch text-decoration-none"
-            :to="localePath('/')"
-            @click.stop="toggle_page = undefined"
-        >
-            <v-icon v-if="$vuetify.breakpoint.mobile" class="pa-3">mdi-home</v-icon>
-            <a v-else class="text-subtitle-2 text--primary">
-                {{ title }}
-                <br>
-                {{ subtitle }}
-            </a>
-        </nuxt-link>
-        <v-spacer></v-spacer>
+    <v-container class="d-flex justify-space-between align-center" style="max-width: 940px;">
+        <v-app-bar-title>
+            <nuxt-link
+                class="d-flex align-stretch text-decoration-none"
+                :to="localePath('/')"
+                @click.stop="toggle_page = undefined"
+            >
+                <v-icon v-if="$vuetify.breakpoint.mobile" class="pa-3">mdi-home</v-icon>
+                <a v-else class="text-subtitle-2 text--primary">
+                    {{ title }}
+                    <br>
+                    {{ subtitle }}
+                </a>
+            </nuxt-link>
+        </v-app-bar-title>
         <v-btn-toggle 
             v-model="toggle_page"
             group
@@ -41,7 +43,6 @@
                 </div>
             </v-btn>
         </v-btn-toggle>
-        <v-spacer></v-spacer>
         <div>
             <div v-if="!$vuetify.breakpoint.mobile" class="d-flex justify-start">
                 <ButtonTranslation />
@@ -56,6 +57,7 @@
                 </v-btn>
             </div>
         </div>
+    </v-container>
     </v-app-bar>
 </template>
 
