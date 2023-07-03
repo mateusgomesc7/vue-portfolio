@@ -5,14 +5,14 @@
       color="primary"
     >
       <v-container
-        class="d-flex justify-space-between align-center text-subtitle-2 py-0 px-2"
+        class="d-flex justify-space-between align-center text-subtitle-2 py-0 px-2 primary-text--text"
         style="max-width: 940px;"
       >
         <span v-if="!$vuetify.breakpoint.xs">
           {{ $t('components.footer.developed') }}
           <nuxt-link :to="localePath('about-me')">
             <a
-              class="text-decoration-underline text--primary"
+              class="text-decoration-underline primary-text--text"
             >
               Mateus Gomes
             </a>
@@ -23,7 +23,7 @@
           <a
             href="https://github.com/mateusgomesc7/vue-portfolio"
             target="_blank"
-            class="text-decoration-underline text--primary"
+            class="text-decoration-underline primary-text--text"
           >
             Vue Portfolio
           </a>

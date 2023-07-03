@@ -13,9 +13,10 @@
         hide-selected
         hide-no-data
         hide-details
+        multiple
+        color="accent"
         item-text="name"
         item-value="id"
-        multiple
         @change="setFilterTechnologies"
         @keydown.enter="closeAutocomplete"
         @blur="isSearchSelected = false"
@@ -23,7 +24,7 @@
     >
     <template #label>
       <v-icon
-       :color="isSearchSelected ? 'primary' : ''"
+       :color="isSearchSelected ? 'accent' : ''"
       >
         mdi-magnify
       </v-icon>

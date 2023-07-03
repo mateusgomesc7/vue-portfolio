@@ -15,7 +15,7 @@
                 @click.stop="toggle_page = undefined"
             >
                 <v-icon v-if="$vuetify.breakpoint.mobile" class="pa-3">mdi-home</v-icon>
-                <a v-else class="text-subtitle-2 text--primary">
+                <a v-else class="text-subtitle-2 primary-text--text">
                     {{ title }}
                     <br>
                     {{ subtitle }}
