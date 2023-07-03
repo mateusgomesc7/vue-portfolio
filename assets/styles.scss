@@ -21,6 +21,15 @@
     color: var(--v-primary-text-base) !important;
 }
 
+.v-carousel {
+    .v-icon {
+        color: var(--v-accent-base) !important;
+    }
+    button {
+        color: var(--v-accent-base) !important;
+    }
+}
+
 .h-100 {
     height: 100%;
 }
