@@ -62,15 +62,15 @@ export default {
       dark: true,
       themes: {
         light: {
-          primary: '#f8f8f2',
-          secondary: '#A5A59F',
-          accent: '#21DD61',
+          primary: '#FEFFFE',
+          secondary: '#D4C2AD',
+          accent: '#8BA37C',
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,
-          'primary-text': '#282a36',
-          'secondary-text': '#878998',
+          'primary-text': '#7B5143',
+          'secondary-text': '#614C4C',
         },
         dark: {
           primary: '#282a36',

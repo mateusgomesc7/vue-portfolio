@@ -9,7 +9,7 @@ export default {
             contact: "Contato"
         },
         presentation: {
-            title: "Olá, Eu sou",
+            title: "Olá, eu sou",
             subtitle: "Desenvolvedor Full-Stack",
             btn_about_me: "Sobre mim",
             btn_resume: "Currículo"
