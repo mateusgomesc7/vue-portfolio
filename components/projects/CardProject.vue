@@ -15,39 +15,19 @@
                     :show-arrows="!$vuetify.breakpoint.mobile"
                     height="230"
                 >
-                    <v-menu
-                        v-model="showMenu"
-                        absolute
-                        offset-y
-                        style="max-width: 600px"
-                        transition="scale-transition"
+                    <v-carousel-item
+                        v-for="(image, i) in project.images"
+                        :key="i"
+                        v-bind="attrs"
+                        v-on="on"
                     >
-                        <template v-slot:activator="{ on, attrs }">
-                            <v-carousel-item
-                                v-for="(image, i) in project.images"
-                                :key="i"
-                                v-bind="attrs"
-                                v-on="on"
-                            >
-                            <v-img
-                                :src="image"
-                                lazy-src="https://picsum.photos/id/11/10/6"
-                                height="100%"
-                                link
-                            ></v-img>
-                            </v-carousel-item>
-                        </template>
-
-                        <v-list>
-                            <v-list-item
-                                v-for="(item, index) in items"
-                                :key="index"
-                                link
-                            >
-                                <v-list-item-title>{{ item.title }}</v-list-item-title>
-                            </v-list-item>
-                        </v-list>
-                    </v-menu>
+                    <v-img
+                        :src="image"
+                        lazy-src="https://picsum.photos/id/11/10/6"
+                        height="100%"
+                        link
+                    ></v-img>
+                    </v-carousel-item>
                 </v-carousel>
                 <v-card-title class="py-1">
                     {{ $t(project.name) }}
@@ -145,11 +125,7 @@ export default {
                 'yellow darken-2',
                 'red',
                 'orange',
-            ],
-            showMenu: false,
-            items: [
-                { title: 'Open project' },
-            ],
+            ]
         }
     },
     methods: {
