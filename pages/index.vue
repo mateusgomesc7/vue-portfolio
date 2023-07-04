@@ -2,7 +2,7 @@
   <v-row no-gutters class="h-100" justify="center" align="center">
     <v-col
       class="d-flex"
-      :class="$vuetify.breakpoint.mdAndDown ? 'justify-center' : 'justify-end'"
+      :class="$vuetify.breakpoint.smAndDown ? 'justify-center' : 'justify-end'"
       cols="12"
       md="5"
     >
