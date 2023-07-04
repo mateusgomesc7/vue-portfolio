@@ -15,8 +15,11 @@
                 ></span>
             </template>
             <div class="py-4">
-                <h2 :class="`headline font-weight-light mb-4 ${year.color}--text`">
-                    Lorem ipsum
+                <h2
+                  v-if="$vuetify.breakpoint.mobile"
+                  :class="`headline font-weight-light mb-4 ${year.color}--text`"
+                >
+                    {{ year.year }}
                 </h2>
                 <div>
                     Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut,

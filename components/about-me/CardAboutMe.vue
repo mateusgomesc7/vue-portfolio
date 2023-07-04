@@ -17,12 +17,11 @@
       </v-card-text>
       <v-card-actions class="px-4 mt-10">
         <v-row no-gutters>
-            <v-col class="mb-2">
+            <v-col class="mb-2 d-flex justify-center">
                 <v-btn
                     depressed
                     color="accent"
                     class="black--text"
-                    width="130"
                     :small="$vuetify.breakpoint.mobile"
                 >
                     <v-icon left class="black--text">
@@ -31,12 +30,11 @@
                     Linkedin
                 </v-btn>
             </v-col>
-            <v-col class="mb-2">
+            <v-col class="mb-2 d-flex justify-center">
                 <v-btn
                     depressed
                     color="accent"
                     class="black--text"
-                    width="130"
                     :small="$vuetify.breakpoint.mobile"
                 >
                     <v-icon left class="black--text">
@@ -45,11 +43,10 @@
                     GitHub
                 </v-btn>
             </v-col>
-            <v-col class="mb-2">
+            <v-col class="mb-2 d-flex justify-center">
                 <v-btn
                     text
                     outlined
-                    width="130"
                     :small="$vuetify.breakpoint.mobile"
                 >
                 <v-icon left>
