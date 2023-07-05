@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import Presentation from '@/components/Presentation.vue';
-import Experience from '@/components/Experience.vue';
+import Presentation from '@/components/home/Presentation.vue';
+import Experience from '@/components/home/Experience.vue';
 
 export default {
     name: "IndexPage",
