@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { Mesh, BoxGeometry, MeshStandardMaterial, Raycaster, Vector2 } from 'three'
+import { Mesh, TorusKnotGeometry, MeshStandardMaterial, Raycaster, Vector2 } from 'three'
 import { ThreeJsMixin } from '@/mixins/ThreeJsMixin.js'
 
 export default {
@@ -13,7 +13,7 @@ export default {
     mixins: [ThreeJsMixin],
     data () {
         return {
-            box: null,
+            torusKnot: null,
             raycaster: null,
             mouse: new Vector2(-1,-1),
             currentIntersect: null, 
@@ -49,11 +49,11 @@ export default {
             this.mouse.y = - (event.offsetY / this.sizes.height) * 2 + 1
         },
         createWorld() {
-            this.box = new Mesh(
-                new BoxGeometry(1, 1, 1),
+            this.torusKnot = new Mesh(
+                new TorusKnotGeometry( 0.5, 0.15, 80, 16 ),
                 new MeshStandardMaterial({ color: 0x616161 })
             )
-            this.scene.add(this.box)
+            this.scene.add(this.torusKnot)
             this.raycaster = new Raycaster()
         },
         tick() {
@@ -63,14 +63,14 @@ export default {
             this.time = currentTime
 
             // Update objects
-            this.box.rotation.y += 0.0004 * deltaTime
-            this.box.rotation.x += 0.0001 * deltaTime
-            this.box.position.y = Math.sin(this.time * 0.001) * 0.3
-            this.box.updateMatrixWorld()
+            this.torusKnot.rotation.y += 0.0004 * deltaTime
+            this.torusKnot.rotation.x += 0.0001 * deltaTime
+            this.torusKnot.position.y = Math.sin(this.time * 0.001) * 0.3
+            this.torusKnot.updateMatrixWorld()
 
             // raycaster
             this.raycaster.setFromCamera(this.mouse, this.camera)
-            const objectToTest = this.box
+            const objectToTest = this.torusKnot
             const intersects = this.raycaster.intersectObject(objectToTest)
             
             if(intersects.length)
