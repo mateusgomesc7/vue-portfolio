@@ -8,11 +8,13 @@ export default {
             about_me: "Sobre mim",
             contact: "Contato"
         },
-        presentation: {
-            title: "Olá, eu sou",
-            subtitle: "Desenvolvedor Full-Stack",
-            btn_about_me: "Sobre mim",
-            btn_resume: "Currículo"
+        home: {
+            presentation: {
+                title: "Olá, eu sou",
+                subtitle: "Desenvolvedor Full-Stack",
+                btn_about_me: "Sobre mim",
+                btn_resume: "Currículo"
+            },
         },
         projects: {
             card_project: {
