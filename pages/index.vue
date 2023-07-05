@@ -9,7 +9,7 @@
       <Presentation />
     </v-col>
     <v-col
-      class="webgl-col d-flex justify-center"
+      class="d-flex justify-center"
       cols="12"
       md="7"
       style="height: 500px;"
@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import Presentation from '@/components/Presentation.vue';
-import Experience from '@/components/Experience.vue';
+import Presentation from '@/components/home/Presentation.vue';
+import Experience from '@/components/home/Experience.vue';
 
 export default {
     name: "IndexPage",

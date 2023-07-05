@@ -52,7 +52,7 @@
                 <v-icon left>
                     mdi-download-circle-outline
                 </v-icon>
-                    {{ $t('components.presentation.btn_resume') }}
+                    {{ $t('components.aboute_me.card_about_me.btn_resume') }}
                 </v-btn>
             </v-col>
         </v-row>

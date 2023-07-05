@@ -8,11 +8,18 @@ export default {
             about_me: "About me",
             contact: "Contact"
         },
-        presentation: {
-            title: "Hi, I'm",
-            subtitle: "Full-Stack Developer",
-            btn_about_me: "About me",
-            btn_resume: "Resume"
+        aboute_me: {
+            card_about_me: {
+                btn_resume: "Resume"
+            },
+        },
+        home: {
+            presentation: {
+                title: "Hi, I'm",
+                subtitle: "Full-Stack Developer",
+                btn_about_me: "About me",
+                btn_resume: "Resume"
+            },
         },
         projects: {
             card_project: {

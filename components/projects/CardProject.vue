@@ -18,8 +18,6 @@
                     <v-carousel-item
                         v-for="(image, i) in project.images"
                         :key="i"
-                        v-bind="attrs"
-                        v-on="on"
                     >
                     <v-img
                         :src="image"
