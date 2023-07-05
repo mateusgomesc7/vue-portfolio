@@ -17,6 +17,7 @@
           class="d-flex justify-center"
           cols="12"
           md="6"
+          style="height: 500px;"
           :class="{'mobile-height': $vuetify.breakpoint.mobile}"
         >
           <ExperienceCoffee />
