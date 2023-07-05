@@ -9,7 +9,7 @@
       <Presentation />
     </v-col>
     <v-col
-      class="webgl-col d-flex justify-center"
+      class="d-flex justify-center"
       cols="12"
       md="7"
       style="height: 500px;"
