@@ -8,6 +8,11 @@ export default {
             about_me: "Sobre mim",
             contact: "Contato"
         },
+        aboute_me: {
+            card_about_me: {
+                btn_resume: "Currículo"
+            },
+        },
         home: {
             presentation: {
                 title: "Olá, eu sou",
