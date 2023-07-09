@@ -29,21 +29,21 @@
             <v-btn :to="localePath('projects')">
                 <v-icon :left="!$vuetify.breakpoint.mobile">mdi-view-grid-plus</v-icon>
                 <div v-if="!$vuetify.breakpoint.mobile">
-                    {{ $t('components.navbar.projects') }}
+                    {{ $t('components.default.navbar.projects') }}
                 </div>
             </v-btn>
 
             <v-btn :to="localePath('about-me')">
                 <v-icon :left="!$vuetify.breakpoint.mobile">mdi-account</v-icon>
                 <div v-if="!$vuetify.breakpoint.mobile">
-                    {{ $t('components.navbar.about_me') }}
+                    {{ $t('components.default.navbar.about_me') }}
                 </div>
             </v-btn>
 
             <v-btn :to="localePath('contact')">
                 <v-icon :left="!$vuetify.breakpoint.mobile">mdi-email</v-icon>
                 <div v-if="!$vuetify.breakpoint.mobile">
-                    {{ $t('components.navbar.contact') }}
+                    {{ $t('components.default.navbar.contact') }}
                 </div>
             </v-btn>
         </v-btn-toggle>
@@ -68,8 +68,8 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
-import SwitchTheme from './utils/SwitchTheme.vue';
-import ButtonTranslation from './utils/ButtonTranslation.vue';
+import SwitchTheme from '@/components/utils/SwitchTheme.vue';
+import ButtonTranslation from '@/components/utils/ButtonTranslation.vue';
 
 export default {
     name: 'Navbar',
