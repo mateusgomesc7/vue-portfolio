@@ -18,10 +18,10 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue';
-import NavigationDrawer from '@/components/NavigationDrawer.vue';
-import Footer from '@/components/Footer.vue';
-import ButtonScrollToTop from '@/components/ButtonScrollToTop.vue';
+import Navbar from '@/components/default/Navbar.vue';
+import NavigationDrawer from '@/components/default/NavigationDrawer.vue';
+import Footer from '@/components/default/Footer.vue';
+import ButtonScrollToTop from '@/components/default/ButtonScrollToTop.vue';
 
 export default {
   name: 'DefaultLayout',

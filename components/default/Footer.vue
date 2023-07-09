@@ -9,7 +9,7 @@
         style="max-width: 940px;"
       >
         <span v-if="!$vuetify.breakpoint.xs">
-          {{ $t('components.footer.developed') }}
+          {{ $t('components.default.footer.developed') }}
           <nuxt-link :to="localePath('about-me')">
             <a
               class="text-decoration-underline primary-text--text"

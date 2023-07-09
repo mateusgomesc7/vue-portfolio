@@ -21,8 +21,8 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
-import ButtonTranslation from './utils/ButtonTranslation.vue';
-import SwitchTheme from './utils/SwitchTheme.vue';
+import ButtonTranslation from '@/components/utils/ButtonTranslation.vue';
+import SwitchTheme from '@/components/utils/SwitchTheme.vue';
 
 export default {
     name: 'NavigationDrawer',
