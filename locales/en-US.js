@@ -1,12 +1,14 @@
 export default {
     components: {
-        footer: {
-            developed: "Developed by "
-        },
-        navbar: {
-            projects: "Projects",
-            about_me: "About me",
-            contact: "Contact"
+        default: {
+            footer: {
+                developed: "Developed by "
+            },
+            navbar: {
+                projects: "Projects",
+                about_me: "About me",
+                contact: "Contact"
+            },
         },
         aboute_me: {
             card_about_me: {
