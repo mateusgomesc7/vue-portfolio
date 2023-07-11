@@ -8,20 +8,12 @@
         class="d-flex justify-space-between align-center pa-0"
         style="max-width: 940px;"
     >
-        <v-app-bar-title>
-            <nuxt-link
-                class="d-flex align-stretch text-decoration-none"
-                :to="localePath('/')"
-                @click.stop="toggle_page = undefined"
-            >
-                <v-icon v-if="$vuetify.breakpoint.mobile" class="pa-3">mdi-home</v-icon>
-                <a v-else class="text-subtitle-2 primary-text--text">
-                    {{ title }}
-                    <br>
-                    {{ subtitle }}
-                </a>
-            </nuxt-link>
-        </v-app-bar-title>
+        <nuxt-link
+            class="d-flex align-center"
+            :to="localePath('/')"
+        >
+            <Logo />
+        </nuxt-link>
         <v-btn-toggle 
             v-model="toggle_page"
             group
@@ -70,10 +62,11 @@
 import { mapState, mapMutations } from 'vuex'
 import SwitchTheme from '@/components/utils/SwitchTheme.vue';
 import ButtonTranslation from '@/components/utils/ButtonTranslation.vue';
+import Logo from '@/components/default/Logo.vue';
 
 export default {
     name: 'Navbar',
-    components: {ButtonTranslation, SwitchTheme},
+    components: {Logo, ButtonTranslation, SwitchTheme},
     data () {
         return {
             title: 'Mateus',
