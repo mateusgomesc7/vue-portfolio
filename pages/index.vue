@@ -26,7 +26,13 @@ import Experience from '@/components/home/Experience.vue';
 
 export default {
     name: "IndexPage",
-    components: { Presentation, Experience }
+    components: { Presentation, Experience },
+    mounted() {
+        this.$nuxt.$emit('active-logo', true);
+    },
+    beforeDestroy() {
+        this.$nuxt.$emit('active-logo', false);
+    }
 }
 </script>
 
