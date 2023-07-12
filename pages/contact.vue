@@ -16,6 +16,8 @@
     <v-card-actions class="pt-4 pb-8">
       <v-btn
           depressed
+          href="https://www.linkedin.com/in/mateus-gomes-c/"
+          target="_blank"
           color="accent"
           class="black--text mx-2"
           :small="$vuetify.breakpoint.mobile"
@@ -27,6 +29,8 @@
       </v-btn>
       <v-btn
           depressed
+          href="https://github.com/mateusgomesc7"
+          target="_blank"
           color="accent"
           class="black--text mx-2"
           :small="$vuetify.breakpoint.mobile"
