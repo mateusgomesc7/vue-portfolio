@@ -6,10 +6,10 @@
   >
     <v-card-text>
       <div class="text-h3 py-4">
-        CONTACT
+        {{ $t('pages.contact.title') }}
       </div>
       <div class="text-subtitle-1">
-        Se você tiver alguma pergunta, oportunidade de trabalho ou simplesmente quiser bater um papo, sinta-se à vontade:
+        {{ $t('pages.contact.subtitle') }}
       </div>
     </v-card-text>
     <EmailField />

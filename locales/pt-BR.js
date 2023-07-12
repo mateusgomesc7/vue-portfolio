@@ -15,6 +15,15 @@ export default {
                 btn_resume: "Currículo"
             },
         },
+        contact: {
+            email_field: {
+                tooltip: {
+                    copy: "Copiar",
+                    copied: "Copiado!",
+                    can_not_copy: "Não é possível copiar o e-mail em uma conexão não segura!"
+                }
+            }
+        },
         home: {
             presentation: {
                 title: "Olá, eu sou",
@@ -39,7 +48,8 @@ export default {
             title: "Sobre mim"
         },
         contact: {
-            title: "Contato"
+            title: "Contato",
+            subtitle: "Se você tiver alguma pergunta, oportunidade de trabalho ou simplesmente quiser bater um papo, sinta-se à vontade:",
         },
         projects: {
             title: "Projetos"
