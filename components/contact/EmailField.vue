@@ -48,6 +48,11 @@ export default {
           navigator.clipboard.writeText(this.email)
             .then(() => {
                 this.tooltipMessage = this.$t('components.contact.email_field.tooltip.copied');
+
+                this.isShowTooltip = true;
+                setTimeout(() => {
+                    this.isShowTooltip = false;
+                }, 3000);
             })
             .catch((error) => {
               console.error('Error copying text to clipboard:', error);
