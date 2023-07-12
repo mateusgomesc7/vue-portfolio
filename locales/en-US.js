@@ -15,6 +15,15 @@ export default {
                 btn_resume: "Resume"
             },
         },
+        contact: {
+            email_field: {
+                tooltip: {
+                    copy: "Copy",
+                    copied: "Copied!",
+                    can_not_copy: "Can't copy the email in a non-secure connection!"
+                }
+            }
+        },
         home: {
             presentation: {
                 title: "Hi, I'm",
@@ -39,7 +48,8 @@ export default {
             title: "About me"
         },
         contact: {
-            title: "Contact"
+            title: "Contact",
+            subtitle: "If you have any questions, job opportunities or just want to chat, feel free:",
         },
         projects: {
             title: "Projects"
