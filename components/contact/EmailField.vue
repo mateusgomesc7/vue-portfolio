@@ -1,8 +1,8 @@
 <template>
     <v-card-text class="d-flex align-center">
       <div
-        class="mr-2 text-button"
-        :class="$vuetify.breakpoint.mobile ? 'text-overline' : 'text-button'"
+        class="mr-2"
+        :class="$vuetify.breakpoint.mobile ? 'text-body-2' : 'text-body-1'"
       >
         {{ email }}
       </div>
@@ -38,7 +38,7 @@ export default {
     data() {
         return {
           email: "mateusgomes.dev@gmail.com",
-          tooltipMessage: "Copiar e-mail",
+          tooltipMessage: this.$t('components.contact.email_field.tooltip.copy'),
           isShowTooltip: false,
         }
     },
@@ -47,13 +47,13 @@ export default {
         if (window.location.protocol === 'https:') {
           navigator.clipboard.writeText(this.email)
             .then(() => {
-                this.tooltipMessage = "Copiado!";
+                this.tooltipMessage = this.$t('components.contact.email_field.tooltip.copied');
             })
             .catch((error) => {
-              console.error('Erro ao copiar texto para a área de transferência:', error);
+              console.error('Error copying text to clipboard:', error);
             });
         } else {
-            this.tooltipMessage = "Não é possível copiar o e-mail em uma conexão não segura.";
+            this.tooltipMessage = this.$t('components.contact.email_field.tooltip.can_not_copy');
 
             this.isShowTooltip = true;
             setTimeout(() => {

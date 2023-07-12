@@ -6,16 +6,18 @@
   >
     <v-card-text>
       <div class="text-h3 py-4">
-        CONTACT
+        {{ $t('pages.contact.title') }}
       </div>
       <div class="text-subtitle-1">
-        Se você tiver alguma pergunta, oportunidade de trabalho ou simplesmente quiser bater um papo, sinta-se à vontade:
+        {{ $t('pages.contact.subtitle') }}
       </div>
     </v-card-text>
     <EmailField />
     <v-card-actions class="pt-4 pb-8">
       <v-btn
           depressed
+          href="https://www.linkedin.com/in/mateus-gomes-c/"
+          target="_blank"
           color="accent"
           class="black--text mx-2"
           :small="$vuetify.breakpoint.mobile"
@@ -27,6 +29,8 @@
       </v-btn>
       <v-btn
           depressed
+          href="https://github.com/mateusgomesc7"
+          target="_blank"
           color="accent"
           class="black--text mx-2"
           :small="$vuetify.breakpoint.mobile"
