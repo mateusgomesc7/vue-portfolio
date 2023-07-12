@@ -1,54 +1,31 @@
 <template>
-  <v-card
-    class="mx-auto"
-    max-width="600"
-    outlined
-  >
-    <v-card-text>
-      <div class="text-h3 py-4">
-        {{ $t('pages.contact.title') }}
-      </div>
-      <div class="text-subtitle-1">
-        {{ $t('pages.contact.subtitle') }}
-      </div>
-    </v-card-text>
-    <EmailField />
-    <v-card-actions class="pt-4 pb-8">
-      <v-btn
-          depressed
-          href="https://www.linkedin.com/in/mateus-gomes-c/"
-          target="_blank"
-          color="accent"
-          class="black--text mx-2"
-          :small="$vuetify.breakpoint.mobile"
-      >
-          <v-icon left class="black--text">
-              mdi-linkedin
-          </v-icon>
-          Linkedin
-      </v-btn>
-      <v-btn
-          depressed
-          href="https://github.com/mateusgomesc7"
-          target="_blank"
-          color="accent"
-          class="black--text mx-2"
-          :small="$vuetify.breakpoint.mobile"
-      >
-          <v-icon left class="black--text">
-              mdi-github
-          </v-icon>
-          GitHub
-      </v-btn>
-    </v-card-actions>
-  </v-card>
+  <v-row no-gutters class="h-100" align="center">
+    <v-col cols="12" md="6">
+      <CardContact />
+    </v-col>
+    <v-col
+      cols="12"
+      md="6"
+      style="height: 500px;"
+      :class="{'mobile-height': $vuetify.breakpoint.mobile}"
+    >
+      <ExperienceCoffee />
+    </v-col>
+  </v-row>
 </template>
   
 <script>
-import EmailField from '@/components/contact/EmailField.vue';
+import CardContact from '@/components/contact/CardContact.vue';
+import ExperienceCoffee from '@/components/contact/ExperienceCoffe.vue';
 
 export default {
     name: "ContactPage",
-    components: { EmailField },
+    components: { CardContact, ExperienceCoffee },
 }
 </script>
+
+<style scoped>
+.mobile-height {
+  height: 300px !important;
+}
+</style>
