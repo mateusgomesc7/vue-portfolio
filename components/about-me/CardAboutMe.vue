@@ -24,47 +24,46 @@
                 </v-hover>
             </v-col>
         </v-row>
-        <v-card-actions class="px-4 mt-10">
-            <v-row no-gutters>
-                <v-col class="mb-2 d-flex justify-end">
-                    <v-btn
-                        depressed
-                        color="accent"
-                        class="black--text"
-                        :small="$vuetify.breakpoint.mobile"
-                    >
-                        <v-icon left class="black--text">
-                            mdi-linkedin
-                        </v-icon>
-                        Linkedin
-                    </v-btn>
-                </v-col>
-                <v-col class="mb-2 d-flex justify-center">
-                    <v-btn
-                        depressed
-                        color="accent"
-                        class="black--text"
-                        :small="$vuetify.breakpoint.mobile"
-                    >
-                        <v-icon left class="black--text">
-                            mdi-github
-                        </v-icon>
-                        GitHub
-                    </v-btn>
-                </v-col>
-                <v-col class="mb-2 d-flex justify-start">
-                    <v-btn
-                        text
-                        outlined
-                        :small="$vuetify.breakpoint.mobile"
-                    >
+        <v-card-actions class="px-0 mt-10 d-flex justify-center">
+            <v-card
+                class="px-0 d-flex justify-space-between"
+                elevation="0"
+                width="100%"
+                max-width="500"
+            >
+                <v-btn
+                    depressed
+                    color="accent"
+                    class="black--text"
+                    :small="$vuetify.breakpoint.mobile"
+                >
+                    <v-icon left class="black--text">
+                        mdi-linkedin
+                    </v-icon>
+                    Linkedin
+                </v-btn>
+                <v-btn
+                    depressed
+                    color="accent"
+                    class="black--text"
+                    :small="$vuetify.breakpoint.mobile"
+                >
+                    <v-icon left class="black--text">
+                        mdi-github
+                    </v-icon>
+                    GitHub
+                </v-btn>
+                <v-btn
+                    text
+                    outlined
+                    :small="$vuetify.breakpoint.mobile"
+                >
                     <v-icon left>
                         mdi-download-circle-outline
                     </v-icon>
-                        {{ $t('components.aboute_me.card_about_me.btn_resume') }}
-                    </v-btn>
-                </v-col>
-            </v-row>
+                    {{ $t('components.aboute_me.card_about_me.btn_resume') }}
+                </v-btn>
+            </v-card>
         </v-card-actions>
     </v-card>
 </template>
