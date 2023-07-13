@@ -5,7 +5,7 @@
             :key="project.name"
             cols="12"
             md="6"
-            class="mt-4"
+            class="mt-6"
         >
             <CardProject :project="project" />
         </v-col>
