@@ -5,7 +5,7 @@
       color="primary"
     >
       <v-container
-        class="d-flex justify-space-between align-center text-subtitle-2 py-0 px-2 primary-text--text"
+        class="d-flex justify-space-between align-center text-subtitle-2 pa-0 primary-text--text"
         style="max-width: 940px;"
       >
         <span v-if="!$vuetify.breakpoint.xs">
@@ -32,7 +32,7 @@
           <v-btn
             href="https://www.linkedin.com/in/mateus-gomes-c/"
             target="_blank"
-            class="mr-2"
+            class="mx-2"
             icon
           >
             <v-icon>mdi-linkedin</v-icon>
@@ -40,6 +40,7 @@
           <v-btn
             href="https://github.com/mateusgomesc7"
             target="_blank"
+            class="mx-2"
             icon
           >
             <v-icon>mdi-github</v-icon>
