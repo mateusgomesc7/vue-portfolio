@@ -24,7 +24,7 @@
                 </v-hover>
             </v-col>
         </v-row>
-        <v-card-actions class="px-0 mt-10 d-flex justify-center">
+        <v-card-actions class="px-0 mt-4 d-flex justify-center">
             <v-card
                 class="px-0 d-flex justify-space-between"
                 elevation="0"

@@ -1,5 +1,10 @@
 <template>
   <v-row no-gutters>
+    <v-col cols="12 pb-4">
+      <h1 class="text-h3">
+        About Me
+      </h1>
+    </v-col>
     <v-col
       cols="12"
       class="pb-10 d-flex justify-center"
