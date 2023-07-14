@@ -40,3 +40,9 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+.v-btn {
+    bottom: 50px;
+}
+</style>
