@@ -1,8 +1,7 @@
 <template>
     <v-card-text class="d-flex align-center">
       <div
-        class="mr-2"
-        :class="$vuetify.breakpoint.mobile ? 'text-body-2' : 'text-body-1'"
+        class="text-body-1 mr-2"
       >
         {{ email }}
       </div>

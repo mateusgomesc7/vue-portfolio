@@ -1,11 +1,11 @@
 <template>
   <v-card elevation="0">
-    <v-card-title class="text-sm-h3 text-h4 primary-text--text">
+    <v-card-title class="text-h3 primary-text--text">
       {{ $t('components.home.presentation.title') }}
       <br />
       Mateus Gomes
     </v-card-title>
-    <v-card-subtitle class="text-sm-h6 text-subtitle">
+    <v-card-subtitle class="text-h6 text-subtitle">
       {{ $t('components.home.presentation.subtitle') }}
     </v-card-subtitle>
     <v-card-actions class="px-4">
