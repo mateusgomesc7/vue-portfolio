@@ -3,7 +3,7 @@
       elevation="0"
     >
       <v-card-text>
-        <div class="text-h3 py-4">
+        <div class="primary-text--text text-h3 py-4">
           {{ $t('pages.contact.title') }}
         </div>
         <div class="text-subtitle-1">
