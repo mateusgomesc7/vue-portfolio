@@ -2,7 +2,7 @@
   <v-row no-gutters>
     <v-col cols="12 pb-4">
       <h1 class="text-h3">
-        About Me
+        {{ $t('pages.about_me.title') }}
       </h1>
     </v-col>
     <v-col
