@@ -12,7 +12,10 @@ export default {
         },
         aboute_me: {
             card_about_me: {
-                btn_resume: "Currículo"
+                btn_resume: "Currículo",
+                first_paragraph: "Sou engenheiro de software e trabalho na área a mais de 3 anos. Trabalhei no desenvolvimento de aplicações web e desktop, utilizando tecnologias como Nuxt.js, Flask, Machine Learning e Visão Computacional.",
+                second_paragraph: "Sou apaixonado por criar softwares que melhoram a vida das pessoas e promovam a automação de processos.",
+                third_paragraph: "Minha essência é ser criativo e curioso, trabalhando em equipe para solucionar problemas complexos e desafiadores.",
             },
         },
         contact: {
