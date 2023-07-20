@@ -2,11 +2,11 @@
     <v-card elevation="0">
         <v-row no-gutters>
             <v-col
-                v-for="align in aligns"
-                :key="align"
+                v-for="text in texts_about_me"
+                :key="text.align"
                 cols="12"
                 class="my-4 d-flex"
-                :class="`justify-${align}`"
+                :class="`justify-${text.align}`"
             >
                 <v-hover>
                     <template v-slot:default="{ hover }">
@@ -16,9 +16,7 @@
                             max-width="500"
                             :elevation="hover ? 8 : 0"
                         >
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum neque quaerat tenetur voluptates
-                            ipsum iste molestiae rem molestias voluptas, nisi illo reiciendis dolores quas autem soluta possimus
-                            qui earum minus!
+                            {{ text.description }}
                         </v-card>
                     </template>
                 </v-hover>
@@ -71,9 +69,22 @@
 <script>
     export default {
         name: 'CardAboutMe',
-        data: () => {
+        data() {
             return {
-                aligns: ['start', 'center', 'end'],
+                texts_about_me: [
+                    {
+                        description: this.$t('components.aboute_me.card_about_me.first_paragraph'),
+                        align: 'start'
+                    },
+                    {
+                        description: this.$t('components.aboute_me.card_about_me.second_paragraph'),
+                        align: 'center'
+                    },
+                    {
+                        description: this.$t('components.aboute_me.card_about_me.third_paragraph'),
+                        align: 'end'
+                    }
+                ],
             }
         },
     }
