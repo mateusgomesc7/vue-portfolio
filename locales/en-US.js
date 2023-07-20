@@ -12,7 +12,10 @@ export default {
         },
         aboute_me: {
             card_about_me: {
-                btn_resume: "Resume"
+                btn_resume: "Resume",
+                first_paragraph: "I am a software engineer with over 3 years of experience in the field. I have worked on the development of web and desktop applications, using technologies such as Nuxt.js, Flask, Machine Learning, and Computer Vision.",
+                second_paragraph: "I am passionate about creating software that improves people's lives and promotes process automation.",
+                third_paragraph: "My essence is to be creative and curious, working in teams to solve complex and challenging problems.",
             },
         },
         contact: {
