@@ -22,9 +22,7 @@
                     {{ year.year }}
                 </h2>
                 <div>
-                    Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut,
-                    sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando
-                    voluptatibus, vix an salutandi sententiae.
+                    {{ year.text }}
                 </div>
             </div>
         </v-timeline-item>
@@ -34,21 +32,26 @@
 <script>
   export default {
     name: 'Timeline',
-    data: () => ({
-      years: [
-        {
-          color: 'cyan',
-          year: '2016 - 2021',
-        },
-        {
-          color: 'green',
-          year: '2022',
-        },
-        {
-          color: 'pink',
-          year: '2023',
-        },
-      ],
-    }),
+    data()  { 
+      return {
+        years: [
+          {
+            color: 'cyan',
+            year: '2016 - 2021',
+            text: this.$t('components.aboute_me.timeline.years.text_2016_2021'),
+          },
+          {
+            color: 'green',
+            year: '2022',
+            text: this.$t('components.aboute_me.timeline.years.text_2022'),
+          },
+          {
+            color: 'pink',
+            year: '2023',
+            text: this.$t('components.aboute_me.timeline.years.text_2023'),
+          },
+        ],
+      }
+    },
   }
 </script>
