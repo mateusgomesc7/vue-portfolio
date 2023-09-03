@@ -20,6 +20,20 @@ export default {
             currentIntersect: null, 
             time: Date.now(),
             animationFrameId: null,
+            bakedDarkMaterial: null,
+            bakedMaterial: null,
+            fanLightMaterial: null,
+            symbolLightMaterial: null
+        }
+    },
+    watch: {
+        '$vuetify.theme.dark': {
+            handler: function (val, oldVal) {
+                if (val !== oldVal) {
+                    this.changeTheme()
+                }
+            },
+            deep: true
         }
     },
     mounted() {
@@ -34,6 +48,28 @@ export default {
         cancelAnimationFrame(this.animationFrameId)
     },
     methods: {
+        changeTheme() {
+            const mesh = this.scene.children[4]
+
+            if (this.$vuetify.theme.dark)
+            {
+                this.box.material.color.set(0x616161)
+                mesh.traverse((child) =>
+                {
+                    child.material = this.bakedDarkMaterial
+                })
+                this.updateLights(mesh)
+            }
+            else
+            {
+                this.box.material.color.set(0xffffff)
+                mesh.traverse((child) =>
+                {
+                    child.material = this.bakedMaterial
+                })
+                this.updateLights(mesh)
+            }
+        },
         mouseClick() {
             if(this.currentIntersect)
             {
@@ -51,10 +87,11 @@ export default {
         },
         createWorld() {
             this.box = new Mesh(
-                new BoxGeometry(0.2, 0.2, 0.2),
+                new BoxGeometry(0.18, 0.18, 0.18),
                 new MeshStandardMaterial({ color: 0x616161 })
             )
             this.box.position.set(0, -0.1, 1.7)
+            this.box.rotation.x = Math.PI/4
             this.scene.add(this.box)
             this.raycaster = new Raycaster()
 
@@ -79,17 +116,22 @@ export default {
             bakedTexture.flipY = false
             bakedTexture.colorSpace = SRGBColorSpace
 
+            const bakedDarkTexture = textureLoader.load('baked_dark.jpg')
+            bakedDarkTexture.flipY = false
+            bakedDarkTexture.colorSpace = SRGBColorSpace
+
             /**
              * Materials
              */
             // Baked Material
-            const bakedMaterial = new MeshBasicMaterial({ map: bakedTexture })
+            this.bakedMaterial = new MeshBasicMaterial({ map: bakedTexture })
+            this.bakedDarkMaterial = new MeshBasicMaterial({ map: bakedDarkTexture })
 
             // Fan light Material
-            const fanLightMaterial = new MeshBasicMaterial({ color: 0xffffff })
+            this.fanLightMaterial = new MeshBasicMaterial({ color: 0xffffff })
 
             // Symbol light Material
-            const symbolLightMaterial = new MeshBasicMaterial({ color: 0xffffe5 })
+            this.symbolLightMaterial = new MeshBasicMaterial({ color: 0xffffe5 })
 
             /**
              * Model 
@@ -100,26 +142,28 @@ export default {
                 {
                     gltf.scene.traverse((child) =>
                     {
-                        child.material = bakedMaterial
+                        child.material = this.bakedDarkMaterial
                     })
 
-                    const alexaLightMesh = gltf.scene.children.find(child => child.name === 'alexaLight')
-                    const fanLightAMesh = gltf.scene.children.find(child => child.name === 'fanLightA')
-                    const fanLightBMesh = gltf.scene.children.find(child => child.name === 'fanLightB')
-                    const symbolLightBMesh = gltf.scene.children.find(child => child.name === 'symbolLight')
-
-                    alexaLightMesh.material = fanLightMaterial
-                    fanLightAMesh.material = fanLightMaterial
-                    fanLightBMesh.material = fanLightMaterial
-                    symbolLightBMesh.material = symbolLightMaterial
-
+                    this.updateLights(gltf.scene)
 
                     gltf.scene.position.y = -1
                     gltf.scene.position.x = 0.55
-                    // gltf.scene.rotation.set(Math.PI/25, -Math.PI/3.5, 0)
                     this.scene.add(gltf.scene)
                 }
             )
+            console.log(this.scene)
+        },
+        updateLights(mesh){
+            const alexaLightMesh = mesh.children.find(child => child.name === 'alexaLight')
+            const fanLightAMesh = mesh.children.find(child => child.name === 'fanLightA')
+            const fanLightBMesh = mesh.children.find(child => child.name === 'fanLightB')
+            const symbolLightBMesh = mesh.children.find(child => child.name === 'symbolLight')
+
+            alexaLightMesh.material = this.fanLightMaterial
+            fanLightAMesh.material = this.fanLightMaterial
+            fanLightBMesh.material = this.fanLightMaterial
+            symbolLightBMesh.material = this.symbolLightMaterial
         },
         tick() {
             // Time
@@ -132,7 +176,7 @@ export default {
 
             // Update objects
             this.box.rotation.y += 0.0004 * deltaTime
-            this.box.rotation.x += 0.0001 * deltaTime
+            this.box.rotation.x += 0.0004 * deltaTime
             // this.box.position.y = Math.sin(this.time * 0.001) * 0.1
             this.box.updateMatrixWorld()
 
