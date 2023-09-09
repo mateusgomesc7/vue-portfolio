@@ -1,17 +1,19 @@
 import { Scene, PerspectiveCamera, WebGLRenderer, AmbientLight, DirectionalLight } from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 export const ThreeJsMixin = {
     data() {
         return {
             scene: null,
             camera: null,
+            controls: null,
             renderer: null,
             ambientLight: null,
             directionalLight: null,
             sizes: {
                 width: 0,
                 height: 0,
-            },
+            }
         }
     },
     mounted() {
@@ -43,17 +45,31 @@ export const ThreeJsMixin = {
             this.scene = new Scene()
             this.setSizes()
             this.createCamera()
+            this.createControls()
             this.createLights()
         },
         createCamera() {        
             this.camera = new PerspectiveCamera(
-                75,
+                45,
                 this.sizes.width / this.sizes.height,
                 0.1,
-                1000
+                100
             )
-            this.camera.position.set(0,0,1.8)
+            this.camera.position.set(4,3,5)
             this.scene.add(this.camera)
+        },
+        createControls() {
+            const canvas = document.querySelector('canvas.webgl')
+
+            this.controls = new OrbitControls(this.camera, canvas)
+            this.controls.enableDamping = true
+            this.controls.minAzimuthAngle = -Math.PI / 24
+            this.controls.maxAzimuthAngle = Math.PI / 2
+            this.controls.maxPolarAngle = Math.PI / 2
+            this.controls.minDistance = 1
+            this.controls.maxDistance = 10
+            this.controls.enablePan = false
+            this.controls.rotateSpeed = 0.5
         },
         createLights() {
             this.ambientLight = new AmbientLight()
