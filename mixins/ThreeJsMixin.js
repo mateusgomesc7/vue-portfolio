@@ -63,42 +63,13 @@ export const ThreeJsMixin = {
 
             this.controls = new OrbitControls(this.camera, canvas)
             this.controls.enableDamping = true
-            this.controls.minAzimuthAngle = -Math.PI / 14
+            this.controls.minAzimuthAngle = -Math.PI / 24
             this.controls.maxAzimuthAngle = Math.PI / 2
             this.controls.maxPolarAngle = Math.PI / 2
             this.controls.minDistance = 1
             this.controls.maxDistance = 10
             this.controls.enablePan = false
             this.controls.rotateSpeed = 0.5
-            if (this.$vuetify.breakpoint.mobile) {
-                this.controls.enableRotate = false
-            }
-
-            this.controls.addEventListener('change', () => {
-                if (this.$vuetify.breakpoint.mobile) {
-                    const zoomValue = this.controls.object.position.distanceTo(this.controls.target)
-
-                    if (zoomValue < 7) {
-                        this.controls.enableRotate = true
-                    } else {
-                        this.controls.enableRotate = false
-                    }
-                }
-            })
-
-
-            canvas.addEventListener('touchstart', (event) => {                
-                if (this.$vuetify.breakpoint.mobile && event.touches.length === 1) {
-                    var startY = event.touches[0].clientY;
-                    canvas.addEventListener('touchmove', (e) => {
-                        if (!this.controls.enableRotate) {
-                            var deltaY = e.touches[0].clientY - startY
-                            window.scrollBy(0, -deltaY, "smooth")
-                            startY = e.touches[0].clientY
-                        }
-                    });
-                }
-            });
         },
         createLights() {
             this.ambientLight = new AmbientLight()
