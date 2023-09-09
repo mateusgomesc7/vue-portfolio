@@ -1,6 +1,38 @@
 <template>
     <div ref="card" class="webgl-container">
         <canvas class="webgl"></canvas>
+        <div v-if="$vuetify.breakpoint.smAndDown">
+            <v-btn
+                v-show="!overlay"
+                fab
+                style="position: absolute; bottom: 0; left: 0;"
+                color="primary"
+                class="ml-2 mb-2"
+                @click="overlay = true"
+            >
+                <v-icon large>
+                    mdi-stop-circle-outline
+                </v-icon>
+            </v-btn>
+            <v-overlay
+                :value="overlay"
+                absolute
+                z-index="2"
+                opacity="0"
+                class="d-flex justify-start align-end"
+            >
+                <v-btn
+                    fab
+                    color="accent"
+                    class="ml-2 mb-2"
+                    @click="overlay = false"
+                >
+                    <v-icon large color="primary">
+                        mdi-play-circle-outline
+                    </v-icon>
+                </v-btn>
+            </v-overlay>
+        </div>
     </div>
 </template>
 
@@ -23,7 +55,8 @@ export default {
             bakedDarkMaterial: null,
             bakedMaterial: null,
             fanLightMaterial: null,
-            symbolLightMaterial: null
+            symbolLightMaterial: null,
+            overlay: true,
         }
     },
     watch: {
@@ -210,6 +243,7 @@ canvas {
     height: 100%;
 }
 .webgl-container {
+    position: relative;
     width: 100%;
     height: 100%;
 }
