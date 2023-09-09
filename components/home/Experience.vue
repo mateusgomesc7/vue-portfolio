@@ -53,7 +53,7 @@ export default {
             time: Date.now(),
             animationFrameId: null,
             bakedDarkMaterial: null,
-            bakedMaterial: null,
+            bakedLightMaterial: null,
             fanLightMaterial: null,
             symbolLightMaterial: null,
             overlay: true,
@@ -86,7 +86,7 @@ export default {
 
             if (this.$vuetify.theme.dark)
             {
-                this.box.material.color.set(0x616161)
+                this.box.material.color.set(this.$vuetify.theme.themes.light.primary)
                 mesh.traverse((child) =>
                 {
                     child.material = this.bakedDarkMaterial
@@ -95,10 +95,10 @@ export default {
             }
             else
             {
-                this.box.material.color.set(0xffffff)
+                this.box.material.color.set(0x616161)
                 mesh.traverse((child) =>
                 {
-                    child.material = this.bakedMaterial
+                    child.material = this.bakedLightMaterial
                 })
                 this.updateLights(mesh)
             }
@@ -106,12 +106,7 @@ export default {
         mouseClick() {
             if(this.currentIntersect)
             {
-                // Generate a random grayscale value between 0 and 255
-                const randomGray = Math.floor(Math.random() * 201);
-
-                // Create a hexadecimal color string in grayscale
-                const colorString = `#${randomGray.toString(16).repeat(3)}`;
-                this.currentIntersect.object.material.color.set(colorString)
+                this.$vuetify.theme.dark = !this.$vuetify.theme.dark
             }
         },
         mouseMove(event) {
@@ -125,6 +120,10 @@ export default {
             )
             this.box.position.set(0, -0.1, 1.7)
             this.box.rotation.x = Math.PI/4
+            if (this.$vuetify.theme.dark)
+                this.box.material.color.set(this.$vuetify.theme.themes.light.primary)
+            else
+                this.box.material.color.set(0x616161)
             this.scene.add(this.box)
             this.raycaster = new Raycaster()
 
@@ -145,9 +144,9 @@ export default {
             /**
              * Textures
              */
-            const bakedTexture = textureLoader.load('baked.jpg')
-            bakedTexture.flipY = false
-            bakedTexture.colorSpace = SRGBColorSpace
+            const bakedLightTexture = textureLoader.load('baked.jpg')
+            bakedLightTexture.flipY = false
+            bakedLightTexture.colorSpace = SRGBColorSpace
 
             const bakedDarkTexture = textureLoader.load('baked_dark.jpg')
             bakedDarkTexture.flipY = false
@@ -157,7 +156,7 @@ export default {
              * Materials
              */
             // Baked Material
-            this.bakedMaterial = new MeshBasicMaterial({ map: bakedTexture })
+            this.bakedLightMaterial = new MeshBasicMaterial({ map: bakedLightTexture })
             this.bakedDarkMaterial = new MeshBasicMaterial({ map: bakedDarkTexture })
 
             // Fan light Material
@@ -175,7 +174,10 @@ export default {
                 {
                     gltf.scene.traverse((child) =>
                     {
-                        child.material = this.bakedDarkMaterial
+                        if (this.$vuetify.theme.dark)
+                            child.material = this.bakedDarkMaterial
+                        else
+                            child.material = this.bakedLightMaterial
                     })
 
                     this.updateLights(gltf.scene)
