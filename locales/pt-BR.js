@@ -17,6 +17,13 @@ export default {
                 second_paragraph: "Sou apaixonado por criar softwares que melhoram a vida das pessoas e promovam a automação de processos.",
                 third_paragraph: "Minha essência é ser criativo e curioso, trabalhando em equipe para solucionar problemas complexos e desafiadores.",
             },
+            timeline: {
+                years: {
+                    text_2016_2021: "Durante a graduação em Engenharia Elétrica, conheci minha primeira linguagem de programação, C. Adquiri conhecimentos sobre estruturas de dados, redes e arquiteturas de computadores. Participei também de diversos projetos utilizando Python, JavaScript, banco de dados, entre outras tecnologias. Nesse período, iniciei meu estágio em Desenvolvimento Web.",
+                    text_2022: "Fui promovido de estagiário para Junior, adquirindo mais experiência em desenvolvimento web e desktop com Nuxt.js, Flask e PyQt. Aperfeiçoei boas práticas de programação e aumentei a autonomia em tomadas de decisões nos projetos. Além disso, concluí meu TCC na área de Visão Computacional.",
+                    text_2023: "2023",
+                }
+            }
         },
         contact: {
             email_field: {
