@@ -17,14 +17,22 @@ export default {
             iconTheme: 'mdi-moon-waning-crescent'
         }
     },
+    watch: {
+        '$vuetify.theme.dark': {
+            handler: function (val, oldVal) {
+                if (val !== oldVal) {
+                    this.changeIcon()
+                }
+            },
+            deep: true
+        }
+    },
     mounted() {
         this.changeIcon()
     },
     methods: {
         changeTheme() {
             this.$vuetify.theme.dark = !this.$vuetify.theme.dark
-            this.changeIcon()
-            
         },
         changeIcon() {
             if (this.$vuetify.theme.dark)
