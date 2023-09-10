@@ -5,12 +5,13 @@
             <v-btn
                 v-show="!overlay"
                 fab
+                small
                 style="position: absolute; bottom: 0; left: 0;"
                 color="primary"
-                class="ml-2 mb-2"
+                class="ml-4 mb-2"
                 @click="overlay = true"
             >
-                <v-icon large>
+                <v-icon>
                     mdi-stop-circle-outline
                 </v-icon>
             </v-btn>
@@ -23,11 +24,12 @@
             >
                 <v-btn
                     fab
+                    small
                     color="accent"
-                    class="ml-2 mb-2"
+                    class="ml-4 mb-2"
                     @click="overlay = false"
                 >
-                    <v-icon large color="primary">
+                    <v-icon color="primary">
                         mdi-play-circle-outline
                     </v-icon>
                 </v-btn>
