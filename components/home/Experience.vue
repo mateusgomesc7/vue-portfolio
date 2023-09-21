@@ -8,38 +8,46 @@
                 small
                 style="position: absolute; bottom: 0; left: 0;"
                 color="primary"
-                class="ml-4 mb-2"
+                class="ml-4 mb-2 play-stop"
                 @click="overlay = true"
             >
                 <v-icon>
                     mdi-stop-circle-outline
                 </v-icon>
             </v-btn>
-            <v-overlay
-                :value="overlay"
-                absolute
-                z-index="2"
-                opacity="0"
-                class="d-flex justify-start align-end"
+            <v-btn
+                v-show="overlay"
+                fab
+                small
+                color="accent"
+                class="ml-4 mb-2 play-stop"
+                @click="overlay = false"
             >
-                <v-btn
-                    fab
-                    small
-                    color="accent"
-                    class="ml-4 mb-2"
-                    @click="overlay = false"
-                >
-                    <v-icon color="primary">
-                        mdi-play-circle-outline
-                    </v-icon>
-                </v-btn>
-            </v-overlay>
+                <v-icon color="primary">
+                    mdi-play-circle-outline
+                </v-icon>
+            </v-btn>
         </div>
+        <v-overlay
+            ref="overlay"
+            :value="overlay || !isLoaded"
+            absolute
+            z-index="2"
+            :opacity="opacityOverlay"
+            class="d-flex justify-center align-center"
+        >
+            <v-progress-circular
+                v-if="!isLoaded"
+                indeterminate
+                size="64"
+            ></v-progress-circular>
+        </v-overlay>
     </div>
 </template>
 
 <script>
-import { Mesh, BoxGeometry, MeshStandardMaterial, Raycaster, Vector2, TextureLoader, SRGBColorSpace, MeshBasicMaterial } from 'three'
+import { Mesh, BoxGeometry, MeshStandardMaterial, Raycaster, Vector2,
+    TextureLoader, SRGBColorSpace, MeshBasicMaterial, LoadingManager } from 'three'
 import { ThreeJsMixin } from '@/mixins/ThreeJsMixin.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
@@ -59,6 +67,8 @@ export default {
             fanLightMaterial: null,
             symbolLightMaterial: null,
             overlay: true,
+            isLoaded: false,
+            opacityOverlay: 0.3
         }
     },
     watch: {
@@ -66,6 +76,17 @@ export default {
             handler: function (val, oldVal) {
                 if (val !== oldVal) {
                     this.changeTheme()
+                }
+            },
+            deep: true
+        },
+        '$vuetify.breakpoint.smAndDown': {
+            handler: function (val, oldVal) {
+                if (val !== oldVal) {
+                    if (val)
+                        this.overlay = true
+                    else
+                        this.overlay = false
                 }
             },
             deep: true
@@ -132,15 +153,28 @@ export default {
             /**
              * Loaders
              */
+            const loadingManager = new LoadingManager(
+                // Loaded
+                () =>
+                {
+                    this.isLoaded = true
+                    this.opacityOverlay = 0
+                    this.overlay = this.$vuetify.breakpoint.smAndDown
+                },
+                // Progress
+                (itemUrl, itemsLoaded, itemsTotal) =>
+                {
+                    // const progressRatio = itemsLoaded / itemsTotal
+                    // console.log('progress')
+                }
+            )
             // Texture loader
-            const textureLoader = new TextureLoader()
-
+            const textureLoader = new TextureLoader(loadingManager)
             // Draco loader
-            const dracoLoader = new DRACOLoader()
+            const dracoLoader = new DRACOLoader(loadingManager)
             dracoLoader.setDecoderPath('draco/')
-
             // GLTF loader
-            const gltfLoader = new GLTFLoader()
+            const gltfLoader = new GLTFLoader(loadingManager)
             gltfLoader.setDRACOLoader(dracoLoader)
 
             /**
@@ -189,7 +223,6 @@ export default {
                     this.scene.add(gltf.scene)
                 }
             )
-            console.log(this.scene)
         },
         updateLights(mesh){
             const alexaLightMesh = mesh.children.find(child => child.name === 'alexaLight')
@@ -250,5 +283,11 @@ canvas {
     position: relative;
     width: 100%;
     height: 100%;
+}
+.play-stop {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
 }
 </style>
