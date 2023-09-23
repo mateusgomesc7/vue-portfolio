@@ -4,11 +4,12 @@
         <div v-if="$vuetify.breakpoint.smAndDown">
             <v-btn
                 v-show="!overlay"
+                id="stop-3d-model"
                 fab
                 small
                 style="position: absolute; bottom: 0; left: 0;"
                 color="primary"
-                class="ml-4 mb-2 play-stop"
+                class="ml-4 mb-2"
                 @click="overlay = true"
             >
                 <v-icon>
@@ -17,10 +18,10 @@
             </v-btn>
             <v-btn
                 v-show="overlay"
+                id="play-3d-model"
                 fab
                 small
                 color="accent"
-                class="ml-4 mb-2 play-stop"
                 @click="overlay = false"
             >
                 <v-icon color="primary">
@@ -284,7 +285,13 @@ canvas {
     width: 100%;
     height: 100%;
 }
-.play-stop {
+#play-3d-model {
+    position: absolute;
+    bottom: 50%;
+    left: 45%;
+    z-index: 5;
+}
+#stop-3d-model {
     position: absolute;
     bottom: 0;
     left: 0;
