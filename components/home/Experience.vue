@@ -157,10 +157,7 @@ export default {
                     this.overlay = this.$vuetify.breakpoint.smAndDown
                 },
                 // Progress
-                () =>
-                {
-                    // console.log('progress')
-                }
+                () => {}
             )
             // Texture loader
             const textureLoader = new TextureLoader(loadingManager)
@@ -288,7 +285,6 @@ export default {
             // Update objects
             this.box.rotation.y += 0.0004 * deltaTime
             this.box.rotation.x += 0.0004 * deltaTime
-            // this.box.position.y = Math.sin(this.time * 0.001) * 0.1
             this.box.updateMatrixWorld()
 
             // raycaster
