@@ -47,8 +47,8 @@
 </template>
 
 <script>
-import { Mesh, BoxGeometry, MeshStandardMaterial, Raycaster, Vector2,
-    TextureLoader, SRGBColorSpace, MeshBasicMaterial, LoadingManager } from 'three'
+import { Mesh, BoxGeometry, MeshStandardMaterial, Raycaster, Vector2, TextureLoader, SRGBColorSpace,
+    MeshBasicMaterial, LoadingManager, VideoTexture } from 'three'
 import { ThreeJsMixin } from '@/mixins/ThreeJsMixin.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
@@ -67,6 +67,8 @@ export default {
             bakedLightMaterial: null,
             fanLightMaterial: null,
             symbolLightMaterial: null,
+            videoCodeMaterial: null,
+            videoPortfolioMaterial: null,
             overlay: true,
             isLoaded: false,
             opacityOverlay: 0.3
@@ -106,25 +108,27 @@ export default {
     },
     methods: {
         changeTheme() {
-            const mesh = this.scene.children[4]
+            const setupMesh = this.scene.children[4]
 
             if (this.$vuetify.theme.dark)
             {
                 this.box.material.color.set(this.$vuetify.theme.themes.light.primary)
-                mesh.traverse((child) =>
+                setupMesh.traverse((child) =>
                 {
                     child.material = this.bakedDarkMaterial
                 })
-                this.updateLights(mesh)
+                this.updateLights(setupMesh)
+                this.updateScreens(setupMesh)
             }
             else
             {
                 this.box.material.color.set(0x616161)
-                mesh.traverse((child) =>
+                setupMesh.traverse((child) =>
                 {
                     child.material = this.bakedLightMaterial
                 })
-                this.updateLights(mesh)
+                this.updateLights(setupMesh)
+                this.updateScreens(setupMesh)
             }
         },
         mouseClick() {
@@ -138,17 +142,7 @@ export default {
             this.mouse.y = - (event.offsetY / this.sizes.height) * 2 + 1
         },
         createWorld() {
-            this.box = new Mesh(
-                new BoxGeometry(0.18, 0.18, 0.18),
-                new MeshStandardMaterial({ color: 0x616161 })
-            )
-            this.box.position.set(0, -0.1, 1.7)
-            this.box.rotation.x = Math.PI/4
-            if (this.$vuetify.theme.dark)
-                this.box.material.color.set(this.$vuetify.theme.themes.light.primary)
-            else
-                this.box.material.color.set(0x616161)
-            this.scene.add(this.box)
+            this.createBox()
             this.raycaster = new Raycaster()
 
             /**
@@ -163,9 +157,8 @@ export default {
                     this.overlay = this.$vuetify.breakpoint.smAndDown
                 },
                 // Progress
-                (itemUrl, itemsLoaded, itemsTotal) =>
+                () =>
                 {
-                    // const progressRatio = itemsLoaded / itemsTotal
                     // console.log('progress')
                 }
             )
@@ -181,7 +174,7 @@ export default {
             /**
              * Textures
              */
-            const bakedLightTexture = textureLoader.load('baked.jpg')
+            const bakedLightTexture = textureLoader.load('baked_light.jpg')
             bakedLightTexture.flipY = false
             bakedLightTexture.colorSpace = SRGBColorSpace
 
@@ -189,18 +182,24 @@ export default {
             bakedDarkTexture.flipY = false
             bakedDarkTexture.colorSpace = SRGBColorSpace
 
+            const videoCodeTexture = this.getVideoTexture('/assets/code.mp4')
+            const videoPortfolioTexture = this.getVideoTexture('/assets/portfolio.mp4')
+
             /**
              * Materials
              */
             // Baked Material
             this.bakedLightMaterial = new MeshBasicMaterial({ map: bakedLightTexture })
             this.bakedDarkMaterial = new MeshBasicMaterial({ map: bakedDarkTexture })
-
             // Fan light Material
             this.fanLightMaterial = new MeshBasicMaterial({ color: 0xffffff })
-
             // Symbol light Material
             this.symbolLightMaterial = new MeshBasicMaterial({ color: 0xffffe5 })
+            // Video code Material
+            this.videoCodeMaterial = new MeshBasicMaterial({ map: videoCodeTexture })
+            // Video portfolio Material
+            this.videoPortfolioMaterial = new MeshBasicMaterial({ map: videoPortfolioTexture })
+
 
             /**
              * Model 
@@ -218,12 +217,46 @@ export default {
                     })
 
                     this.updateLights(gltf.scene)
+                    this.updateScreens(gltf.scene)
 
                     gltf.scene.position.y = -1
                     gltf.scene.position.x = 0.55
+
                     this.scene.add(gltf.scene)
                 }
             )
+        },
+        createBox() {
+            this.box = new Mesh(
+                new BoxGeometry(0.18, 0.18, 0.18),
+                new MeshStandardMaterial({ color: 0x616161 })
+            )
+            this.box.position.set(0, -0.1, 1.7)
+            this.box.rotation.x = Math.PI/4
+            if (this.$vuetify.theme.dark)
+                this.box.material.color.set(this.$vuetify.theme.themes.light.primary)
+            else
+                this.box.material.color.set(0x616161)
+            this.scene.add(this.box)
+        },
+        getVideoTexture(video) {
+            const model = {}
+
+            // Element
+            model.element = document.createElement('video')
+            model.element.muted = true
+            model.element.loop = true
+            model.element.controls = true
+            model.element.playsInline = true
+            model.element.autoplay = true
+            model.element.src = video
+            model.element.play()
+
+            // Texture
+            const texture = new VideoTexture(model.element)
+            texture.colorSpace = SRGBColorSpace
+
+            return texture
         },
         updateLights(mesh){
             const alexaLightMesh = mesh.children.find(child => child.name === 'alexaLight')
@@ -235,6 +268,13 @@ export default {
             fanLightAMesh.material = this.fanLightMaterial
             fanLightBMesh.material = this.fanLightMaterial
             symbolLightBMesh.material = this.symbolLightMaterial
+        },
+        updateScreens(mesh){
+            const screenBMesh = mesh.children.find(child => child.name === 'screenB')
+            const screenAMesh = mesh.children.find(child => child.name === 'screenA')
+
+            screenBMesh.material = this.videoPortfolioMaterial
+            screenAMesh.material = this.videoCodeMaterial
         },
         tick() {
             // Time
