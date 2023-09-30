@@ -13,14 +13,14 @@ export default {
         aboute_me: {
             card_about_me: {
                 btn_resume: "Resume",
-                first_paragraph: "I am a software engineer with over 3 years' experience in the field. I have worked on the development of web and desktop applications, using technologies such as Nuxt.js, Flask, Machine Learning, and Computer Vision.",
+                first_paragraph: "I am a software engineer with over 3 years' experience in the field. I have worked on the development of web and desktop applications, using technologies such as <strong>Nuxt.js</strong>, <strong>Flask</strong>, <strong>Machine Learning</strong>, and <strong>Computer Vision</strong>.",
                 second_paragraph: "I am passionate about creating software that improves people's lives and promotes process automation.",
                 third_paragraph: "My essence is to be creative and curious, working in teams to solve complex and challenging problems.",
             },
             timeline: {
                 years: {
-                    text_2016_2021: "During my Electrical Engineering graduation, I learned my first programming language, C. I acquired knowledge in data structures, networks, and computer architectures. I also participated in several projects using Python, JavaScript, databases, and other technologies. During this period, I started my internship in Web Development.",
-                    text_2022: "I was promoted from intern to Junior, gaining more experience in web and desktop development using Nuxt.js, Flask, and PyQt. I improved programming best practices and increased autonomy in decision-making within projects. Additionally, I completed my thesis in the area of Computer Vision.",
+                    text_2016_2021: "During my Electrical Engineering graduation, I learned my first programming language, <strong>C</strong>. I acquired knowledge in data structures, networks, and computer architectures. I also participated in several projects using <strong>Python</strong>, <strong>JavaScript</strong>, <strong>databases</strong>, and other technologies. During this period, I started my internship in Web Development.",
+                    text_2022: "I was promoted from intern to Junior, gaining more experience in web and desktop development using <strong>Nuxt.js</strong>, <strong>Flask</strong>, and <strong>PyQt</strong>. I improved programming best practices and increased autonomy in decision-making within projects. Additionally, I completed my thesis in the area of <strong>Computer Vision</strong>.",
                     text_2023: "2023",
                 }
             }
