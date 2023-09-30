@@ -21,9 +21,7 @@
                 >
                     {{ year.year }}
                 </h2>
-                <div>
-                    {{ year.text }}
-                </div>
+                <div v-html="year.text"></div>
             </div>
         </v-timeline-item>
     </v-timeline>

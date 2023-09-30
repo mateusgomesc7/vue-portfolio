@@ -15,9 +15,8 @@
                             outlined
                             max-width="500"
                             :elevation="hover ? 8 : 0"
-                        >
-                            {{ text.description }}
-                        </v-card>
+                            v-html="text.description"
+                        ></v-card>
                     </template>
                 </v-hover>
             </v-col>
