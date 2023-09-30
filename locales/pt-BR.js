@@ -13,14 +13,14 @@ export default {
         aboute_me: {
             card_about_me: {
                 btn_resume: "Currículo",
-                first_paragraph: "Sou engenheiro de software e trabalho na área a mais de 3 anos. Trabalhei no desenvolvimento de aplicações web e desktop, utilizando tecnologias como Nuxt.js, Flask, Machine Learning e Visão Computacional.",
+                first_paragraph: "Sou engenheiro de software e trabalho na área a mais de 3 anos. Trabalhei no desenvolvimento de aplicações web e desktop, utilizando tecnologias como <strong>Nuxt.js</strong>, <strong>Flask</strong>, <strong>Machine Learning</strong> e <strong>Visão Computacional</strong>.",
                 second_paragraph: "Sou apaixonado por criar softwares que melhoram a vida das pessoas e promovam a automação de processos.",
                 third_paragraph: "Minha essência é ser criativo e curioso, trabalhando em equipe para solucionar problemas complexos e desafiadores.",
             },
             timeline: {
                 years: {
-                    text_2016_2021: "Durante a graduação em Engenharia Elétrica, conheci minha primeira linguagem de programação, C. Adquiri conhecimentos sobre estruturas de dados, redes e arquiteturas de computadores. Participei também de diversos projetos utilizando Python, JavaScript, banco de dados, entre outras tecnologias. Nesse período, iniciei meu estágio em Desenvolvimento Web.",
-                    text_2022: "Fui promovido de estagiário para Junior, adquirindo mais experiência em desenvolvimento web e desktop com Nuxt.js, Flask e PyQt. Aperfeiçoei boas práticas de programação e aumentei a autonomia em tomadas de decisões nos projetos. Além disso, concluí meu TCC na área de Visão Computacional.",
+                    text_2016_2021: "Durante a graduação em Engenharia Elétrica, conheci minha primeira linguagem de programação, <strong>C</strong>. Adquiri conhecimentos sobre estruturas de dados, redes e arquiteturas de computadores. Participei também de diversos projetos utilizando <strong>Python</strong>, <strong>JavaScript</strong>, <strong>banco de dados</strong>, entre outras tecnologias. Nesse período, iniciei meu estágio em Desenvolvimento Web.",
+                    text_2022: "Fui promovido de estagiário para Junior, adquirindo mais experiência em desenvolvimento web e desktop com <strong>Nuxt.js</strong>, <strong>Flask</strong> e <strong>PyQt</strong>. Aperfeiçoei boas práticas de programação e aumentei a autonomia em tomadas de decisões nos projetos. Além disso, concluí meu TCC na área de <strong>Visão Computacional</strong>.",
                     text_2023: "2023",
                 }
             }
