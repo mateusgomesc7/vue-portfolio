@@ -27,6 +27,14 @@
         {
             "id": "7",
             "name": "React"
+        },
+        {
+            "id": "8",
+            "name": "OCR"
+        },
+        {
+            "id": "9",
+            "name": "PostgreSQL"
         }
     ]
 }

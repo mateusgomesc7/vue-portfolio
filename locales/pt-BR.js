@@ -68,16 +68,16 @@ export default {
     data: {
         projects: {
             project_1: {
-                title: "Projeto 1",
-                description: "Descrição do projeto 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl nec ultrices ultrices, nunc nisl aliquam nunc, nec aliquam nisl nisl nec nisl."
+                title: "Automação de Leitura e Testes",
+                description: "Parceria entre as empresas <strong>Assert</strong> e <strong>LANDIS+GYR</strong>. Sistema desenvolvido para a automação de leitura e testes de medidores de energia elétrica,  com a capacidade de agregar e exibir os resultados em tempo real. Com a utilização de tecnologias como <strong>Machine Learning</strong>, <strong>OCR</strong>, <strong>Python</strong>, <strong>PyQt</strong> e <strong>PostgreSQL</strong>.",
             },
             project_2: {
-                title: "Projeto 2",
-                description: "Descrição do projeto 2"
+                title: "Controle de Medidores Inteligentes",
+                description: "Parceria entre as empresas <strong>Assert</strong> e <strong>LANDIS+GYR</strong>. Aplicativo web desenvolvido tecnologias como <strong>Vue.js</strong> (<strong>Nuxt.js</strong>) e <strong>Flask</strong>, para aprimorar o gerenciamento automatizado de testes de medidores elétricos."
             },
             project_3: {
-                title: "Projeto 3",
-                description: "Descrição do projeto 3"
+                title: "Controle de Fluxo de Pagamento",
+                description: "Parceria entre as empresas <strong>Assert</strong> e <strong>Foxconn</strong>. Aplicativo desenvolvido utilizando tecnologias como <strong>Vue.js</strong> (<strong>Nuxt.js</strong>) e <strong>Flask</strong>, para simplificar e gerenciar fluxos de pagamento complexos através de vários estágios. Este projeto ofereceu uma solução sofisticada para monitorar e controlar os processos de pagamento, garantindo uma gestão eficiente desde o início até a conclusão."
             },
             project_4: {
                 title: "Projeto 4",
