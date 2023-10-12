@@ -20,7 +20,7 @@
                         :key="i"
                     >
                     <v-img
-                        :src="image"
+                        :src="requireImage(image)"
                         lazy-src="https://picsum.photos/id/11/10/6"
                         height="100%"
                         link
@@ -38,9 +38,8 @@
                             class="secondary-text--text"
                             :class="expand ? '' : 'text-truncate'"
                             @click="expand = true"
-                        >
-                            {{ $t(project.description) }}
-                        </v-col>
+                            v-html="$t(project.description)"
+                        ></v-col>
                         <v-col cols="1">
                             <v-btn
                                 icon
@@ -139,6 +138,9 @@ export default {
                 behavior: 'smooth',
             });
         },
+        requireImage(imagePath) {
+            return require(`@/assets/projects/${imagePath}`);
+        }
     }
 }
 </script>

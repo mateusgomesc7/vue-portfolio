@@ -68,16 +68,16 @@ export default {
     data: {
         projects: {
             project_1: {
-                title: "Project 1",
-                description: "Description of project 1"
+                title: "Reading and Testing Automation",
+                description: "Partnership between <strong>Assert</strong> and <strong>LANDIS+GYR</strong>. A system designed for the automation of reading and testing of electrical energy meters, with the ability to aggregate and display real-time results. Utilizing technologies such as <strong>Machine Learning</strong>, <strong>OCR</strong>, <strong>Python</strong>, <strong>PyQt</strong>, and <strong>PostgreSQL</strong>."
             },
             project_2: {
-                title: "Project 2",
-                description: "Description of project 2"
+                title: "Smart Meter Control",
+                description: "A partnership between the companies <strong>Assert</strong> and <strong>LANDIS+GYR</strong>. A web application developed with modern technologies, such as <strong>Vue.js</strong> (<strong>Nuxt.js</strong>) and <strong>Flask</strong>, to enhance the automated management of electrical meter tests."
             },
             project_3: {
-                title: "Project 3",
-                description: "Description of project 3"
+                title: "Payment Flow Control",
+                description: "A partnership between the companies <strong>Assert</strong> and <strong>Foxconn</strong>. An application developed using technologies like <strong>Vue.js</strong> (<strong>Nuxt.js</strong>) and <strong>Flask</strong> to simplify and manage complex payment flows across multiple stages. This project provided a sophisticated solution for monitoring and controlling payment processes, ensuring efficient management from start to finish."
             },
             project_4: {
                 title: "Project 4",
