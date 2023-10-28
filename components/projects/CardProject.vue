@@ -13,7 +13,7 @@
                     hide-delimiter-background
                     show-arrows-on-hover
                     :show-arrows="!$vuetify.breakpoint.mobile"
-                    height="230"
+                    height="246"
                 >
                     <v-carousel-item
                         v-for="(image, i) in project.images"
