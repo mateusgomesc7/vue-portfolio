@@ -7,8 +7,14 @@
       "liveLink": "https://exemplo.com/projeto1",
       "repositoryLink": "https://github.com/seu-usuario/projeto1",
       "images": [
-        "identification.gif",
-        "ocr.gif"
+        {
+          "name": "identification.gif",
+          "is_illustrative": true
+        },
+        {
+          "name": "ocr.gif",
+          "is_illustrative": true
+        }
       ]
     },
     {
@@ -18,8 +24,14 @@
       "liveLink": "https://exemplo.com/projeto1",
       "repositoryLink": "https://github.com/seu-usuario/projeto1",
       "images": [
-        "web-tests.png",
-        "process-tests.gif"
+        {
+          "name": "web-tests.png",
+          "is_illustrative": true
+        },
+        {
+          "name": "process-tests.gif",
+          "is_illustrative": true
+        }
       ]
     },
     {
@@ -29,7 +41,10 @@
       "liveLink": "https://exemplo.com/projeto1",
       "repositoryLink": "https://github.com/seu-usuario/projeto1",
       "images": [
-        "foxconn.png"
+        {
+          "name": "foxconn.png",
+          "is_illustrative": true
+        }
       ]
     }
   ]
