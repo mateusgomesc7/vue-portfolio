@@ -19,8 +19,14 @@
                         v-for="(image, i) in project.images"
                         :key="i"
                     >
+                    <div
+                        v-show="image.is_illustrative"
+                        class="illustrative-image text-caption font-weight-bold primary
+                        primary-text--text px-2 py-1 rounded-sm">
+                            {{ $t('components.projects.card_project.illustrative_image') }}
+                    </div>
                     <v-img
-                        :src="requireImage(image)"
+                        :src="requireImage(image.name)"
                         lazy-src="https://picsum.photos/id/11/10/6"
                         height="100%"
                         link
@@ -144,3 +150,12 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.illustrative-image {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
+}
+</style>

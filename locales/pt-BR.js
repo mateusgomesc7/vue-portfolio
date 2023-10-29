@@ -46,7 +46,8 @@ export default {
             card_project: {
                 btn_open: "Abrir",
                 btn_open_project: "Abrir projeto",
-                btn_source_code: "Código fonte"
+                btn_source_code: "Código fonte",
+                illustrative_image: "Imagem ilustrativa"
             },
             search: {
                 search_by_technologie: "Pesquisar por tecnologia"
