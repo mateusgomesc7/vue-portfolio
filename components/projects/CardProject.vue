@@ -29,7 +29,7 @@
                         :src="requireImage(image.name)"
                         lazy-src="https://picsum.photos/id/11/10/6"
                         height="100%"
-                        link
+                        contain
                     ></v-img>
                     </v-carousel-item>
                 </v-carousel>
