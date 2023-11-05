@@ -81,8 +81,8 @@ export default {
                 description: "A partnership between the companies <strong>Assert</strong> and <strong>Foxconn</strong>. An application developed using technologies like <strong>Vue.js</strong> (<strong>Nuxt.js</strong>) and <strong>Flask</strong> to simplify and manage complex payment flows across multiple stages. This project provided a sophisticated solution for monitoring and controlling payment processes, ensuring efficient management from start to finish."
             },
             project_4: {
-                title: "Project 4",
-                description: "Description of project 4"
+                title: "Autonomous Vehicle",
+                description: "An autonomous vehicle built with a low computational power <strong>Raspberry Pi</strong> uses computer vision to make decisions, such as following the track and recognizing traffic lights. Developed as part of my Bachelor's Thesis. For this purpose, it employs <strong>Haar Cascade</strong> algorithms for identification and a <strong>Decision Tree</strong> algorithm."
             },
             project_5: {
                 title: "Project 5",
