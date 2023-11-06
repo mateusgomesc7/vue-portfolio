@@ -1,6 +1,6 @@
 <template>
   <v-row no-gutters>
-    <v-col cols="12 pb-4">
+    <v-col cols="12 pb-2" :class="$vuetify.breakpoint.smAndDown ? 'd-flex justify-center' : ''">
       <h1 class="text-h3">
         {{ $t('pages.about_me.title') }}
       </h1>
@@ -11,7 +11,7 @@
     >
       <CardAboutMe />
     </v-col>
-    <v-col cols="12">
+    <v-col cols="12" class="pb-4">
       <Timeline />
     </v-col>
   </v-row>

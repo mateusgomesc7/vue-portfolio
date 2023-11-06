@@ -2,6 +2,7 @@
     <v-autocomplete
         :value="filterTechnologies"
         ref="autocomplete"
+        class="px-4"
         :items="technologies"
         :loading="loading"
         :menu-props="{ maxHeight: 200 }"
