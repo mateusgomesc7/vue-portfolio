@@ -83,7 +83,7 @@
                         key: 3
                     },
                     {
-                        description: this.$t('components.aboute_me.card_about_me.third_paragraph'),
+                        description: this.$t('components.aboute_me.card_about_me.fourth_paragraph'),
                         key: 4
                     }
                 ],

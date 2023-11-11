@@ -13,15 +13,16 @@ export default {
         aboute_me: {
             card_about_me: {
                 btn_resume: "Resume",
-                first_paragraph: "I am a software engineer with over 3 years' experience in the field. I have worked on the development of web and desktop applications, using technologies such as <strong>Nuxt.js</strong>, <strong>Flask</strong>, <strong>Machine Learning</strong>, and <strong>Computer Vision</strong>.",
+                first_paragraph: "My name is Mateus Gomes, I am a <strong>Software Engineer</strong> with over 3 years of experience.",
                 second_paragraph: "I am passionate about creating software that improves people's lives and promotes process automation.",
-                third_paragraph: "My essence is to be creative and curious, working in teams to solve complex and challenging problems.",
+                third_paragraph: "I worked on the development of web and desktop applications, using technologies such as <strong>Vue</strong>, <strong>Nuxt</strong>, <strong>Flask</strong>, <strong>AI</strong>, and <strong>Computer Vision</strong>.",
+                fourth_paragraph: "I am always curious to learn more when it comes to new technologies and creative coding."
             },
             timeline: {
                 years: {
-                    text_2016_2021: "During my Electrical Engineering graduation, I learned my first programming language, <strong>C</strong>. I acquired knowledge in data structures, networks, and computer architectures. I also participated in several projects using <strong>Python</strong>, <strong>JavaScript</strong>, <strong>databases</strong>, and other technologies. During this period, I started my internship in Web Development.",
-                    text_2022: "I was promoted from intern to Junior, gaining more experience in web and desktop development using <strong>Nuxt.js</strong>, <strong>Flask</strong>, and <strong>PyQt</strong>. I improved programming best practices and increased autonomy in decision-making within projects. Additionally, I completed my thesis in the area of <strong>Computer Vision</strong>.",
-                    text_2023: "2023",
+                    text_2016_2021: "During my Electrical Engineering graduation, I learned my first programming language, <strong>C</strong>. I acquired knowledge in data structures, networks, and computer architectures. I also participated in several projects using <strong>Python</strong>, <strong>JavaScript</strong>, <strong>databases</strong>, and other technologies. During this period, I started my internship in <strong>Web Development</strong>.",
+                    text_2022: "I was promoted from intern to Junior, gaining more experience in web and desktop development using <strong>Vue.js</strong>, <strong>Nuxt.js</strong>, <strong>Flask</strong>, and <strong>PyQt</strong>. I improved programming best practices and increased autonomy in decision-making within projects. Additionally, I completed my thesis in the area of <strong>Computer Vision</strong>.",
+                    text_2023: "I took on the challenging position of Technical Leader, where I was responsible for defining software architecture, project management, and team leadership. I enhanced my communication skills by interacting directly with clients and the team. Committed to utilizing technologies such as <strong>AI</strong>, <strong>PyQt</strong>, and <strong>Computer Vision</strong>.",
                 }
             }
         },
@@ -37,7 +38,7 @@ export default {
         home: {
             presentation: {
                 title: "Hi, I'm",
-                subtitle: "Full-Stack Developer",
+                subtitle: "Software Engineer",
                 btn_about_me: "About me",
                 btn_resume: "Resume"
             },
