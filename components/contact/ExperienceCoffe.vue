@@ -5,20 +5,28 @@
 </template>
 
 <script>
-import { Mesh, TorusKnotGeometry, MeshStandardMaterial, Raycaster, Vector2 } from 'three'
+import { MeshStandardMaterial, Raycaster, Vector2, LoadingManager,
+TextureLoader, SRGBColorSpace, MeshBasicMaterial  } from 'three'
 import { ThreeJsMixin } from '@/mixins/ThreeJsMixin.js'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
 
 export default {
     name: 'ExperienceCoffee',
     mixins: [ThreeJsMixin],
     data () {
         return {
-            torusKnot: null,
             raycaster: null,
             mouse: new Vector2(-1,-1),
             currentIntersect: null, 
             time: Date.now(),
             animationFrameId: null,
+            overlay: true,
+            isLoaded: false,
+            opacityOverlay: 0.3,
+
+            bakedDarkMaterial: null,
+            bakedLightMaterial: null,
         }
     },
     mounted() {
@@ -49,12 +57,55 @@ export default {
             this.mouse.y = - (event.offsetY / this.sizes.height) * 2 + 1
         },
         createWorld() {
-            this.torusKnot = new Mesh(
-                new TorusKnotGeometry( 0.5, 0.15, 80, 16 ),
-                new MeshStandardMaterial({ color: 0x616161 })
-            )
-            this.scene.add(this.torusKnot)
             this.raycaster = new Raycaster()
+
+
+            /**
+             * Loaders
+             */
+             const loadingManager = new LoadingManager(
+                // Loaded
+                () =>
+                {
+                    this.isLoaded = true
+                    this.opacityOverlay = 0
+                    this.overlay = this.$vuetify.breakpoint.smAndDown
+                },
+                // Progress
+                () => {}
+            )
+            // Texture loader
+            // const textureLoader = new TextureLoader(loadingManager)
+            // Draco loader
+            const dracoLoader = new DRACOLoader(loadingManager)
+            dracoLoader.setDecoderPath('draco/')
+            // GLTF loader
+            const gltfLoader = new GLTFLoader(loadingManager)
+            gltfLoader.setDRACOLoader(dracoLoader)
+
+            gltfLoader.load(
+                'computer.glb',
+                (gltf) =>
+                {
+                    console.log('gltf :', gltf)
+                }
+            )
+
+            /**
+             * Model 
+             */
+            //  gltfLoader.load(
+            //     'coffe.glb',
+            //     (gltf) =>
+            //     {
+            //         // gltf.scene.traverse((child) =>
+            //         // {
+            //         //     child.material = this.bakedLightMaterial
+            //         // })
+
+            //         // this.scene.add(gltf.scene)
+            //     }
+            // )
         },
         tick() {
             // Time
@@ -62,25 +113,24 @@ export default {
             const deltaTime = currentTime - this.time
             this.time = currentTime
 
+            // Update controls
+            this.controls.update()
+
             // Update objects
-            this.torusKnot.rotation.y += 0.0004 * deltaTime
-            this.torusKnot.rotation.x += 0.0001 * deltaTime
-            this.torusKnot.position.y = Math.sin(this.time * 0.001) * 0.3
-            this.torusKnot.updateMatrixWorld()
 
             // raycaster
-            this.raycaster.setFromCamera(this.mouse, this.camera)
-            const objectToTest = this.torusKnot
-            const intersects = this.raycaster.intersectObject(objectToTest)
+            // this.raycaster.setFromCamera(this.mouse, this.camera)
+            // const objectToTest = this.torusKnot
+            // const intersects = this.raycaster.intersectObject(objectToTest)
             
-            if(intersects.length)
-            {
-                this.currentIntersect = intersects[0]
-            }
-            else
-            {
-                this.currentIntersect = null
-            }
+            // if(intersects.length)
+            // {
+            //     this.currentIntersect = intersects[0]
+            // }
+            // else
+            // {
+            //     this.currentIntersect = null
+            // }
 
             // Render
             this.renderer.render(this.scene, this.camera)
@@ -98,6 +148,7 @@ canvas {
     height: 100%;
 }
 .webgl-container {
+    position: relative;
     width: 100%;
     height: 100%;
 }
