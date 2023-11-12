@@ -1,7 +1,7 @@
 <template>
   <v-row no-gutters>
     <v-col
-      cols="12 pb-2 ml-5"
+      cols="12 pb-2 pl-5"
       :class="$vuetify.breakpoint.smAndDown ? 'd-flex justify-center' : ''">
       <h1 class="text-h3">
         {{ $t('pages.about_me.title') }}
