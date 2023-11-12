@@ -93,7 +93,7 @@ export default {
   },
 
   i18n: {
-    strategy: 'prefix',
+    strategy: 'no_prefix',
     defaultLocale: 'en',
     locales: [
       {

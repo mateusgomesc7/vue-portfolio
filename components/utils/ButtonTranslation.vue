@@ -16,14 +16,18 @@
     </template>
 
     <v-list max-height="300">
+      <v-list-item-group
+        :value="$i18n.locale"
+        @change="changeLocale"
+      >
         <v-list-item
-            v-for="locale in availableLocales"
+            v-for="locale in $i18n.locales"
             :key="locale.code"
-            :to="switchLocalePath(locale.code)"
-            link
+            :value="locale.code"
         >
             <v-list-item-title>{{ locale.name }}</v-list-item-title>
         </v-list-item>
+      </v-list-item-group>
     </v-list>
   </v-menu>
 </template>
@@ -31,15 +35,17 @@
 <script>
   export default {
     name: 'ButtonTranslation',
-    data: () => ({
-      items: [
-        { title: 'English' },
-        { title: 'Português' },
-      ],
-    }),
+
     computed: {
       availableLocales () {
+        console.log(this.$i18n.locales)
+        console.log(this.$i18n.locale)
         return this.$i18n.locales
+      }
+    },
+    methods: {
+      changeLocale (val) {
+        this.$i18n.setLocale(val)
       }
     }
   }
