@@ -6,7 +6,7 @@
     <v-col
       cols="12"
       md="6"
-      style="height: 500px;"
+      style="height: 600px;"
       :class="{'mobile-height': $vuetify.breakpoint.mobile}"
     >
       <ExperienceCoffee />

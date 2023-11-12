@@ -5,11 +5,12 @@
 </template>
 
 <script>
-import { MeshStandardMaterial, Raycaster, Vector2, LoadingManager,
-TextureLoader, SRGBColorSpace, MeshBasicMaterial  } from 'three'
+import { Raycaster, Vector2, LoadingManager, ShaderMaterial, Color  } from 'three'
 import { ThreeJsMixin } from '@/mixins/ThreeJsMixin.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
+import vertexShader from '@/assets/shaders/coffeSteam/vertex.glsl'
+import fragmentShader from '@/assets/shaders/coffeSteam/fragment.glsl'
 
 export default {
     name: 'ExperienceCoffee',
@@ -18,15 +19,15 @@ export default {
         return {
             raycaster: null,
             mouse: new Vector2(-1,-1),
-            currentIntersect: null, 
+            currentIntersect: null,
             time: Date.now(),
+            elapsed: 0,
             animationFrameId: null,
             overlay: true,
             isLoaded: false,
             opacityOverlay: 0.3,
-
-            bakedDarkMaterial: null,
-            bakedLightMaterial: null,
+            coffeSteamMaterial: null,
+            coffeMaterial: null,
         }
     },
     mounted() {
@@ -74,8 +75,6 @@ export default {
                 // Progress
                 () => {}
             )
-            // Texture loader
-            // const textureLoader = new TextureLoader(loadingManager)
             // Draco loader
             const dracoLoader = new DRACOLoader(loadingManager)
             dracoLoader.setDecoderPath('draco/')
@@ -83,45 +82,70 @@ export default {
             const gltfLoader = new GLTFLoader(loadingManager)
             gltfLoader.setDRACOLoader(dracoLoader)
 
+            /**
+             * Materials
+             */
+            this.coffeSteamMaterial = new ShaderMaterial({
+                transparent: true,
+                depthWrite: false,
+                vertexShader,
+                fragmentShader,
+                uniforms: {
+                    uTime: { value: 0 },
+                    uTimeFrequency: { value: 0.0005 },
+                    vUvFrequency: { value: new Vector2(4, 5) },
+                }
+            })
+
             gltfLoader.load(
                 'coffe.glb',
                 (gltf) =>
                 {
-                    // gltf.scene.traverse((child) =>
-                    // {
-                    //     child.material = this.bakedLightMaterial
-                    // })
+                    const mugMesh = gltf.scene.children.find(child => child.name === 'mug')
+                    const coffeMesh = gltf.scene.children.find(child => child.name === 'coffe')
+
+                    mugMesh.material = mugMesh.material.clone()
+                    coffeMesh.material = coffeMesh.material.clone()
+
+                    mugMesh.material.color = new Color(0xfefcff);
+                    mugMesh.material.roughness = 0.8;
+                    mugMesh.material.metalness = 0.7;
+
+                    coffeMesh.material.color = new Color(0x8B4513);
+                    coffeMesh.material.roughness = 0.8;
+                    coffeMesh.material.metalness = 0.7;
 
                     this.scene.add(gltf.scene)
                 }
             )
 
-            /**
-             * Model 
-             */
-            //  gltfLoader.load(
-            //     'coffe.glb',
-            //     (gltf) =>
-            //     {
-            //         // gltf.scene.traverse((child) =>
-            //         // {
-            //         //     child.material = this.bakedLightMaterial
-            //         // })
+            gltfLoader.load(
+                'coffeSteam.glb',
+                (gltf) =>
+                {
+                    gltf.scene.traverse((child) =>
+                    {
+                        child.material = this.coffeSteamMaterial
+                    })
 
-            //         // this.scene.add(gltf.scene)
-            //     }
-            // )
+                    this.scene.add(gltf.scene)
+                }
+            )
+
+            this.scene.position.y = - 1
         },
         tick() {
             // Time
             const currentTime = Date.now()
             const deltaTime = currentTime - this.time
+            this.elapsed += deltaTime
             this.time = currentTime
 
             // Update controls
             this.controls.update()
 
             // Update objects
+            this.coffeSteamMaterial.uniforms.uTime.value = this.elapsed
 
             // raycaster
             // this.raycaster.setFromCamera(this.mouse, this.camera)
