@@ -84,10 +84,15 @@ export default {
             gltfLoader.setDRACOLoader(dracoLoader)
 
             gltfLoader.load(
-                'computer.glb',
+                'coffe.glb',
                 (gltf) =>
                 {
-                    console.log('gltf :', gltf)
+                    // gltf.scene.traverse((child) =>
+                    // {
+                    //     child.material = this.bakedLightMaterial
+                    // })
+
+                    this.scene.add(gltf.scene)
                 }
             )
 
