@@ -30,9 +30,9 @@
 <script>
   export default {
     name: 'Timeline',
-    data()  { 
-      return {
-        years: [
+    computed: {
+      years() {
+        return [
           {
             color: 'cyan',
             year: '2016 - 2021',
@@ -48,8 +48,8 @@
             year: '2023',
             text: this.$t('components.aboute_me.timeline.years.text_2023'),
           },
-        ],
+        ]
       }
-    },
+    }
   }
 </script>
