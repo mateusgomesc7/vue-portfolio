@@ -29,6 +29,8 @@
             >
                 <v-btn
                     depressed
+                    href="https://www.linkedin.com/in/mateus-gomes-c/"
+                    target="_blank"
                     color="accent"
                     class="black--text"
                     :small="$vuetify.breakpoint.mobile"
@@ -40,6 +42,8 @@
                 </v-btn>
                 <v-btn
                     depressed
+                    href="https://github.com/mateusgomesc7"
+                    target="_blank"
                     color="accent"
                     class="black--text"
                     :small="$vuetify.breakpoint.mobile"
@@ -52,6 +56,8 @@
                 <v-btn
                     text
                     outlined
+                    href="https://drive.google.com/file/d/1OIWoH9lxGRvXnbEU3P1zs9jrg7x91kK_/view?usp=sharing"
+                    target="_blank"
                     :small="$vuetify.breakpoint.mobile"
                 >
                     <v-icon left>
