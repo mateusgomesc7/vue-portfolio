@@ -1,5 +1,8 @@
 <template>
-    <v-card-text class="d-flex align-center">
+    <v-card-text
+    class="d-flex align-center"
+    :class="$vuetify.breakpoint.smAndDown ? 'justify-center' : ''"
+    >
       <div
         class="text-body-1 mr-2"
       >
