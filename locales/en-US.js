@@ -40,7 +40,7 @@ export default {
                 title: "Hi, I'm",
                 subtitle: "Software Engineer",
                 btn_about_me: "About me",
-                btn_resume: "Resume"
+                btn_projects: "Projects"
             },
         },
         projects: {

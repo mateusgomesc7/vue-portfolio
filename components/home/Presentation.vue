@@ -16,17 +16,21 @@
         :small="$vuetify.breakpoint.mobile"
         :to="localePath('about-me')"
       >
+        <v-icon left class="black--text">
+          mdi-account
+        </v-icon>
         {{ $t('components.home.presentation.btn_about_me') }}
       </v-btn>
       <v-btn
         text
         outlined
         :small="$vuetify.breakpoint.mobile"
+        :to="localePath('projects')"
       >
         <v-icon left>
-          mdi-download-circle-outline
+          mdi-view-grid-plus
         </v-icon>
-        {{ $t('components.home.presentation.btn_resume') }}
+        {{ $t('components.home.presentation.btn_projects') }}
       </v-btn>
     </v-card-actions>
   </v-card>
