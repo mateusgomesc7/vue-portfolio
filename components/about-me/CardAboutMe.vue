@@ -73,9 +73,9 @@
 <script>
     export default {
         name: 'CardAboutMe',
-        data() {
-            return {
-                texts_about_me: [
+        computed: {
+            texts_about_me() {
+                return [
                     {
                         description: this.$t('components.aboute_me.card_about_me.first_paragraph'),
                         key: 1
@@ -92,10 +92,8 @@
                         description: this.$t('components.aboute_me.card_about_me.fourth_paragraph'),
                         key: 4
                     }
-                ],
-            }
-        },
-        computed: {
+                ]
+            },
             resumeLink() {
                 const currentLanguage = this.$i18n.locale;
 
