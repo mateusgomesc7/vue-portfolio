@@ -83,7 +83,10 @@ export default {
             },
             project_4: {
                 title: "Veículo Autônomo",
-                description: "Um veículo autônomo construído com um <strong>Raspberry Pi</strong> de baixo poder computacional utilizando visão computacional para a tomada de decisões, como seguir a trajetória da pista e reconhecer semáforos. Desenvolvido como parte do meu TCC. Para essa finalidade, emprega os algoritmos <strong>Haar Cascade</strong> para identificação e um algoritmo de <strong>Árvore de Decisão</strong>."
+                description: "Um veículo autônomo construído com um <strong>Raspberry Pi</strong> de baixo poder computacional utilizando visão computacional para a tomada de decisões, como seguir a trajetória da pista e reconhecer semáforos. Desenvolvido como parte do meu TCC. Para essa finalidade, emprega os algoritmos <strong>Haar Cascade</strong> para identificação e um algoritmo de <strong>Árvore de Decisão</strong>.",
+                external_link: {
+                    name: "Documento"
+                }
             },
             project_5: {
                 title: "Projeto 5",

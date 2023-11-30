@@ -74,8 +74,11 @@
                 <v-divider></v-divider>
                 <v-card-actions class="px-4">
                     <v-btn
+                        v-if="project.externalLink.url"
                         dark
                         depressed
+                        :href="project.externalLink.url"
+                        target="_blank"
                         color="accent"
                         class="black--text"
                     >
@@ -85,15 +88,14 @@
                         >
                             mdi-open-in-new
                         </v-icon>
-                        {{
-                            $vuetify.breakpoint.width > 380 ?
-                            $t('components.projects.card_project.btn_open_project') :
-                            $t('components.projects.card_project.btn_open')
-                        }}
+                        {{ $t(project.externalLink.name) }}
                     </v-btn>
                     <v-btn
+                        v-if="project.repositoryLink"
                         text
                         outlined
+                        :href="project.repositoryLink"
+                        target="_blank"
                     >
                         <v-icon
                             left

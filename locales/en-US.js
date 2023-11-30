@@ -83,7 +83,10 @@ export default {
             },
             project_4: {
                 title: "Autonomous Vehicle",
-                description: "An autonomous vehicle built with a low computational power <strong>Raspberry Pi</strong> uses computer vision to make decisions, such as following the track and recognizing traffic lights. Developed as part of my Bachelor's Thesis. For this purpose, it employs <strong>Haar Cascade</strong> algorithms for identification and a <strong>Decision Tree</strong> algorithm."
+                description: "An autonomous vehicle built with a low computational power <strong>Raspberry Pi</strong> uses computer vision to make decisions, such as following the track and recognizing traffic lights. Developed as part of my Bachelor's Thesis. For this purpose, it employs <strong>Haar Cascade</strong> algorithms for identification and a <strong>Decision Tree</strong> algorithm.",
+                external_link: {
+                    name: "Document"
+                }
             },
             project_5: {
                 title: "Project 5",
