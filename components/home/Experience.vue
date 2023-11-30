@@ -54,6 +54,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
 
 export default {
+    name: 'Experience',
     mixins: [ThreeJsMixin],
     data () {
         return {

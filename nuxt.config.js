@@ -93,7 +93,7 @@ export default {
   },
 
   i18n: {
-    strategy: 'prefix',
+    strategy: 'no_prefix',
     defaultLocale: 'en',
     locales: [
       {
@@ -118,5 +118,15 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    transpile: ['three', 'GLTFLoader'],
+
+    extend(config, ctx) {
+      if (config.module) {
+        config.module.rules.push({
+          test: /\.(glsl)$/i,
+          use: ['raw-loader', 'glslify-loader'],
+        })
+      }
+    },
   }
 }
