@@ -56,7 +56,7 @@
                 <v-btn
                     text
                     outlined
-                    href="https://drive.google.com/file/d/1OIWoH9lxGRvXnbEU3P1zs9jrg7x91kK_/view?usp=sharing"
+                    :href="resumeLink"
                     target="_blank"
                     :small="$vuetify.breakpoint.mobile"
                 >
@@ -95,6 +95,17 @@
                 ],
             }
         },
+        computed: {
+            resumeLink() {
+                const currentLanguage = this.$i18n.locale;
+
+                if (currentLanguage === 'pt') {
+                    return 'https://drive.google.com/file/d/1OIWoH9lxGRvXnbEU3P1zs9jrg7x91kK_/view?usp=sharing';
+                } else {
+                    return 'https://drive.google.com/file/d/1E81q0vISLxOtN-pCNsrS5yQM0tXw7lz3/view?usp=sharing';
+                }
+            }
+        }
     }
 </script>
 
