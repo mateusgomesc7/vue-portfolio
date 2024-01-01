@@ -13,7 +13,6 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/i18n": "^7.3.1",
-    "@vercel/analytics": "^1.1.1",
     "core-js": "^3.25.3",
     "glslify": "^7.1.1",
     "glslify-loader": "^2.0.0",
