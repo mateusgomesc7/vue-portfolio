@@ -98,9 +98,9 @@
                 const currentLanguage = this.$i18n.locale;
 
                 if (currentLanguage === 'pt') {
-                    return 'https://drive.google.com/file/d/1OIWoH9lxGRvXnbEU3P1zs9jrg7x91kK_/view?usp=sharing';
+                    return 'https://drive.google.com/file/d/1KHm_EhLAkXoDfQ6w1y-_9sf9bz0zs7Zk/view?usp=sharing';
                 } else {
-                    return 'https://drive.google.com/file/d/1E81q0vISLxOtN-pCNsrS5yQM0tXw7lz3/view?usp=sharing';
+                    return 'https://drive.google.com/file/d/1oTflFZpFKUtLrhuODR86t8fPqSssJCwM/view?usp=sharing';
                 }
             }
         }
