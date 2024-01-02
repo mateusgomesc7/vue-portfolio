@@ -21,8 +21,8 @@
                     >
                     <div
                         v-show="image.is_illustrative"
-                        class="illustrative-image text-caption font-weight-bold primary
-                        primary-text--text px-2 py-1 rounded-sm">
+                        class="illustrative-image text-caption font-weight-bold accent
+                        black--text px-2 py-1 rounded-sm">
                             {{ $t('components.projects.card_project.illustrative_image') }}
                     </div>
                     <v-img

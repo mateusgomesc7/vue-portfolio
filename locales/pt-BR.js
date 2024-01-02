@@ -13,10 +13,10 @@ export default {
         aboute_me: {
             card_about_me: {
                 btn_resume: "Currículo",
-                first_paragraph: "Meu nome é Mateus Gomes, sou um <strong>Engenheiro de Software</strong> com mais de 3 anos de experiência.",
-                second_paragraph: "Sou apaixonado por criar softwares que melhoram a vida das pessoas e promovam a automação de processos.",
+                first_paragraph: "Meu nome é Mateus Gomes, sou um <strong>Engenheiro de Software</strong> quase 4 anos de experiência.",
+                second_paragraph: "Tenho especial interesse em codificação criativa e no desenvolvimento de softwares que impactem positivamente a vida das pessoas.",
                 third_paragraph: "Trabalhei no desenvolvimento de aplicações web e desktop, utilizando tecnologias como <strong>Vue</strong>, <strong>Nuxt</strong>, <strong>Flask</strong>, <strong>IA</strong> e <strong>Visão Computacional</strong>.",
-                fourth_paragraph: "Estou sempre curioso para aprender mais quando o assunto é novas tecnologias e codificação criativa."
+                fourth_paragraph: "Estou sempre curioso para aprender mais quando o assunto é novas tecnologias e que promovam a automação de processos."
             },
             timeline: {
                 years: {
