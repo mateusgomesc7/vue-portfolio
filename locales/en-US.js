@@ -13,10 +13,10 @@ export default {
         aboute_me: {
             card_about_me: {
                 btn_resume: "Resume",
-                first_paragraph: "My name is Mateus Gomes, I am a <strong>Software Engineer</strong> with over 3 years of experience.",
-                second_paragraph: "I am passionate about creating software that improves people's lives and promotes process automation.",
+                first_paragraph: "My name is Mateus Gomes, I am a <strong>Software Engineer</strong> with  nearly 4 years of experience.",
+                second_paragraph: "I have a particular interest in creative coding and in developing software that positively impacts people's lives.",
                 third_paragraph: "I worked on the development of web and desktop applications, using technologies such as <strong>Vue</strong>, <strong>Nuxt</strong>, <strong>Flask</strong>, <strong>AI</strong>, and <strong>Computer Vision</strong>.",
-                fourth_paragraph: "I am always curious to learn more when it comes to new technologies and creative coding."
+                fourth_paragraph: "I am always curious to learn more, especially about new technologies that promote process automation."
             },
             timeline: {
                 years: {
