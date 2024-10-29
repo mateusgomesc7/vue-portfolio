@@ -23,7 +23,9 @@
         </v-col>
       </v-row>
     </section>
-    <section id="projects" class="full-section">Projetos</section>
+    <section id="projects" class="full-section">
+      <Projects />
+    </section>
     <section id="about-me" class="full-section">Sobre Mim</section>
     <section id="contact" class="full-section">Contato</section>
   </div>
@@ -32,10 +34,11 @@
 <script>
 import Presentation from "@/components/home/Presentation.vue";
 import Experience from "@/components/home/Experience.vue";
+import Projects from "@/components/projects/index.vue";
 
 export default {
   name: "IndexPage",
-  components: { Presentation, Experience },
+  components: { Presentation, Experience, Projects },
   mounted() {
     this.$nuxt.$emit("active-logo", true);
   },
