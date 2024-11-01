@@ -88,4 +88,11 @@ export default {
 .custom-button {
   min-width: 32px;
 }
+
+.v-app-bar {
+  height: 61px !important;
+}
+.container {
+  border-bottom: 1px solid #ccc;
+}
 </style>
