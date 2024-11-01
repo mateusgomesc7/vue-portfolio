@@ -8,6 +8,29 @@
             $vuetify.breakpoint.smAndDown ? 'justify-center' : 'justify-end'
           "
           cols="12"
+          md="6"
+        >
+          <Presentation />
+        </v-col>
+        <v-col class="d-flex justify-center" cols="12" md="6">
+          <v-img
+            :src="require(`@/assets/images/profile_background.svg`)"
+            alt="Desenvolvedor Web"
+          />
+        </v-col>
+      </v-row>
+    </section>
+    <section id="projects" class="full-section">
+      <Projects />
+    </section>
+    <section id="about-me" class="full-section">
+      <v-row no-gutters class="h-100" justify="center" align="center">
+        <v-col
+          class="d-flex"
+          :class="
+            $vuetify.breakpoint.smAndDown ? 'justify-center' : 'justify-end'
+          "
+          cols="12"
           md="5"
         >
           <Presentation />
@@ -23,17 +46,13 @@
         </v-col>
       </v-row>
     </section>
-    <section id="projects" class="full-section">
-      <Projects />
-    </section>
-    <section id="about-me" class="full-section">Sobre Mim</section>
     <section id="contact" class="full-section">Contato</section>
   </div>
 </template>
 
 <script>
 import Presentation from "@/components/home/Presentation.vue";
-import Experience from "@/components/home/Experience.vue";
+import Experience from "@/components/about-me/Experience.vue";
 import Projects from "@/components/projects/index.vue";
 
 export default {

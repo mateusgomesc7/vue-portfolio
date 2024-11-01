@@ -2,15 +2,46 @@
   <v-card
     hover
     min-height="250"
-    max-width="820"
-    class="d-flex align-center px-8 mb-8 rounded-xl"
+    class="d-flex align-center primary-90 px-8 mb-8 rounded-xl"
   >
     <div cols="5" class="custom-card-image">
-      <v-img
-        class="rounded-xl"
-        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-        contain
-      ></v-img>
+      <v-slide-y-transition mode="out-in">
+        <v-img
+          :key="project.image"
+          height="170px"
+          width="302px"
+          class="rounded-xl elevation-4"
+          :class="{ pointer: groupProject.length > 1 }"
+          :src="requireImage(project.image)"
+          @load="onLoad"
+          @click.stop="
+            positionProject = (positionProject + 1) % groupProject.length
+          "
+        >
+          <template v-slot:placeholder>
+            <v-row class="fill-height ma-0" align="center" justify="center">
+              <v-progress-circular
+                indeterminate
+                color="grey lighten-5"
+              ></v-progress-circular>
+            </v-row>
+          </template>
+        </v-img>
+      </v-slide-y-transition>
+      <transition name="fade-box" appear>
+        <div
+          v-if="groupProject.length > 1 && imageLoad"
+          :key="project.image"
+          class="caixa caixa-1 secondary rounded-xl elevation-4"
+        ></div>
+      </transition>
+      <transition name="fade-box" appear>
+        <div
+          v-if="groupProject.length > 2 && imageLoad"
+          :key="project.image"
+          class="caixa caixa-2 secondary rounded-xl elevation-4"
+        ></div>
+      </transition>
     </div>
 
     <div
@@ -51,6 +82,7 @@ export default {
   data() {
     return {
       positionProject: 0,
+      imageLoad: false,
     };
   },
   computed: {
@@ -58,12 +90,19 @@ export default {
       return this.groupProject[this.positionProject];
     },
   },
+  methods: {
+    onLoad() {
+      this.imageLoad = true;
+    },
+    requireImage(imagePath) {
+      return require(`@/assets/projects/${imagePath}`);
+    },
+  },
 };
 </script>
 
 <style scoped>
 .custom-card-image {
-  width: 30%;
   height: 100%;
   justify-content: center;
   align-items: center;
@@ -93,5 +132,36 @@ export default {
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
+}
+
+.fade-box-enter-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-box-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.v-image {
+  z-index: 3;
+}
+.caixa {
+  height: 170px;
+  width: 302px;
+  position: absolute;
+}
+.caixa-1 {
+  bottom: 38px;
+  left: 32px;
+  z-index: 2;
+}
+.caixa-2 {
+  bottom: 31px;
+  left: 32px;
+  z-index: 1;
 }
 </style>
