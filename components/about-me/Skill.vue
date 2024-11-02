@@ -1,6 +1,10 @@
 <template>
   <div class="d-flex flex-column align-center ma-2">
-    <div class="content-icon rounded-pill primary-90 mb-2">
+    <div
+      class="content-icon rounded-pill primary-90"
+      :class="name ? 'mb-2' : ''"
+      :style="{ width: size, height: size }"
+    >
       <v-img :src="requireImage(icon)" :max-width="maxWidth"></v-img>
     </div>
     <div class="text-body-2">{{ name }}</div>
@@ -23,6 +27,10 @@ export default {
       type: String,
       default: "40px",
     },
+    size: {
+      type: String,
+      default: "70px",
+    },
   },
   methods: {
     requireImage(icon) {
@@ -34,8 +42,6 @@ export default {
 
 <style scoped>
 .content-icon {
-  width: 70px;
-  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;

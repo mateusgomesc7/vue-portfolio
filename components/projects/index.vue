@@ -19,49 +19,73 @@ export default {
       [
         {
           title: "Lorem Ipsum",
-          age: 2023,
           image: "web-tests.png",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, voluptas eligendi! Eligendi similique sequi, sit sunt, mollitia, nam quia odio quibusdam magnam dolorum possimus ipsam deleniti ex maiores hic inventore!",
+          skills: [
+            { icon: "typescript.svg" },
+            { icon: "vuejs.svg" },
+            { icon: "nuxt.svg", maxWidth: "23px" },
+          ],
         },
         {
           title: "Anyhitng",
-          age: 2024,
           image: "foxconn.png",
           description:
             "Temporibus, voluptas eligendi! Eligendi similique sequi, sit sunt, mollitia, nam quia odio quibusdam magnam dolorum possimus ipsam deleniti ex maiores hic inventore!",
+          skills: [
+            { icon: "typescript.svg" },
+            { icon: "vuejs.svg" },
+            { icon: "nuxt.svg", maxWidth: "23px" },
+          ],
         },
         {
           title: "Anyhitng Too",
-          age: 2025,
           image: "autonomous_car.gif",
           description:
             "Odit, quos, voluptates, quas, quia quae quibusdam dolorum possimus ipsam deleniti ex maiores hic inventore!",
+          skills: [
+            { icon: "typescript.svg" },
+            { icon: "vuejs.svg" },
+            { icon: "nuxt.svg", maxWidth: "23px" },
+          ],
         },
       ],
       [
         {
           title: "Lorem Ipsum",
-          age: 2026,
           image: "web-tests.png",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, voluptas eligendi! Eligendi similique sequi, sit sunt, mollitia, nam quia odio quibusdam magnam dolorum possimus ipsam deleniti ex maiores hic inventore!",
+          skills: [
+            { icon: "typescript.svg" },
+            { icon: "vuejs.svg" },
+            { icon: "nuxt.svg", maxWidth: "23px" },
+          ],
         },
         {
           title: "Anyhitng",
-          age: 2024,
           image: "foxconn.png",
           description:
             "Temporibus, voluptas eligendi! Eligendi similique sequi, sit sunt, mollitia, nam quia odio quibusdam magnam dolorum possimus ipsam deleniti ex maiores hic inventore!",
+          skills: [
+            { icon: "typescript.svg" },
+            { icon: "vuejs.svg" },
+            { icon: "nuxt.svg", maxWidth: "23px" },
+          ],
         },
       ],
       [
         {
           title: "Lorem Ipsum",
-          age: 2026,
           image: "foxconn.png",
           description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, voluptas eligendi! Eligendi similique sequi, sit sunt, mollitia, nam quia odio quibusdam magnam dolorum possimus ipsam deleniti ex maiores hic inventore!",
+          skills: [
+            { icon: "typescript.svg" },
+            { icon: "vuejs.svg" },
+            { icon: "nuxt.svg", maxWidth: "23px" },
+          ],
         },
       ],
     ],

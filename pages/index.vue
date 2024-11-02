@@ -10,7 +10,7 @@
         </v-col>
       </v-row>
     </section>
-    <section id="projects" class="full-section">
+    <section id="projects" class="full-section primary-90">
       <Projects />
     </section>
     <section id="about-me" class="full-section">

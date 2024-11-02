@@ -2,7 +2,7 @@
   <v-card
     hover
     min-height="250"
-    class="d-flex align-center primary-90 px-8 mb-8 rounded-xl"
+    class="d-flex align-center px-8 mb-8 mx-8 rounded-xl"
   >
     <div cols="5" class="custom-card-image">
       <v-slide-y-transition mode="out-in">
@@ -32,14 +32,14 @@
         <div
           v-if="groupProject.length > 1 && imageLoad"
           :key="project.image"
-          class="caixa caixa-1 secondary rounded-xl elevation-4"
+          class="box box-1 secondary rounded-xl elevation-4"
         ></div>
       </transition>
       <transition name="fade-box" appear>
         <div
           v-if="groupProject.length > 2 && imageLoad"
           :key="project.image"
-          class="caixa caixa-2 secondary rounded-xl elevation-4"
+          class="box box-2 secondary rounded-xl elevation-4"
         ></div>
       </transition>
     </div>
@@ -49,8 +49,19 @@
     >
       <v-slide-x-reverse-transition mode="out-in">
         <div :key="positionProject">
-          <v-card-subtitle class="pt-0 pb-1">{{ project.age }}</v-card-subtitle>
-          <v-card-title class="pt-0">{{ project.title }}</v-card-title>
+          <v-card-title class="pt-0 d-flex justify-space-between">
+            <div class="text-h5">{{ project.title }}</div>
+            <div class="d-flex align-center justify-center">
+              <Skill
+                v-for="(skill, i) in project.skills"
+                :key="i"
+                :name="skill.name"
+                :icon="skill.icon"
+                :max-width="skill.maxWidth ?? '18px'"
+                size="35px"
+              />
+            </div>
+          </v-card-title>
           <v-card-text>{{ project.description }}</v-card-text>
         </div>
       </v-slide-x-reverse-transition>
@@ -72,7 +83,10 @@
 </template>
 
 <script>
+import Skill from "@/components/about-me/Skill.vue";
+
 export default {
+  components: { Skill },
   props: {
     groupProject: {
       type: Array,
@@ -149,18 +163,18 @@ export default {
 .v-image {
   z-index: 3;
 }
-.caixa {
+.box {
   height: 170px;
   width: 302px;
   position: absolute;
 }
-.caixa-1 {
-  bottom: 38px;
+.box-1 {
+  bottom: 35px;
   left: 32px;
   z-index: 2;
 }
-.caixa-2 {
-  bottom: 31px;
+.box-2 {
+  bottom: 28px;
   left: 32px;
   z-index: 1;
 }
