@@ -2,21 +2,11 @@
   <div>
     <section id="home" class="full-section">
       <v-row no-gutters class="h-100" justify="center" align="center">
-        <v-col
-          class="d-flex"
-          :class="
-            $vuetify.breakpoint.smAndDown ? 'justify-center' : 'justify-end'
-          "
-          cols="12"
-          md="6"
-        >
+        <v-col cols="12" md="6">
           <Presentation />
         </v-col>
         <v-col class="d-flex justify-center" cols="12" md="6">
-          <v-img
-            :src="require(`@/assets/images/profile_background.svg`)"
-            alt="Desenvolvedor Web"
-          />
+          <Profile />
         </v-col>
       </v-row>
     </section>
@@ -53,11 +43,12 @@
 <script>
 import Presentation from "@/components/home/Presentation.vue";
 import Experience from "@/components/about-me/Experience.vue";
+import Profile from "@/components/home/Profile.vue";
 import Projects from "@/components/projects/index.vue";
 
 export default {
   name: "IndexPage",
-  components: { Presentation, Experience, Projects },
+  components: { Presentation, Profile, Experience, Projects },
   mounted() {
     this.$nuxt.$emit("active-logo", true);
   },

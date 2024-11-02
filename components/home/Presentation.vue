@@ -1,43 +1,36 @@
 <template>
-  <v-card elevation="0">
-    <v-card-title class="text-h3 primary-text--text">
-      {{ $t('components.home.presentation.title') }}
-      <br />
-      Mateus Gomes
-    </v-card-title>
-    <v-card-subtitle class="text-h6 text-subtitle">
-      {{ $t('components.home.presentation.subtitle') }}
-    </v-card-subtitle>
-    <v-card-actions class="px-4">
-      <v-btn
-        depressed
-        color="accent"
-        class="black--text"
-        :small="$vuetify.breakpoint.mobile"
-        :to="localePath('about-me')"
-      >
-        <v-icon left class="black--text">
-          mdi-account
-        </v-icon>
-        {{ $t('components.home.presentation.btn_about_me') }}
-      </v-btn>
-      <v-btn
-        text
-        outlined
-        :small="$vuetify.breakpoint.mobile"
-        :to="localePath('projects')"
-      >
-        <v-icon left>
-          mdi-view-grid-plus
-        </v-icon>
-        {{ $t('components.home.presentation.btn_projects') }}
-      </v-btn>
-    </v-card-actions>
+  <v-card elevation="0" max-width="417">
+    <v-row no-gutters>
+      <v-col cols="12">
+        <v-card-title class="text-h2 pl-0 primary-text--text font-weight-bold">
+          {{ $t("components.home.presentation.title") }}
+          <br />
+          Mateus Gomes
+        </v-card-title>
+      </v-col>
+      <v-col cols="12" class="d-flex flex-row-reverse">
+        <v-card-subtitle
+          class="text-subtitle-1 pl-0 text-right"
+          v-html="
+            $t('components.home.presentation.subtitle', {
+              years: new Date().getFullYear() - 2020,
+            })
+          "
+        >
+        </v-card-subtitle>
+      </v-col>
+    </v-row>
   </v-card>
 </template>
 
 <script>
 export default {
-  name: 'Presentation',
-}
+  name: "Presentation",
+};
 </script>
+
+<style scoped>
+.v-card__subtitle {
+  max-width: 270px;
+}
+</style>

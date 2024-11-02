@@ -4,11 +4,17 @@
       class="d-flex justify-space-between align-center pa-0"
       style="max-width: 940px"
     >
-      <nuxt-link class="d-flex align-center" to="#home">
+      <v-btn
+        id="go-home"
+        text
+        class="pa-0"
+        elevation="0"
+        @click.stop="goToHome()"
+      >
         <Logo />
-      </nuxt-link>
+      </v-btn>
       <v-btn-toggle v-model="toggle_page" group>
-        <v-btn to="#projects">
+        <v-btn value="projects" @click="goTo('#projects')">
           <v-icon :left="!$vuetify.breakpoint.mobile"
             >mdi-view-grid-plus</v-icon
           >
@@ -17,14 +23,14 @@
           </div>
         </v-btn>
 
-        <v-btn to="#about-me">
+        <v-btn value="about-me" @click="goTo('#about-me')">
           <v-icon :left="!$vuetify.breakpoint.mobile">mdi-account</v-icon>
           <div v-if="!$vuetify.breakpoint.mobile">
             {{ $t("components.default.navbar.about_me") }}
           </div>
         </v-btn>
 
-        <v-btn to="#contact">
+        <v-btn value="contact" @click="goTo('#contact')">
           <v-icon :left="!$vuetify.breakpoint.mobile">mdi-email</v-icon>
           <div v-if="!$vuetify.breakpoint.mobile">
             {{ $t("components.default.navbar.contact") }}
@@ -59,6 +65,7 @@ import { mapState, mapMutations } from "vuex";
 import SwitchTheme from "@/components/utils/SwitchTheme.vue";
 import ButtonTranslation from "@/components/utils/ButtonTranslation.vue";
 import Logo from "@/components/default/Logo.vue";
+import goTo from "vuetify/lib/services/goto";
 
 export default {
   name: "Navbar",
@@ -68,20 +75,73 @@ export default {
       title: "Mateus",
       subtitle: "Gomes",
       toggle_page: undefined,
+      duration: 500,
+      disbledUpdateActiveSection: false,
     };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.updateActiveSection);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.updateActiveSection);
   },
   computed: {
     ...mapState("navigation_drawer", {
       drawer: (state) => state.drawer,
     }),
+    options() {
+      return {
+        duration: this.duration,
+      };
+    },
   },
   methods: {
     ...mapMutations("navigation_drawer", ["setDrawer"]),
+
+    goToHome() {
+      this.goTo("#home");
+      this.toggle_page = undefined;
+      this.$nuxt.$emit("active-logo", true);
+    },
+    goTo(section) {
+      this.disbledUpdateActiveSection = true;
+      this.$vuetify.goTo(section, this.options);
+      setTimeout(() => {
+        this.disbledUpdateActiveSection = false;
+      }, this.duration);
+    },
+    updateActiveSection() {
+      if (this.disbledUpdateActiveSection) return;
+
+      const sections = document.querySelectorAll(".full-section");
+      const scrollPosition = window.scrollY + 100;
+
+      sections.forEach((section) => {
+        if (
+          scrollPosition >= section.offsetTop &&
+          scrollPosition < section.offsetTop + section.offsetHeight
+        ) {
+          if (section.id === "home") {
+            this.toggle_page = undefined;
+            this.$nuxt.$emit("active-logo", true);
+            return;
+          } else {
+            this.toggle_page = section.id;
+            this.$nuxt.$emit("active-logo", false);
+          }
+        }
+      });
+    },
   },
 };
 </script>
 
 <style scoped>
+#go-home {
+  height: 48px;
+  min-width: 48px;
+}
+
 .custom-select {
   max-width: 66px;
 }
