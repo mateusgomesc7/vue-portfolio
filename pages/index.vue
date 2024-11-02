@@ -38,7 +38,7 @@
         </v-row>
         <v-row>
           <v-col>
-            <v-card width="100%" height="300px"> </v-card>
+            <Skills />
           </v-col>
         </v-row>
       </div>
@@ -52,11 +52,12 @@ import Presentation from "@/components/home/Presentation.vue";
 import Profile from "@/components/home/Profile.vue";
 import Experience from "@/components/about-me/Experience.vue";
 import About from "@/components/about-me/About.vue";
+import Skills from "@/components/about-me/Skills.vue";
 import Projects from "@/components/projects/index.vue";
 
 export default {
   name: "IndexPage",
-  components: { Presentation, Profile, About, Experience, Projects },
+  components: { Presentation, Profile, About, Experience, Skills, Projects },
   mounted() {
     this.$nuxt.$emit("active-logo", true);
   },
