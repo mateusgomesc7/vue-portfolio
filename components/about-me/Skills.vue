@@ -7,13 +7,13 @@
   >
     <v-row no-gutters>
       <v-col>
-        <v-card-title class="text-h4">Skills</v-card-title>
+        <v-card-title class="text-h4 font-weight-bold">Skills</v-card-title>
       </v-col>
     </v-row>
     <v-row no-gutters>
       <v-col cols="6" class="d-flex flex-wrap justify-center">
         <Skill
-          v-for="(skill, i) in FrontSkills"
+          v-for="(skill, i) in frontSkills"
           :key="i"
           :name="skill.name"
           :icon="skill.icon"
@@ -22,7 +22,7 @@
       </v-col>
       <v-col cols="6" class="d-flex flex-wrap justify-center">
         <Skill
-          v-for="(skill, i) in BackSkills"
+          v-for="(skill, i) in backSkills"
           :key="i"
           :name="skill.name"
           :icon="skill.icon"
@@ -41,7 +41,7 @@ export default {
   components: { Skill },
   data: () => {
     return {
-      FrontSkills: [
+      frontSkills: [
         { name: "JavaScript", icon: "javascript.svg" },
         { name: "TypeScript", icon: "typescript.svg" },
         { name: "Vue.js", icon: "vuejs.svg" },
@@ -49,6 +49,7 @@ export default {
         { name: "Jest", icon: "jest.svg" },
         { name: "Vitest", icon: "vitest.svg", maxWidth: "45px" },
         { name: "Vuetify", icon: "vuetify.svg" },
+        { name: "Three.js", icon: "threejs.svg" },
 
         // { name: "Git", icon: "git.svg" },
         // { name: "HTML5", icon: "html5.svg" },
@@ -57,7 +58,7 @@ export default {
         // { name: "Bootstrap", icon: "bootstrap.svg" },
         // { name: "Nginx", icon: "nginx.svg" },
       ],
-      BackSkills: [
+      backSkills: [
         { name: "Python", icon: "python.svg", maxWidth: "45px" },
         { name: "Flask", icon: "flask.svg" },
         { name: "PostgreSQL", icon: "postgresql.svg" },

@@ -43,7 +43,20 @@
         </v-row>
       </div>
     </section>
-    <section id="contact" class="full-section">Contato</section>
+    <section id="contact" class="full-section">
+      <div class="w-100">
+        <v-row no-gutters class="w-100">
+          <v-col cols="12">
+            <Clients />
+          </v-col>
+        </v-row>
+        <v-row no-gutters class="w-100">
+          <v-col cols="12">
+            <Contacts />
+          </v-col>
+        </v-row>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -54,10 +67,21 @@ import Experience from "@/components/about-me/Experience.vue";
 import About from "@/components/about-me/About.vue";
 import Skills from "@/components/about-me/Skills.vue";
 import Projects from "@/components/projects/index.vue";
+import Contacts from "@/components/contact/index.vue";
+import Clients from "@/components/contact/Clients.vue";
 
 export default {
   name: "IndexPage",
-  components: { Presentation, Profile, About, Experience, Skills, Projects },
+  components: {
+    Presentation,
+    Profile,
+    About,
+    Experience,
+    Skills,
+    Projects,
+    Contacts,
+    Clients,
+  },
   mounted() {
     this.$nuxt.$emit("active-logo", true);
   },
