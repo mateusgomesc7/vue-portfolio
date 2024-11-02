@@ -14,27 +14,34 @@
       <Projects />
     </section>
     <section id="about-me" class="full-section">
-      <v-row no-gutters class="h-100" justify="center" align="center">
-        <v-col
-          class="d-flex"
-          :class="
-            $vuetify.breakpoint.smAndDown ? 'justify-center' : 'justify-end'
-          "
-          cols="12"
-          md="5"
-        >
-          <Presentation />
-        </v-col>
-        <v-col
-          class="d-flex justify-center"
-          cols="12"
-          md="7"
-          style="height: 500px"
-          :class="{ 'mobile-height': $vuetify.breakpoint.mobile }"
-        >
-          <Experience />
-        </v-col>
-      </v-row>
+      <div>
+        <v-row no-gutters justify="center" align="center">
+          <v-col
+            class="d-flex"
+            :class="
+              $vuetify.breakpoint.smAndDown ? 'justify-center' : 'justify-end'
+            "
+            cols="12"
+            md="5"
+          >
+            <About />
+          </v-col>
+          <v-col
+            class="d-flex justify-center"
+            cols="12"
+            md="7"
+            style="height: 500px"
+            :class="{ 'mobile-height': $vuetify.breakpoint.mobile }"
+          >
+            <Experience />
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <v-card width="100%" height="300px"> </v-card>
+          </v-col>
+        </v-row>
+      </div>
     </section>
     <section id="contact" class="full-section">Contato</section>
   </div>
@@ -42,13 +49,14 @@
 
 <script>
 import Presentation from "@/components/home/Presentation.vue";
-import Experience from "@/components/about-me/Experience.vue";
 import Profile from "@/components/home/Profile.vue";
+import Experience from "@/components/about-me/Experience.vue";
+import About from "@/components/about-me/About.vue";
 import Projects from "@/components/projects/index.vue";
 
 export default {
   name: "IndexPage",
-  components: { Presentation, Profile, Experience, Projects },
+  components: { Presentation, Profile, About, Experience, Projects },
   mounted() {
     this.$nuxt.$emit("active-logo", true);
   },

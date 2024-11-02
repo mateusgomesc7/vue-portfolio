@@ -106,6 +106,7 @@ export default {
     goTo(section) {
       this.disbledUpdateActiveSection = true;
       this.$vuetify.goTo(section, this.options);
+      history.replaceState(null, null, `${section}`);
       setTimeout(() => {
         this.disbledUpdateActiveSection = false;
       }, this.duration);
@@ -124,11 +125,11 @@ export default {
           if (section.id === "home") {
             this.toggle_page = undefined;
             this.$nuxt.$emit("active-logo", true);
-            return;
           } else {
             this.toggle_page = section.id;
             this.$nuxt.$emit("active-logo", false);
           }
+          history.replaceState(null, null, `#${section.id}`);
         }
       });
     },
