@@ -2,7 +2,7 @@
   <v-card
     hover
     min-height="250"
-    class="d-flex align-center px-8 mb-8 mx-8 rounded-xl"
+    class="d-flex align-center px-8 mb-8 rounded-xl"
   >
     <div cols="5" class="custom-card-image">
       <v-slide-y-transition mode="out-in">

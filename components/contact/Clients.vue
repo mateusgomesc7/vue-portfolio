@@ -3,14 +3,14 @@
     width="100%"
     height="300px"
     elevation="0"
-    class="d-flex flex-column align-center"
+    class="d-flex flex-column align-center primary-90"
   >
     <v-row no-gutters>
       <v-col class="d-flex justify-center align-end">
         <div class="text-h4 font-weight-bold">Clients</div>
       </v-col>
     </v-row>
-    <v-row class="w-100 font-weight-bold mt-0 mb-6">
+    <v-row class="w-100 font-weight-bold mt-0">
       <v-col cols="12" class="d-flex flex-wrap justify-space-around">
         <div
           v-for="(client, i) in clients"
@@ -48,9 +48,6 @@ export default {
 </script>
 
 <style scoped>
-.v-card {
-  background-color: #363636 !important;
-}
 .v-card__title {
   max-height: 30px;
 }

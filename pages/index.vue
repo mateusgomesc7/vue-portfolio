@@ -1,20 +1,24 @@
 <template>
   <div>
     <section id="home" class="full-section">
-      <v-row no-gutters class="h-100" justify="center" align="center">
-        <v-col cols="12" md="6">
-          <Presentation />
-        </v-col>
-        <v-col class="d-flex justify-center" cols="12" md="6">
-          <Profile />
-        </v-col>
-      </v-row>
+      <v-container class="px-0">
+        <v-row no-gutters class="h-100" justify="center" align="center">
+          <v-col cols="12" md="6">
+            <Presentation />
+          </v-col>
+          <v-col class="d-flex justify-center" cols="12" md="6">
+            <Profile />
+          </v-col>
+        </v-row>
+      </v-container>
     </section>
     <section id="projects" class="full-section primary-90">
-      <Projects />
+      <v-container class="px-0">
+        <Projects />
+      </v-container>
     </section>
     <section id="about-me" class="full-section">
-      <div>
+      <v-container class="px-0">
         <v-row no-gutters justify="center" align="center">
           <v-col
             class="d-flex"
@@ -41,21 +45,12 @@
             <Skills />
           </v-col>
         </v-row>
-      </div>
+      </v-container>
     </section>
-    <section id="contact" class="full-section">
-      <div class="w-100">
-        <v-row no-gutters class="w-100">
-          <v-col cols="12">
-            <Clients />
-          </v-col>
-        </v-row>
-        <v-row no-gutters class="w-100">
-          <v-col cols="12">
-            <Contacts />
-          </v-col>
-        </v-row>
-      </div>
+    <section id="contact" class="full-section primary-90">
+      <v-container class="px-0">
+        <Contacts />
+      </v-container>
     </section>
   </div>
 </template>
@@ -68,7 +63,6 @@ import About from "@/components/about-me/About.vue";
 import Skills from "@/components/about-me/Skills.vue";
 import Projects from "@/components/projects/index.vue";
 import Contacts from "@/components/contact/index.vue";
-import Clients from "@/components/contact/Clients.vue";
 
 export default {
   name: "IndexPage",
@@ -80,7 +74,6 @@ export default {
     Skills,
     Projects,
     Contacts,
-    Clients,
   },
   mounted() {
     this.$nuxt.$emit("active-logo", true);
@@ -92,6 +85,10 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  max-width: 940px;
+}
+
 .mobile-height {
   height: 300px !important;
 }
@@ -101,6 +98,5 @@ export default {
   display: flex; /* Centraliza conteúdo */
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #ccc; /* Opcional: borda entre seções */
 }
 </style>

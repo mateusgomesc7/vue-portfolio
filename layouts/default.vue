@@ -4,9 +4,7 @@
     <Navbar />
 
     <v-main>
-      <v-container :fill-height="!$vuetify.breakpoint.mobile" class="px-0">
-        <Nuxt />
-      </v-container>
+      <Nuxt />
       <ButtonScrollToTop />
     </v-main>
 

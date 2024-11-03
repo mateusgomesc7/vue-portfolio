@@ -1,5 +1,6 @@
 <template>
   <div class="d-flex flex-column">
+    <div class="text-h3 font-weight-bold mb-8">Projects</div>
     <GroupProject
       v-for="(groupProject, index) in groupProjects"
       :key="index"
