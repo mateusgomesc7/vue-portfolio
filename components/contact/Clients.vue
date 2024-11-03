@@ -1,11 +1,10 @@
 <template>
   <v-card
     width="100%"
-    height="300px"
     elevation="0"
     class="d-flex flex-column align-center primary-90"
   >
-    <v-row no-gutters>
+    <v-row no-gutters class="mb-8">
       <v-col class="d-flex justify-center align-end">
         <div class="text-h4 font-weight-bold">Clients</div>
       </v-col>

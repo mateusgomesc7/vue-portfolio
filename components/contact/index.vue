@@ -1,13 +1,13 @@
 <template>
   <div>
-    <v-row no-gutters class="w-100 vh-40">
+    <v-row no-gutters class="w-100 my-16">
       <v-col cols="12">
         <Clients />
       </v-col>
     </v-row>
-    <v-row no-gutters class="w-100 vh-60 accent rounded-xl rounded-b-0">
+    <v-row no-gutters class="w-100 pa-16 accent rounded-xl rounded-b-0">
       <v-col cols="12" class="d-flex flex-column align-center justify-center">
-        <v-row>
+        <v-row class="mb-8">
           <v-col class="d-flex align-center justify-center">
             <div class="text-h3 font-weight-bold">Contacts</div>
           </v-col>
@@ -34,10 +34,7 @@ export default {
 </script>
 
 <style scoped>
-.vh-40 {
-  height: 40vh;
-}
-.vh-60 {
-  height: 60vh;
+.spacing {
+  padding: 140px 0 !important;
 }
 </style>
