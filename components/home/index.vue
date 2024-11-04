@@ -1,5 +1,11 @@
 <template>
-  <v-row no-gutters class="h-100 spacing" justify="center" align="center">
+  <v-row
+    no-gutters
+    class="h-100"
+    justify="center"
+    align="center"
+    :class="$vuetify.breakpoint.smAndDown ? 'small-spacing' : 'large-spacing'"
+  >
     <v-col cols="12" md="6">
       <Presentation />
     </v-col>
@@ -23,7 +29,10 @@ export default {
 </script>
 
 <style scoped>
-.spacing {
+.large-spacing {
   margin: 140px 0;
+}
+.small-spacing {
+  margin: 60px 0;
 }
 </style>
