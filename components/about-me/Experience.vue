@@ -79,6 +79,7 @@ export default {
       overlay: true,
       isLoaded: false,
       opacityOverlay: 0.3,
+      canvasElement: null,
     };
   },
   watch: {
@@ -99,8 +100,19 @@ export default {
       },
       deep: true,
     },
+    "currentIntersect.object.visible": {
+      handler: function (val) {
+        if (val) {
+          this.canvasElement.classList.add("pointer");
+        } else {
+          this.canvasElement.classList.remove("pointer");
+        }
+      },
+      deep: true,
+    },
   },
   mounted() {
+    this.canvasElement = this.$el.querySelector("canvas");
     this.createWorld();
     this.$refs.card.addEventListener("click", this.mouseClick);
     this.$refs.card.addEventListener("mousemove", this.mouseMove);
@@ -338,10 +350,13 @@ canvas {
   z-index: 5;
 }
 
+.pointer {
+  cursor: pointer !important;
+}
 .draggable {
-  cursor: grab !important;
+  cursor: grab;
 }
 .draggable:active {
-  cursor: grabbing !important;
+  cursor: grabbing;
 }
 </style>
