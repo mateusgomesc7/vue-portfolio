@@ -1,11 +1,28 @@
 <template>
-  <div class="d-flex flex-column my-16">
-    <div class="text-h3 font-weight-bold mb-8">Projects</div>
-    <GroupProject
-      v-for="(groupProject, index) in groupProjects"
-      :key="index"
-      :group-project="groupProject"
-    />
+  <div
+    class="d-flex flex-column my-16"
+    :class="$vuetify.breakpoint.smAndDown ? 'px-4' : ''"
+  >
+    <div
+      class="text-h3 font-weight-bold mb-8"
+      :class="$vuetify.breakpoint.smAndDown ? 'align-self-center' : ''"
+    >
+      Projects
+    </div>
+    <div
+      class="d-flex flex-wrap"
+      :class="
+        $vuetify.breakpoint.smAndDown
+          ? 'justify-space-around'
+          : 'justify-space-between'
+      "
+    >
+      <GroupProject
+        v-for="(groupProject, index) in groupProjects"
+        :key="index"
+        :group-project="groupProject"
+      />
+    </div>
   </div>
 </template>
 

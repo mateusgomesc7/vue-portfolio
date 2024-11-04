@@ -6,10 +6,14 @@
     align="center"
     :class="$vuetify.breakpoint.smAndDown ? 'small-spacing' : 'large-spacing'"
   >
-    <v-col cols="12" md="6">
+    <v-col
+      cols="12"
+      md="6"
+      :class="$vuetify.breakpoint.smAndDown ? 'd-flex justify-center' : ''"
+    >
       <Presentation />
     </v-col>
-    <v-col class="d-flex justify-center" cols="12" md="6">
+    <v-col cols="12" md="6" class="d-flex justify-center">
       <Profile />
     </v-col>
   </v-row>
