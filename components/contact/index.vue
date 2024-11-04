@@ -5,7 +5,10 @@
         <Clients />
       </v-col>
     </v-row>
-    <v-row no-gutters class="w-100 pa-16 accent rounded-xl rounded-b-0">
+    <v-row
+      no-gutters
+      class="w-100 pa-16 accent rounded-xl rounded-b-0 elevation-4"
+    >
       <v-col cols="12" class="d-flex flex-column align-center justify-center">
         <v-row class="mb-8">
           <v-col class="d-flex align-center justify-center">

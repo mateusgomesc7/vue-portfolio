@@ -5,7 +5,7 @@
         <Home />
       </v-container>
     </section>
-    <section id="projects" class="full-section primary-90">
+    <section id="projects" class="full-section inner-shadow primary-90">
       <v-container class="pa-0">
         <Projects />
       </v-container>
@@ -15,7 +15,7 @@
         <AboutMe />
       </v-container>
     </section>
-    <section id="contact" class="full-section primary-90">
+    <section id="contact" class="full-section inner-shadow primary-90">
       <v-container class="pa-0">
         <Contacts />
       </v-container>
@@ -56,8 +56,13 @@ export default {
 }
 
 .full-section {
-  display: flex; /* Centraliza conteúdo */
+  display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.inner-shadow {
+  box-shadow: inset 0 8px 6px -6px rgba(0, 0, 0, 0.3),
+    inset 0 -8px 6px -6px rgba(0, 0, 0, 0.3);
 }
 </style>
