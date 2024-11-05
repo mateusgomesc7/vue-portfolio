@@ -5,6 +5,7 @@
       interval="7000"
       :hide-delimiters="groupProject.length <= 1"
       :show-arrows="groupProject.length > 1 && !$vuetify.breakpoint.smAndDown"
+      :hide-delimiter-background="!$vuetify.theme.dark"
     >
       <v-carousel-item v-for="(project, i) in groupProject" :key="i">
         <v-img

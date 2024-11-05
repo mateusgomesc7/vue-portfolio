@@ -9,7 +9,10 @@
       no-gutters
       class="w-100 pa-16 accent rounded-xl rounded-b-0 elevation-4"
     >
-      <v-col cols="12" class="d-flex flex-column align-center justify-center">
+      <v-col
+        cols="12"
+        class="d-flex flex-column align-center justify-center highlight-text--text"
+      >
         <v-row :class="$vuetify.breakpoint.mobile ? 'mb-4' : 'mb-8'">
           <v-col class="d-flex align-center justify-center">
             <div
@@ -26,7 +29,7 @@
             sm="6"
             class="d-flex flex-column justify-center align-center"
           >
-            <v-icon class="mb-2"> mdi-email </v-icon>
+            <v-icon class="mb-2 highlight-text--text"> mdi-email </v-icon>
             <EmailField />
           </v-col>
           <v-col
@@ -34,7 +37,7 @@
             sm="6"
             class="d-flex flex-column justify-center align-center"
           >
-            <v-icon class="mb-2"> mdi-map-marker </v-icon>
+            <v-icon class="mb-2 highlight-text--text"> mdi-map-marker </v-icon>
             <div>Paraíba, Brazil</div>
           </v-col>
         </v-row>

@@ -11,8 +11,15 @@
       :open-on-hover="false"
     >
       <template v-slot:activator="{ on, attrs }">
-        <v-btn text outlined small v-bind="attrs" v-on="on" @click="copyEmail">
-          <v-icon small> mdi-content-copy </v-icon>
+        <v-btn
+          outlined
+          small
+          color="highlight-text"
+          v-bind="attrs"
+          v-on="on"
+          @click="copyEmail"
+        >
+          <v-icon small class="highlight-text--text"> mdi-content-copy </v-icon>
         </v-btn>
       </template>
       <span>{{ tooltipMessage }}</span>
