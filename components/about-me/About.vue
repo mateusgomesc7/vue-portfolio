@@ -3,7 +3,8 @@
     <v-row no-gutters>
       <v-col cols="12">
         <v-card-title
-          class="text-h3 pl-0 pt-0 primary-text--text font-weight-bold"
+          class="pl-0 pt-0 primary-text--text font-weight-bold"
+          :class="$vuetify.breakpoint.mobile ? 'text-h4' : 'text-h3'"
         >
           About me
         </v-card-title>

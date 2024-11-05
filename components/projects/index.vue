@@ -4,8 +4,10 @@
     :class="$vuetify.breakpoint.smAndDown ? 'px-4' : ''"
   >
     <div
-      class="text-h3 font-weight-bold mb-8"
-      :class="$vuetify.breakpoint.smAndDown ? 'align-self-center' : ''"
+      class="font-weight-bold mb-8"
+      :class="
+        $vuetify.breakpoint.smAndDown ? 'align-self-center text-h4' : 'text-h3'
+      "
     >
       Projects
     </div>

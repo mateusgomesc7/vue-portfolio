@@ -5,14 +5,15 @@
         <v-card-title class="text-h4 font-weight-bold">Skills</v-card-title>
       </v-col>
     </v-row>
-    <v-row no-gutters>
+    <v-row no-gutters :class="$vuetify.breakpoint.mobile ? 'mx-2' : ''">
       <v-col cols="6" class="d-flex flex-wrap justify-center">
         <Skill
           v-for="(skill, i) in frontSkills"
           :key="i"
           :name="skill.name"
           :icon="skill.icon"
-          :max-width="skill.maxWidth"
+          :max-width="$vuetify.breakpoint.mobile ? '25px' : skill.maxWidth"
+          :size="$vuetify.breakpoint.mobile ? '55px' : '70px'"
         />
       </v-col>
       <v-col cols="6" class="d-flex flex-wrap justify-center">
@@ -21,7 +22,8 @@
           :key="i"
           :name="skill.name"
           :icon="skill.icon"
-          :max-width="skill.maxWidth"
+          :max-width="$vuetify.breakpoint.mobile ? '25px' : skill.maxWidth"
+          :size="$vuetify.breakpoint.mobile ? '55px' : '70px'"
         />
       </v-col>
     </v-row>

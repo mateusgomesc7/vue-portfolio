@@ -4,7 +4,7 @@
       <v-col
         class="d-flex"
         :class="
-          $vuetify.breakpoint.smAndDown ? 'justify-center' : 'justify-end'
+          $vuetify.breakpoint.smAndDown ? 'justify-center px-8' : 'justify-end'
         "
         cols="12"
         md="5"
@@ -15,8 +15,7 @@
         class="d-flex justify-center"
         cols="12"
         md="7"
-        style="height: 500px"
-        :class="{ 'mobile-height': $vuetify.breakpoint.mobile }"
+        :class="$vuetify.breakpoint.mobile ? 'small-height' : 'big-height'"
       >
         <Experience />
       </v-col>
@@ -39,3 +38,12 @@ export default {
   components: { Experience, About, Skills },
 };
 </script>
+
+<style>
+.big-height {
+  height: 500px;
+}
+.small-height {
+  height: 300px;
+}
+</style>

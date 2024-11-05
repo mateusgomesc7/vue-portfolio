@@ -7,7 +7,9 @@
     >
       <v-img :src="requireImage(icon)" :max-width="maxWidth"></v-img>
     </div>
-    <div class="text-body-2">{{ name }}</div>
+    <div :class="$vuetify.breakpoint.mobile ? 'text-caption' : 'text-body-2'">
+      {{ name }}
+    </div>
   </div>
 </template>
 

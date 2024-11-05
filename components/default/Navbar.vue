@@ -7,8 +7,8 @@
       <v-btn
         id="go-home"
         text
-        class="pa-0"
         elevation="0"
+        class="pa-0 mr-4"
         @click.stop="goToHome()"
       >
         <Logo />

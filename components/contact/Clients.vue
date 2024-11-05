@@ -4,7 +4,7 @@
     elevation="0"
     class="d-flex flex-column align-center primary-90"
   >
-    <v-row no-gutters class="mb-8">
+    <v-row no-gutters class="mb-2">
       <v-col class="d-flex justify-center align-end">
         <div class="text-h4 font-weight-bold">Clients</div>
       </v-col>
@@ -14,7 +14,7 @@
         <div
           v-for="(client, i) in clients"
           :key="i"
-          class="content-client px-6"
+          class="content-client px-6 py-4"
         >
           <v-img
             :src="requireImage(client.icon)"
@@ -55,6 +55,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  float: left;
   filter: grayscale(100%);
   transition: transform 0.2s ease;
 }

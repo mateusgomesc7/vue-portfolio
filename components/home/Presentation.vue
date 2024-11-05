@@ -4,9 +4,7 @@
       <v-col cols="12">
         <v-card-title
           class="primary-text--text font-weight-bold"
-          :class="
-            $vuetify.breakpoint.smAndDown ? 'text-h3 pl-4' : 'text-h2 pl-0'
-          "
+          :class="$vuetify.breakpoint.mobile ? 'text-h4 pl-8' : 'text-h2 pl-0'"
         >
           {{ $t("components.home.presentation.title") }}
           <br />
@@ -21,7 +19,7 @@
               years: new Date().getFullYear() - 2020,
             })
           "
-          :class="$vuetify.breakpoint.smAndDown ? 'pr-4 mb-6' : 'pr-0'"
+          :class="$vuetify.breakpoint.mobile ? 'pr-8 mb-6' : 'pr-0'"
         >
         </v-card-subtitle>
       </v-col>
