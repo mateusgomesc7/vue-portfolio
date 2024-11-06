@@ -34,7 +34,7 @@ export default {
 
 <style scoped>
 .large-spacing {
-  margin: 140px 0;
+  margin: 180px 0;
 }
 .small-spacing {
   margin: 60px 0;
