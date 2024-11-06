@@ -31,6 +31,9 @@ export default {
         fourth_paragraph:
           "I am always curious to learn more, especially about new technologies that promote process automation.",
       },
+      skills: {
+        title: "Skills",
+      },
       timeline: {
         years: {
           text_2016_2021:
@@ -43,6 +46,11 @@ export default {
       },
     },
     contact: {
+      title: "Contacts",
+      location: "Paraíba, Brazil",
+      clients: {
+        title: "Clients",
+      },
       email_field: {
         tooltip: {
           copy: "Copy",
@@ -61,6 +69,7 @@ export default {
       },
     },
     projects: {
+      title: "Projects",
       card_project: {
         btn_open: "Open",
         btn_open_project: "Open project",

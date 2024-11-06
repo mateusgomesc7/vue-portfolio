@@ -19,7 +19,7 @@
               class="font-weight-bold"
               :class="$vuetify.breakpoint.smAndDown ? 'text-h4' : 'text-h3'"
             >
-              Contacts
+              {{ $t("components.contact.title") }}
             </div>
           </v-col>
         </v-row>
@@ -38,7 +38,7 @@
             class="d-flex flex-column justify-center align-center"
           >
             <v-icon class="mb-2 highlight-text--text"> mdi-map-marker </v-icon>
-            <div>Paraíba, Brazil</div>
+            <div>{{ $t("components.contact.location") }}</div>
           </v-col>
         </v-row>
       </v-col>

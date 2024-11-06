@@ -6,7 +6,9 @@
   >
     <v-row no-gutters class="mb-2">
       <v-col class="d-flex justify-center align-end">
-        <div class="text-h4 font-weight-bold">Clients</div>
+        <div class="text-h4 font-weight-bold">
+          {{ $t("components.contact.clients.title") }}
+        </div>
       </v-col>
     </v-row>
     <v-row class="w-100 font-weight-bold mt-0">

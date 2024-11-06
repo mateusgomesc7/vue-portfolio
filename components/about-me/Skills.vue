@@ -2,7 +2,9 @@
   <v-card class="d-flex flex-column align-center" width="100%" elevation="0">
     <v-row no-gutters class="mb-8">
       <v-col>
-        <v-card-title class="text-h4 font-weight-bold">Skills</v-card-title>
+        <v-card-title class="text-h4 font-weight-bold">
+          {{ $t("components.aboute_me.skills.title") }}
+        </v-card-title>
       </v-col>
     </v-row>
     <v-row no-gutters :class="$vuetify.breakpoint.mobile ? 'mx-2' : ''">

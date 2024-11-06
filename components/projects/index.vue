@@ -9,7 +9,7 @@
         $vuetify.breakpoint.smAndDown ? 'align-self-center text-h4' : 'text-h3'
       "
     >
-      Projects
+      {{ $t("components.projects.title") }}
     </div>
     <div class="d-flex flex-wrap justify-space-around">
       <GroupProject
