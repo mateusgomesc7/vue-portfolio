@@ -11,14 +11,7 @@
     >
       Projects
     </div>
-    <div
-      class="d-flex flex-wrap"
-      :class="
-        $vuetify.breakpoint.smAndDown
-          ? 'justify-space-around'
-          : 'justify-space-between'
-      "
-    >
+    <div class="d-flex flex-wrap justify-space-around">
       <GroupProject
         v-for="(groupProject, index) in groupProjects"
         :key="index"
@@ -38,10 +31,9 @@ export default {
     groupProjects: [
       [
         {
-          title: "Computer Vision OCR",
+          title: "data.projects.project_2.title",
           image: "assert2.svg",
-          description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, voluptas eligendi! Eligendi similique sequi, sit sunt, mollitia, nam quia odio quibusdam magnam dolorum possimus ipsam deleniti ex maiores hic inventore!",
+          description: "data.projects.project_2.description",
           skills: [
             { icon: "python.svg" },
             { icon: "flask.svg" },
@@ -51,10 +43,9 @@ export default {
           ],
         },
         {
-          title: "Automation of Electrical Equipment Tests",
+          title: "data.projects.project_1.title",
           image: "assert1.svg",
-          description:
-            "Temporibus, voluptas eligendi! Eligendi similique sequi, sit sunt, mollitia, nam quia odio quibusdam magnam dolorum possimus ipsam deleniti ex maiores hic inventore!",
+          description: "data.projects.project_1.description",
           skills: [
             { icon: "typescript.svg" },
             { icon: "vuejs.svg" },
@@ -64,10 +55,9 @@ export default {
           ],
         },
         {
-          title: "IoT Automation",
+          title: "data.projects.project_3.title",
           image: "assert3.svg",
-          description:
-            "Odit, quos, voluptates, quas, quia quae quibusdam dolorum possimus ipsam deleniti ex maiores hic inventore!",
+          description: "data.projects.project_3.description",
           skills: [
             { icon: "javascript.svg" },
             { icon: "vuejs.svg" },
@@ -79,10 +69,9 @@ export default {
       ],
       [
         {
-          title: "Payment Management",
+          title: "data.projects.project_4.title",
           image: "foxconn1.svg",
-          description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, voluptas eligendi! Eligendi similique sequi, sit sunt, mollitia, nam quia odio quibusdam magnam dolorum possimus ipsam deleniti ex maiores hic inventore!",
+          description: "data.projects.project_4.description",
           skills: [
             { icon: "javascript.svg" },
             { icon: "vuejs.svg" },
@@ -92,29 +81,15 @@ export default {
           ],
         },
         {
-          title: "Access Control System",
+          title: "data.projects.project_5.title",
           image: "foxconn2.svg",
-          description:
-            "Temporibus, voluptas eligendi! Eligendi similique sequi, sit sunt, mollitia, nam quia odio quibusdam magnam dolorum possimus ipsam deleniti ex maiores hic inventore!",
+          description: "data.projects.project_5.description",
           skills: [
             { icon: "javascript.svg" },
             { icon: "vuejs.svg" },
             { icon: "nuxt.svg", maxWidth: "23px" },
             { icon: "jest.svg" },
             { icon: "vuetify.svg" },
-          ],
-        },
-      ],
-      [
-        {
-          title: "Lorem Ipsum",
-          image: "foxconn.png",
-          description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, voluptas eligendi! Eligendi similique sequi, sit sunt, mollitia, nam quia odio quibusdam magnam dolorum possimus ipsam deleniti ex maiores hic inventore!",
-          skills: [
-            { icon: "typescript.svg" },
-            { icon: "vuejs.svg" },
-            { icon: "nuxt.svg", maxWidth: "23px" },
           ],
         },
       ],

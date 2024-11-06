@@ -11,6 +11,15 @@ export default {
       },
     },
     aboute_me: {
+      about: {
+        title: "About me",
+        subtitle_1: "Experience",
+        text_1:
+          "I am a software developer with over 4 years of experience in web and desktop applications, involved in all stages of projects. I have expertise in Vue.js, JavaScript, TypeScript, and Python, as well as API development and PostgreSQL databases.",
+        subtitle_2: "Education",
+        text_2:
+          "Bachelor's in Electrical Engineering from IFPB and a Postgraduate degree in Software Engineering from PUC Minas.",
+      },
       card_about_me: {
         btn_resume: "Resume",
         first_paragraph:
@@ -79,31 +88,32 @@ export default {
   data: {
     projects: {
       project_1: {
-        title: "Reading and Testing Automation",
+        title: "Automation of Electrical Equipment Tests",
         description:
-          "Partnership between <strong>Assert</strong> and <strong>LANDIS+GYR</strong>. A system designed for the automation of reading and testing of electrical energy meters, with the ability to aggregate and display real-time results. Utilizing technologies such as <strong>Machine Learning</strong>, <strong>OCR</strong>, <strong>Python</strong>, <strong>PyQt</strong>, and <strong>PostgreSQL</strong>.",
+          "Development of a web and desktop application for planning, execution, data collection, and report generation in the quality testing process of electronic equipment.",
       },
       project_2: {
-        title: "Smart Meter Control",
+        title: "Computer Vision OCR",
         description:
-          "A partnership between the companies <strong>Assert</strong> and <strong>LANDIS+GYR</strong>. A web application developed with modern technologies, such as <strong>Vue.js</strong> (<strong>Nuxt.js</strong>) and <strong>Flask</strong>, to enhance the automated management of electrical meter tests.",
+          "Desktop application with computer vision automation to detect and read displays, using Machine Learning models for identification and OCR for text extraction.",
       },
       project_3: {
-        title: "Payment Flow Control",
+        title: "IoT Automation",
         description:
-          "A partnership between the companies <strong>Assert</strong> and <strong>Foxconn</strong>. An application developed using technologies like <strong>Vue.js</strong> (<strong>Nuxt.js</strong>) and <strong>Flask</strong> to simplify and manage complex payment flows across multiple stages. This project provided a sophisticated solution for monitoring and controlling payment processes, ensuring efficient management from start to finish.",
+          "Web application for log monitoring and remote execution of processes on electrical equipment, with integration to Azure DevOps Server.",
       },
       project_4: {
-        title: "Autonomous Vehicle",
+        title: "Payment Management",
         description:
-          "An autonomous vehicle built with a low computational power <strong>Raspberry Pi</strong> uses computer vision to make decisions, such as following the track and recognizing traffic lights. Developed as part of my Bachelor's Thesis. For this purpose, it employs <strong>Haar Cascade</strong> algorithms for identification and a <strong>Decision Tree</strong> algorithm.",
+          "Web-based ERP application focused on internal payment management, with integration and automation of financial processes.",
         external_link: {
           name: "Document",
         },
       },
       project_5: {
-        title: "Project 5",
-        description: "Description of project 5",
+        title: "Access Control System",
+        description:
+          "Web application with role-based access control (RBAC), allowing management of permissions and granular access for different user levels.",
       },
       project_6: {
         title: "Project 6",

@@ -26,9 +26,9 @@
         </v-img>
 
         <v-card-title class="d-flex justify-space-between">
-          <div class="text-h5">{{ project.title }}</div>
+          <div class="text-h5" v-html="$t(project.title)"></div>
         </v-card-title>
-        <v-card-text>{{ project.description }}</v-card-text>
+        <v-card-text class="pb-0">{{ $t(project.description) }}</v-card-text>
         <div class="d-flex align-center justify-center">
           <Skill
             v-for="(skill, i) in project.skills"

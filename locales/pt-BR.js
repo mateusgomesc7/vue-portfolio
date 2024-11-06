@@ -11,6 +11,15 @@ export default {
       },
     },
     aboute_me: {
+      about: {
+        title: "Sobre mim",
+        subtitle_1: "Experiência",
+        text_1:
+          "Sou desenvolvedor de software com mais de 4 anos de experiência em aplicações web e desktop, com atuação em todas as etapas de projetos. Tenho expertise em Vue.js, JavaScript, TypeScript e Python, desenvolvimento de APIs e bancos de dados PostgreSQL.",
+        subtitle_2: "Educação",
+        text_2:
+          "Bacharel em Engenharia Elétrica pelo IFPB e Pós-graduado em Engenharia de Software pela PUC Minas.",
+      },
       card_about_me: {
         btn_resume: "Currículo",
         first_paragraph:
@@ -80,31 +89,32 @@ export default {
   data: {
     projects: {
       project_1: {
-        title: "Automação de Leitura e Testes",
+        title: "Automação de Testes de Equipamentos Elétricos",
         description:
-          "Parceria entre as empresas <strong>Assert</strong> e <strong>LANDIS+GYR</strong>. Sistema desenvolvido para a automação de leitura e testes de medidores de energia elétrica,  com a capacidade de agregar e exibir os resultados em tempo real. Com a utilização de tecnologias como <strong>Machine Learning</strong>, <strong>OCR</strong>, <strong>Python</strong>, <strong>PyQt</strong> e <strong>PostgreSQL</strong>.",
+          "Desenvolvimento de aplicação web e desktop para o planejamento, execução, coleta de dados e geração de relatórios no processo de teste de qualidade de equipamentos eletrônicos.",
       },
       project_2: {
-        title: "Controle de Medidores Inteligentes",
+        title: "Visão Computacional <br> OCR",
         description:
-          "Parceria entre as empresas <strong>Assert</strong> e <strong>LANDIS+GYR</strong>. Aplicativo web desenvolvido tecnologias como <strong>Vue.js</strong> (<strong>Nuxt.js</strong>) e <strong>Flask</strong>, para aprimorar o gerenciamento automatizado de testes de medidores elétricos.",
+          "Aplicação desktop com automação de visão computacional para detectar e ler displays, utilizando modelos de Machine Learning para identificação e OCR para extração de texto.",
       },
       project_3: {
-        title: "Controle de Fluxo de Pagamento",
+        title: "Automação IoT",
         description:
-          "Parceria entre as empresas <strong>Assert</strong> e <strong>Foxconn</strong>. Aplicativo desenvolvido utilizando tecnologias como <strong>Vue.js</strong> (<strong>Nuxt.js</strong>) e <strong>Flask</strong>, para simplificar e gerenciar fluxos de pagamento complexos através de vários estágios. Este projeto ofereceu uma solução sofisticada para monitorar e controlar os processos de pagamento, garantindo uma gestão eficiente desde o início até a conclusão.",
+          "Aplicação web para monitoramento de logs e execução remota de processos em equipamentos elétricos, com integração ao Azure DevOps Server.",
       },
       project_4: {
-        title: "Veículo Autônomo",
+        title: "Gestão de Pagamentos",
         description:
-          "Um veículo autônomo construído com um <strong>Raspberry Pi</strong> de baixo poder computacional utilizando visão computacional para a tomada de decisões, como seguir a trajetória da pista e reconhecer semáforos. Desenvolvido como parte do meu TCC. Para essa finalidade, emprega os algoritmos <strong>Haar Cascade</strong> para identificação e um algoritmo de <strong>Árvore de Decisão</strong>.",
+          "Aplicação web ERP focada na gestão de pagamentos internos, com integração e automação de processos financeiros.",
         external_link: {
           name: "Documento",
         },
       },
       project_5: {
-        title: "Projeto 5",
-        description: "Descrição do projeto 5",
+        title: "Sistema de Controle de Acesso",
+        description:
+          "Aplicação web com controle de acesso baseado em papéis (RBAC), permitindo gerenciamento de permissões e acesso granular para diferentes níveis de usuários.",
       },
       project_6: {
         title: "Projeto 6",
