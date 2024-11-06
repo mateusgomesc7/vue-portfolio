@@ -1,10 +1,12 @@
 <template>
-  <div>
-    <v-row no-gutters justify="center" align="center" class="my-16">
+  <div :class="$vuetify.breakpoint.mobile ? 'small-spacing' : 'large-spacing'">
+    <v-row no-gutters justify="center" align="center">
       <v-col
-        class="d-flex"
+        class="d-flex align-self-start"
         :class="
-          $vuetify.breakpoint.smAndDown ? 'justify-center px-8' : 'justify-end'
+          $vuetify.breakpoint.smAndDown
+            ? 'justify-center px-8 pt-4'
+            : 'justify-end pt-8'
         "
         cols="12"
         md="5"
@@ -39,11 +41,18 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .big-height {
   height: 500px;
 }
 .small-height {
   height: 300px;
+}
+
+.large-spacing {
+  margin: 130px 0;
+}
+.small-spacing {
+  margin: 60px 0;
 }
 </style>

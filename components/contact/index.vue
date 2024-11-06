@@ -1,13 +1,18 @@
 <template>
-  <div>
-    <v-row no-gutters class="w-100 my-16">
+  <div :class="$vuetify.breakpoint.mobile ? 'small-margin' : 'large-margin'">
+    <v-row no-gutters class="w-100">
       <v-col cols="12">
         <Clients />
       </v-col>
     </v-row>
     <v-row
       no-gutters
-      class="w-100 pa-16 accent rounded-xl rounded-b-0 elevation-4"
+      class="w-100 px-16 accent rounded-xl rounded-b-0 elevation-4"
+      :class="
+        $vuetify.breakpoint.mobile
+          ? 'small-margin small-padding'
+          : 'large-margin large-padding'
+      "
     >
       <v-col
         cols="12"
@@ -57,7 +62,16 @@ export default {
 </script>
 
 <style scoped>
-.spacing {
-  padding: 140px 0 !important;
+.large-margin {
+  margin-top: 130px;
+}
+.small-margin {
+  margin-top: 60px;
+}
+.large-padding {
+  padding: 100px 0;
+}
+.small-padding {
+  padding: 60px 0;
 }
 </style>

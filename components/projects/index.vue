@@ -1,7 +1,7 @@
 <template>
   <div
-    class="d-flex flex-column my-16"
-    :class="$vuetify.breakpoint.smAndDown ? 'px-4' : ''"
+    class="d-flex flex-column"
+    :class="$vuetify.breakpoint.mobile ? 'px-4 small-spacing' : 'large-spacing'"
   >
     <div
       class="font-weight-bold mb-8"
@@ -97,3 +97,12 @@ export default {
   }),
 };
 </script>
+
+<style scoped>
+.large-spacing {
+  margin: 130px 0;
+}
+.small-spacing {
+  margin: 60px 0;
+}
+</style>
