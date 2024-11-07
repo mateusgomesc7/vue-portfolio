@@ -10,10 +10,24 @@
     "
   >
     <v-img
+      id="profile-background"
       :src="require(`@/assets/images/profile_background.svg`)"
-      alt="Desenvolvedor Web"
-      :height="$vuetify.breakpoint.smAndDown ? 438 : undefined"
-      :contain="$vuetify.breakpoint.smAndDown"
+      alt="Profile Backgroud"
+      :height="$vuetify.breakpoint.mobile ? 438 : undefined"
+      :contain="$vuetify.breakpoint.mobile"
+    />
+    <v-img
+      id="profile"
+      :src="require(`@/assets/images/profile.png`)"
+      alt="Profile"
+      :class="
+        $vuetify.breakpoint.smAndDown
+          ? $vuetify.breakpoint.mobile
+            ? 'small-height'
+            : 'medium-height'
+          : 'large-height'
+      "
+      :contain="$vuetify.breakpoint.mobile"
     />
     <v-btn
       id="linkedin-profile"
@@ -74,6 +88,31 @@ export default {
 
 .v-btn {
   position: absolute;
+}
+
+/* #profile-background {
+  position: absolute;
+  z-index: -1;
+} */
+
+#profile {
+  position: absolute;
+  z-index: 1;
+  bottom: -4px;
+  left: 47px;
+}
+#profile.small-height {
+  bottom: 38px;
+  left: 23px;
+}
+#profile.medium-height {
+  bottom: -3px;
+  left: 29px;
+}
+#profile.large-height {
+  height: 650px;
+  bottom: -4px;
+  left: 49px;
 }
 
 #linkedin-profile {
