@@ -19,7 +19,7 @@
               years: new Date().getFullYear() - 2020,
             })
           "
-          :class="$vuetify.breakpoint.mobile ? 'pr-8 mb-6' : 'pr-0'"
+          :class="$vuetify.breakpoint.mobile ? 'pr-8 mb-6' : 'pr-4'"
         >
         </v-card-subtitle>
       </v-col>

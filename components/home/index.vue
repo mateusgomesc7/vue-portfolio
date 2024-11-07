@@ -8,12 +8,23 @@
   >
     <v-col
       cols="12"
-      md="6"
-      :class="$vuetify.breakpoint.smAndDown ? 'd-flex justify-center' : ''"
+      md="8"
+      class="d-flex"
+      :class="
+        $vuetify.breakpoint.smAndDown ? 'justify-center' : 'justify-end pr-4'
+      "
     >
       <Presentation />
     </v-col>
-    <v-col cols="12" md="6" class="d-flex justify-center">
+    <v-col
+      cols="12"
+      md="4"
+      :class="
+        $vuetify.breakpoint.smAndDown
+          ? 'd-flex align-center justify-center'
+          : 'd-flex flex-column justify-start'
+      "
+    >
       <Profile />
     </v-col>
   </v-row>
@@ -34,9 +45,9 @@ export default {
 
 <style scoped>
 .large-spacing {
-  margin: 180px 0;
+  margin: 280px 0;
 }
 .small-spacing {
-  margin: 60px 0;
+  margin: 140px 0;
 }
 </style>
